@@ -2573,6 +2573,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </code>
           objects.</p>
         <div>
+          <section tested>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection" data-idl="" data-title="RTCPeerConnection">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code>RTCConfiguration</code></a></span> <span class="idlParamName">configuration</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> : <span class="idlSuperclass">EventTarget</span> {
 <span class="idlMethod" id="idl-def-rtcpeerconnection-createoffer(optional-rtcofferoptions)" data-idl="" data-title="createOffer" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-promise">Promise</a>&lt;<a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>&gt;</span> <span class="idlMethName"><a data-lt="createOffer" href="#dom-rtcpeerconnection-createoffer" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>createOffer</code></a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcofferoptions" class="internalDFN" data-link-type="dfn"><code>RTCOfferOptions</code></a></span> <span class="idlParamName">options</span></span>);</span>
@@ -2604,8 +2605,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
 <span class="idlAttribute" id="idl-def-rtcpeerconnection-onconnectionstatechange" data-idl="" data-title="onconnectionstatechange" data-dfn-for="rtcpeerconnection">             attribute <span class="idlAttrType"><a href="https://html.spec.whatwg.org/multipage/#eventhandler">EventHandler</a></span>           <span class="idlAttrName"><a data-lt="onconnectionstatechange" href="#dom-rtcpeerconnection-onconnectionstatechange" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>onconnectionstatechange</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcpeerconnection-onfingerprintfailure" data-idl="" data-title="onfingerprintfailure" data-dfn-for="rtcpeerconnection">             attribute <span class="idlAttrType"><a href="https://html.spec.whatwg.org/multipage/#eventhandler">EventHandler</a></span>           <span class="idlAttrName"><a data-lt="onfingerprintfailure" href="#dom-rtcpeerconnection-onfingerprintfailure" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>onfingerprintfailure</code></a></span>;</span>
 };</span></pre>
-
-          <section typeof="bibo:Chapter" resource="#constructors" property="bibo:hasPart">
+  </section>
+          <section tested typeof="bibo:Chapter" resource="#constructors" property="bibo:hasPart">
             <h5 id="constructors" resource="#constructors"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="constructors">
               <dt><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcpeerconnection" data-idl="" data-title="RTCPeerConnection"><code>RTCPeerConnection</code></dfn></dt>
@@ -2639,14 +2640,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="attributes">
               <dt><code>localDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <dfn id="dom-rtcpeerconnection-localdescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="localDescription"><code>localDescription</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                   </code> if it is not null and otherwise it <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                   </code>.</p>
               </dd>
               <dt><code>currentLocalDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                   </code>
                   attribute represents the local
@@ -2657,7 +2658,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>pendingLocalDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                   </code>
                   attribute represents a local
@@ -2669,14 +2670,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>remoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <dfn id="dom-rtcpeerconnection-remotedescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="remoteDescription"><code>remoteDescription</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                   </code> if it is not null and otherwise it <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                   </code>.</p>
               </dd>
               <dt><code>currentRemoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                   </code>
                   attribute represents the last remote
