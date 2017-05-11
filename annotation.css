@@ -1,11 +1,31 @@
-.out-of-scope {
+.out-of-scope, .non-normative {
   border: 3px solid darkgray;
-  opacity: 0.25;
+  content: "...";
+}
+
+.out-of-scope p,
+.out-of-scope ul,
+.out-of-scope h2,
+.non-normative p,
+.non-normative ul,
+.non-normative h2 {
+  opacity: 0.25
 }
 
 .out-of-scope:before {
   content: "Out Of Scope";
-  color: darkgray;
+  color: dimgray;
+  font-weight: bold;
+  background: gainsboro;
+  border-top: 3px solid darkgray;
+  border-right: 3px solid darkgray;
+  border-bottom: 3px solid darkgray;
+  padding: 3px 6px 3px 3px;
+}
+
+.non-normative:before {
+  content: "Non-Normative";
+  color: dimgray;
   font-weight: bold;
   background: gainsboro;
   border-top: 3px solid darkgray;
@@ -41,5 +61,20 @@
   border-top: 3px solid crimson;
   border-right: 3px solid crimson;
   border-bottom: 3px solid crimson;
+  padding: 3px 6px 3px 3px;
+}
+
+.needs-verification {
+  border: 3px solid darkorange;
+}
+
+.needs-verification:before {
+  content: "Needs Verification";
+  color: darkorange;
+  font-weight: bold;
+  background: gold;
+  border-top: 3px solid darkorange;
+  border-right: 3px solid darkorange;
+  border-bottom: 3px solid darkorange;
   padding: 3px 6px 3px 3px;
 }
