@@ -65,11 +65,26 @@
 }
 
 .needs-verification {
-  border: 3px solid darkorange;
+  border: 3px solid darkblue;
 }
 
 .needs-verification:before {
   content: "Needs Verification";
+  color: darkblue;
+  font-weight: bold;
+  background: lightsteelblue;
+  border-top: 3px solid darkblue;
+  border-right: 3px solid darkblue;
+  border-bottom: 3px solid darkblue;
+  padding: 3px 6px 3px 3px;
+}
+
+.incomplete {
+  border: 3px solid darkorange;
+}
+
+.incomplete:before {
+  content: "Incomplete";
   color: darkorange;
   font-weight: bold;
   background: gold;
