@@ -1,18 +1,20 @@
-.out-of-scope, .non-normative {
+
+*[out-of-scope],
+*[non-normative] {
   border: 3px solid darkgray;
   content: "...";
 }
 
-.out-of-scope p,
-.out-of-scope ul,
-.out-of-scope h2,
-.non-normative p,
-.non-normative ul,
-.non-normative h2 {
+*[out-of-scope] p,
+*[out-of-scope] ul,
+*[out-of-scope] h2,
+*[non-normative] p,
+*[non-normative] ul,
+*[non-normative] h2 {
   opacity: 0.25
 }
 
-.out-of-scope:before {
+*[out-of-scope]:before {
   content: "Out Of Scope";
   color: dimgray;
   font-weight: bold;
@@ -23,7 +25,7 @@
   padding: 3px 6px 3px 3px;
 }
 
-.non-normative:before {
+*[non-normative]:before {
   content: "Non-Normative";
   color: dimgray;
   font-weight: bold;
@@ -34,11 +36,11 @@
   padding: 3px 6px 3px 3px;
 }
 
-.tested {
+*[tested] {
   border: 3px solid darkgreen;
 }
 
-.tested:before {
+*[tested]:before {
   content: "Tested";
   color: darkgreen;
   font-weight: bold;
@@ -49,11 +51,11 @@
   padding: 3px 6px 3px 3px;
 }
 
-.untested {
+*[untested] {
   border: 3px solid crimson;
 }
 
-.untested:before {
+*[untested]:before {
   content: "Untested";
   color: crimson;
   font-weight: bold;
@@ -64,11 +66,11 @@
   padding: 3px 6px 3px 3px;
 }
 
-.needs-verification {
+*[needs-verification] {
   border: 3px solid darkblue;
 }
 
-.needs-verification:before {
+*[needs-verification]:before {
   content: "Needs Verification";
   color: darkblue;
   font-weight: bold;
@@ -79,11 +81,11 @@
   padding: 3px 6px 3px 3px;
 }
 
-.incomplete {
+*[incomplete] {
   border: 3px solid darkorange;
 }
 
-.incomplete:before {
+*[incomplete]:before {
   content: "Incomplete";
   color: darkorange;
   font-weight: bold;

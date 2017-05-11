@@ -1460,7 +1460,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ol>
   </nav>
 
-  <section class="informative non-normative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
+  <section non-normative class="informative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-intro" resource="#h-intro"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span>
     </h2>
@@ -1476,7 +1476,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <cite><a class="bibref" href="#bib-RTCWEB-OVERVIEW">RTCWEB-OVERVIEW</a></cite>] and [<cite><a class="bibref" href="#bib-RTCWEB-SECURITY">RTCWEB-SECURITY</a></cite>].</p>
   </section>
 
-  <section class="non-normative" id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
+  <section non-normative id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-conformance" resource="#h-conformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Conformance</span>
     </h2>
@@ -1491,7 +1491,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>Conformance requirements phrased as algorithms or specific steps may be implemented in any manner, so long as the end result is equivalent. (In particular, the algorithms defined in this specification are intended to be easy to follow, and not intended to be performant.)</p>
     <p>Implementations that use ECMAScript to implement the APIs defined in this specification <em class="rfc2119" title="MUST">MUST</em> implement them in a manner consistent with the ECMAScript Bindings defined in the Web IDL specification [<cite><a class="bibref" href="#bib-WEBIDL-1">WEBIDL-1</a></cite>], as this specification uses that specification and terminology.</p>
   </section>
-  <section class="out-of-scope" id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
+  <section out-of-scope id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Terminology</span>
     </h2>
@@ -1540,7 +1540,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </code> is established or re-established.
         </p>
         <div>
-          <section class="untested">
+          <section untested>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcconfiguration" data-idl="" data-title="RTCConfiguration">dictionary <span class="idlDictionaryID"><a data-lt="RTCConfiguration" href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCConfiguration</code></a></span> {
 <span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
@@ -1552,7 +1552,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-octet">octet</a></span>                    <span class="idlMemberName"><a data-lt="iceCandidatePoolSize" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceCandidatePoolSize</code></a></span> = <span class="idlMemberValue">0</span>;</span>
 };</span></pre>
 </section>
-          <section class="tested" typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
             <h5 id="dictionary-rtcconfiguration-members" resource="#dictionary-rtcconfiguration-members"><span property="xhv:role" resource="xhv:heading">Dictionary <a class="idlType internalDFN" href="#dom-rtcconfiguration" data-link-type="dfn"><code>RTCConfiguration</code></a> Members</span></h5>
             <dl data-link-for="RTCConfiguration" data-dfn-for="RTCConfiguration" class="dictionary-members">
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-iceservers" data-idl="" data-title="iceServers"><code>iceServers</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span></dt>
@@ -1611,7 +1611,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h4 id="h-rtcicecredentialtype-enum" resource="#h-rtcicecredentialtype-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType"><code>RTCIceCredentialType</code></dfn> Enum</span>
         </h4>
         <div>
-          <section class="untested">
+          <section untested>
           <pre class="def idl"><span class="idlEnum" id="idl-def-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType">enum <span class="idlEnumID"><a data-lt="RTCIceCredentialType" href="#dom-rtcicecredentialtype" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCredentialType</code></a></span> {
     <a href="#dom-rtcicecredentialtype-password" class="idlEnumItem">"password"</a>,
     <a href="#dom-rtcicecredentialtype-oauth" class="idlEnumItem">"oauth"</a>
@@ -1699,7 +1699,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </section>
       </section>
 
-      <section class="untested" id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
+      <section untested id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcoauthcredential-dictionary" resource="#h-rtcoauthcredential-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcoauthcredential" data-idl="" data-title="RTCOAuthCredential"><code>RTCOAuthCredential</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCOAuthCredential</code> dictionary is used to describe the OAuth auth credential information which is used by the STUN/TURN client (inside the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>) to authenticate against a STUN/TURN server, as described in [<cite><a class="bibref" href="#bib-RFC7635">RFC7635</a></cite>]. Note that the <code>kid</code> parameter is not located in this dictionary, but in
@@ -1737,7 +1737,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section class="untested" id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
+      <section untested id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
         <h4 id="h-rtciceserver-dictionary" resource="#h-rtciceserver-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceserver" data-idl="" data-title="RTCIceServer"><code>RTCIceServer</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCIceServer</code> dictionary is used to describe the STUN and TURN servers that can be used by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> to establish a connection with a peer.</p>
@@ -1811,7 +1811,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section class="untested" id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcicetransportpolicy-enum" resource="#h-rtcicetransportpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.5 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransportpolicy" data-idl="" data-title="RTCIceTransportPolicy"><code>RTCIceTransportPolicy</code></dfn> Enum</span>
         </h4>
         <p>As noted in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, if the
@@ -1846,7 +1846,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section class="untested" id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcbundlepolicy-enum" resource="#h-rtcbundlepolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcbundlepolicy" data-idl="" data-title="RTCBundlePolicy"><code>RTCBundlePolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, bundle policy affects which media tracks are negotiated if the remote endpoint is not bundle-aware, and what ICE candidates are gathered. If the remote endpoint is bundle-aware, all media tracks and data channels are bundled onto the same transport.</p>
@@ -1880,7 +1880,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section class="untested" id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcrtcpmuxpolicy-enum" resource="#h-rtcrtcpmuxpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.7 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtcpmuxpolicy" data-idl="" data-title="RTCRtcpMuxPolicy"><code>RTCRtcpMuxPolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, the RtcpMuxPolicy affects what ICE candidates are gathered to support non-multiplexed RTCP.</p>
@@ -1923,7 +1923,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section  class="untested" id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
+      <section  untested id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
         <h4 id="h-offer-answer-options" resource="#h-offer-answer-options"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.8 </span>Offer/Answer Options</span>
         </h4>
         <p>These dictionaries describe the options that can be used to control the offer/answer creation process.</p>
@@ -1986,10 +1986,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <section id="operation" typeof="bibo:Chapter" resource="#operation" property="bibo:hasPart">
         <h4 id="h-operation" resource="#h-operation"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1 </span>Operation</span>
         </h4>
-        <p class="tested">Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
+        <p tested>Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
           </code> creates an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object.</p>
-        <p class="untested"><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
+        <p untested><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
         </p>
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has a <dfn data-dfn-type="dfn" id="dfn-signaling-state">signaling
@@ -2014,57 +2014,57 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <p>When the <dfn id="dom-peerconnection" data-dfn-type="dfn"><code>RTCPeerConnection()</code></dfn> constructor is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
         <ol>
           <li>
-            <p class="tested">Let <var>connection</var> be a newly created
+            <p tested>Let <var>connection</var> be a newly created
               <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
               </code> object.</p>
           </li>
           <li>
-            <p class="tested">If the <code>certificates</code> value in
+            <p tested>If the <code>certificates</code> value in
               <var>configuration</var> is non-empty, check that the <code>expires</code> on each value is in the future. If a certificate has expired, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
               <code>InvalidAccessError</code>; otherwise, store the certificates. </p>
-              <p class="untested">If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
+              <p untested>If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
           </li>
           <li>
-            <p class="untested">If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
+            <p untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
               </code> is
               <code>negotiate</code>, and the user agent does not implement non-muxed RTCP, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>NotSupportedError</code>.</p>
           </li>
-          <li class="tested">
+          <li tested>
             <p>Initialize <var>connection</var>'s <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
           </li>
           <li>
-            <p class="needs-verification"><a href="#set-pc-configuration" class="internalDFN" data-link-type="dfn">Set the configuration</a> specified by
+            <p needs-verification><a href="#set-pc-configuration" class="internalDFN" data-link-type="dfn">Set the configuration</a> specified by
               <var>configuration</var>.</p>
           </li>
           <li>
-            <p class="needs-verification">Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-isclosed">isClosed</dfn>]] internal slot, initialized to <code>false</code>.</p>
+            <p needs-verification>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-isclosed">isClosed</dfn>]] internal slot, initialized to <code>false</code>.</p>
           </li>
-          <li class="needs-verification">
+          <li needs-verification>
             <p>Let <var>connection</var> have a [[<dfn data-dfn-type="dfn" id="dfn-neednegotiation">needNegotiation</dfn>]] internal slot, initialized to <code>false</code>.</p>
           </li>
-          <li class="needs-verification">
+          <li needs-verification>
             <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-sctptransport">sctpTransport</dfn>]] internal slot, initialized to <code>null</code>.</p>
           </li>
-          <li class="needs-verification">
+          <li needs-verification>
             <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-operations">operations</dfn>]] internal slot, representing an <a href="#dfn-operations-queue" class="internalDFN" data-link-type="dfn">operations queue</a>, initialized to an empty list.</p>
           </li>
-          <li class="tested">
+          <li tested>
             <p>Set <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
               <code>stable</code>.</p>
           </li>
-          <li class="tested">
+          <li tested>
             <p>Set <var>connection</var>'s <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE connection state</a> to
               <code>new</code>.</p>
           </li>
           <li>
-            <p class="tested">Set <var>connection</var>'s <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> to
+            <p tested>Set <var>connection</var>'s <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> to
               <code>new</code>.</p>
           </li>
           <li>
-            <p class="tested">Set <var>connection</var>'s <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> to
+            <p tested>Set <var>connection</var>'s <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> to
               <code>new</code>.</p>
           </li>
-          <li class="tested">
+          <li tested>
             <p>Set <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
               </code>,
               <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
@@ -2075,15 +2075,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               </code> to null.
             </p>
           </li>
-          <li class="tested">
+          <li tested>
             <p>Return <var>connection</var>.</p>
           </li>
         </ol>
-        <p class="tested">An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
+        <p tested>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has an
           <dfn data-dfn-type="dfn" id="dfn-operations-queue">operations queue</dfn>, [[<a href="#dfn-operations" class="internalDFN" data-link-type="dfn">operations</a>]], which ensures that only one asynchronous operation in the queue is executed concurrently. If subsequent calls are made while the returned promise of a previous call is still not settled, they are added to the queue and executed when all the previous calls have finished executing and their promises have settled.</p>
         <p>To <dfn id="enqueue-an-operation" data-dfn-type="dfn">enqueue an operation</dfn>, run the following steps:</p>
-        <section class="tested">
+        <section tested>
         <ol>
           <li>
             <p>Let <var>connection</var> be the current
@@ -2147,7 +2147,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </li>
         </ol>
       </section>
-      <section class="incomplete">
+      <section incomplete>
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has an aggregated
           <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a>. Whenever the state of an
@@ -2183,7 +2183,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </li>
         </ol>
       </section>
-      <section class="incomplete">
+      <section incomplete>
         <p>To <dfn id="update-ice-gathering-state" data-dfn-type="dfn">update the <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering
         state</a></dfn> of an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> instance
@@ -2218,7 +2218,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </li>
         </ol>
       </section>
-      <section class="incomplete">
+      <section incomplete>
         <p>To <dfn id="update-ice-connection-state" data-dfn-type="dfn">update the <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE
         connection state</a></dfn> of an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code>
@@ -2267,28 +2267,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If elements of the SDP were modified, then reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidModificationError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If the <var>description</var>'s <code><a data-for="RTCSessionDescription" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn"><code>type</code></a>
                       </code> is invalid for the current <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> of <var>connection</var>, then reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If the content of <var>description</var> is not valid SDP syntax, then reject <var>p</var> with an
                       <code>RTCError</code> (with <code>errorDetail</code> set to "sdp-syntax-error" and the sdpLineNumber attribute set to the line number in the SDP where the syntax error was detected) and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If the content of <var>description</var> is invalid, then reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidAccessError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>For all other errors, for example if
                       <var>description</var> cannot be applied at the media layer, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2307,7 +2307,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <p>If <var>description</var> is set as a local description, then run one of the following steps:</p>
                     <ul>
                       <!-- A) transition stable to haveLocalOffer -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "offer", set
                           <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                           </code>
@@ -2316,7 +2316,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                       <!-- C) transition haveRemoteOffer or haveLocalProvAnswer to
                       stable -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                           <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                           </code>
@@ -2331,7 +2331,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                       </li>
                       <!-- B) transition rollback to haveLocalOffer to stable -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                           <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                           </code>
@@ -2339,7 +2339,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <code>stable</code>.</p>
                       </li>
                       <!-- G) transition haveRemoteOffer to haveLocalProvAnswer -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                           </code>
                           to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2351,7 +2351,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                     <p>Otherwise, if <var>description</var> is set as a remote description, then run one of the following steps:</p>
                     <ul>
                       <!-- D) transition stable to haveRemoteOffer -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "offer", set
                           <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                           </code>
@@ -2360,7 +2360,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                       <!-- F) transition haveRemoteOffer or haveLocalProvAnswer to
                       stable -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                           <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                           </code>
@@ -2375,7 +2375,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                       </li>
                       <!-- E) transition rollback to haveRemoteOffer to stable -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                           <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                           </code>
@@ -2383,7 +2383,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <code>stable</code>.</p>
                       </li>
                       <!-- H) transition haveRemoteOffer to haveLocalProvAnswer -->
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                           </code>
                           to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2391,21 +2391,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                     </ul>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> changed above, fire a simple event named
                       <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                       </code> at
                       <var>connection</var>.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>description</var> is of type "answer", and it initiates the closure of an existing SCTP association, as defined in [<cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of <var>connection</var>'s [[
                       <code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot to
                       <code>null</code>.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>If <var>description</var> is of type "answer" or "pranswer", then run the following steps:</p>
                     <ol>
-                      <li>
+                      <li untested>
                         <p>If <var>description</var> initiates the establishment of a new SCTP association, as defined in [
                           <cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of
                           <var>connection</var>'s [[
@@ -2413,7 +2413,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
                           </code>.</p>
                       </li>
-                      <li>
+                      <li needs-verification>
                         <p>If <var>description</var> negotiates the DTLS role of the SCTP transport, and there is an
                           <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                           </code> with a <code>null</code>
@@ -2421,23 +2421,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           </code>, then generate an ID according to [
                           <cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>]. If no available ID could be generated, then run the following steps:</p>
                         <ol>
-                          <li>
+                          <li untested>
                             <p>Let <var>channel</var> be the
                               <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                               </code> object for which an ID could not be generated.</p>
                           </li>
                           <li>
-                            <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
+                            <p untested>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
                               </code> attribute to
                               <code>closed</code>.</p>
                           </li>
-                          <li>
+                          <li untested>
                             <p>Fire an event named <code><a data-for="RTCDataChannel" href="#event-datachannel-error" class="internalDFN" data-link-type="dfn"><code>error</code></a>
                               </code> with a
                               <code>ResourceInUse</code> exception at
                               <var>channel</var>.</p>
                           </li>
-                          <li>
+                          <li untested>
                             <p>Fire a simple event named <code title="event-RTCDataChannel-close"><a href="#event-datachannel-close" class="internalDFN" data-link-type="dfn"><code>close</code></a>
                               </code> at
                               <var>channel</var>.</p>
@@ -2446,7 +2446,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                     </ol>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>description</var> is set as a local description, then run the following steps for each media description in <var>description</var> that is not yet associated with an <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code> object:</p>
                     <ol>
@@ -2461,7 +2461,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                     </ol>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>description</var> is set as a remote description, then run the following steps for each media description in
                       <var>description</var>:</p>
                     <ol>
