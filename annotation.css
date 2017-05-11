@@ -1,0 +1,45 @@
+.out-of-scope {
+  border: 3px solid darkgray;
+  opacity: 0.25;
+}
+
+.out-of-scope:before {
+  content: "Out Of Scope";
+  color: darkgray;
+  font-weight: bold;
+  background: gainsboro;
+  border-top: 3px solid darkgray;
+  border-right: 3px solid darkgray;
+  border-bottom: 3px solid darkgray;
+  padding: 3px 6px 3px 3px;
+}
+
+.tested {
+  border: 3px solid darkgreen;
+}
+
+.tested:before {
+  content: "Tested";
+  color: darkgreen;
+  font-weight: bold;
+  background: palegreen;
+  border-top: 3px solid darkgreen;
+  border-right: 3px solid darkgreen;
+  border-bottom: 3px solid darkgreen;
+  padding: 3px 6px 3px 3px;
+}
+
+.untested {
+  border: 3px solid crimson;
+}
+
+.untested:before {
+  content: "Untested";
+  color: crimson;
+  font-weight: bold;
+  background: mistyrose;
+  border-top: 3px solid crimson;
+  border-right: 3px solid crimson;
+  border-bottom: 3px solid crimson;
+  padding: 3px 6px 3px 3px;
+}
