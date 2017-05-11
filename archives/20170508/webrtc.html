@@ -1460,7 +1460,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ol>
   </nav>
 
-  <section class="informative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
+  <section class="informative non-normative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-intro" resource="#h-intro"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span>
     </h2>
@@ -1476,7 +1476,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <cite><a class="bibref" href="#bib-RTCWEB-OVERVIEW">RTCWEB-OVERVIEW</a></cite>] and [<cite><a class="bibref" href="#bib-RTCWEB-SECURITY">RTCWEB-SECURITY</a></cite>].</p>
   </section>
 
-  <section id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
+  <section class="non-normative" id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-conformance" resource="#h-conformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Conformance</span>
     </h2>
@@ -1611,6 +1611,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h4 id="h-rtcicecredentialtype-enum" resource="#h-rtcicecredentialtype-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType"><code>RTCIceCredentialType</code></dfn> Enum</span>
         </h4>
         <div>
+          <section class="untested">
           <pre class="def idl"><span class="idlEnum" id="idl-def-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType">enum <span class="idlEnumID"><a data-lt="RTCIceCredentialType" href="#dom-rtcicecredentialtype" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCredentialType</code></a></span> {
     <a href="#dom-rtcicecredentialtype-password" class="idlEnumItem">"password"</a>,
     <a href="#dom-rtcicecredentialtype-oauth" class="idlEnumItem">"oauth"</a>
@@ -1695,9 +1696,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </tbody>
           </table>
         </div>
+        </section>
       </section>
 
-      <section id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
+      <section class="untested" id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcoauthcredential-dictionary" resource="#h-rtcoauthcredential-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcoauthcredential" data-idl="" data-title="RTCOAuthCredential"><code>RTCOAuthCredential</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCOAuthCredential</code> dictionary is used to describe the OAuth auth credential information which is used by the STUN/TURN client (inside the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>) to authenticate against a STUN/TURN server, as described in [<cite><a class="bibref" href="#bib-RFC7635">RFC7635</a></cite>]. Note that the <code>kid</code> parameter is not located in this dictionary, but in
@@ -1735,7 +1737,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
+      <section class="untested" id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
         <h4 id="h-rtciceserver-dictionary" resource="#h-rtciceserver-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceserver" data-idl="" data-title="RTCIceServer"><code>RTCIceServer</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCIceServer</code> dictionary is used to describe the STUN and TURN servers that can be used by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> to establish a connection with a peer.</p>
@@ -1809,7 +1811,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
+      <section class="untested" id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcicetransportpolicy-enum" resource="#h-rtcicetransportpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.5 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransportpolicy" data-idl="" data-title="RTCIceTransportPolicy"><code>RTCIceTransportPolicy</code></dfn> Enum</span>
         </h4>
         <p>As noted in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, if the
@@ -1844,7 +1846,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
+      <section class="untested" id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcbundlepolicy-enum" resource="#h-rtcbundlepolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcbundlepolicy" data-idl="" data-title="RTCBundlePolicy"><code>RTCBundlePolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, bundle policy affects which media tracks are negotiated if the remote endpoint is not bundle-aware, and what ICE candidates are gathered. If the remote endpoint is bundle-aware, all media tracks and data channels are bundled onto the same transport.</p>
@@ -1878,7 +1880,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
+      <section class="untested" id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcrtcpmuxpolicy-enum" resource="#h-rtcrtcpmuxpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.7 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtcpmuxpolicy" data-idl="" data-title="RTCRtcpMuxPolicy"><code>RTCRtcpMuxPolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, the RtcpMuxPolicy affects what ICE candidates are gathered to support non-multiplexed RTCP.</p>
@@ -1921,7 +1923,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
+      <section  class="untested" id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
         <h4 id="h-offer-answer-options" resource="#h-offer-answer-options"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.8 </span>Offer/Answer Options</span>
         </h4>
         <p>These dictionaries describe the options that can be used to control the offer/answer creation process.</p>
@@ -1984,10 +1986,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <section id="operation" typeof="bibo:Chapter" resource="#operation" property="bibo:hasPart">
         <h4 id="h-operation" resource="#h-operation"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1 </span>Operation</span>
         </h4>
-        <p>Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
+        <p class="tested">Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
           </code> creates an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object.</p>
-        <p><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
+        <p class="untested"><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
         </p>
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has a <dfn data-dfn-type="dfn" id="dfn-signaling-state">signaling
@@ -2012,56 +2014,57 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <p>When the <dfn id="dom-peerconnection" data-dfn-type="dfn"><code>RTCPeerConnection()</code></dfn> constructor is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
         <ol>
           <li>
-            <p>Let <var>connection</var> be a newly created
+            <p class="tested">Let <var>connection</var> be a newly created
               <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
               </code> object.</p>
           </li>
           <li>
-            <p>If the <code>certificates</code> value in
+            <p class="tested">If the <code>certificates</code> value in
               <var>configuration</var> is non-empty, check that the <code>expires</code> on each value is in the future. If a certificate has expired, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
-              <code>InvalidAccessError</code>; otherwise, store the certificates. If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
+              <code>InvalidAccessError</code>; otherwise, store the certificates. </p>
+              <p class="untested">If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
           </li>
           <li>
-            <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
+            <p class="untested">If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
               </code> is
               <code>negotiate</code>, and the user agent does not implement non-muxed RTCP, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>NotSupportedError</code>.</p>
           </li>
-          <li>
+          <li class="tested">
             <p>Initialize <var>connection</var>'s <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
           </li>
           <li>
-            <p><a href="#set-pc-configuration" class="internalDFN" data-link-type="dfn">Set the configuration</a> specified by
+            <p class="needs-verification"><a href="#set-pc-configuration" class="internalDFN" data-link-type="dfn">Set the configuration</a> specified by
               <var>configuration</var>.</p>
           </li>
           <li>
-            <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-isclosed">isClosed</dfn>]] internal slot, initialized to <code>false</code>.</p>
+            <p class="needs-verification">Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-isclosed">isClosed</dfn>]] internal slot, initialized to <code>false</code>.</p>
           </li>
-          <li>
+          <li class="needs-verification">
             <p>Let <var>connection</var> have a [[<dfn data-dfn-type="dfn" id="dfn-neednegotiation">needNegotiation</dfn>]] internal slot, initialized to <code>false</code>.</p>
           </li>
-          <li>
+          <li class="needs-verification">
             <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-sctptransport">sctpTransport</dfn>]] internal slot, initialized to <code>null</code>.</p>
           </li>
-          <li>
+          <li class="needs-verification">
             <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-operations">operations</dfn>]] internal slot, representing an <a href="#dfn-operations-queue" class="internalDFN" data-link-type="dfn">operations queue</a>, initialized to an empty list.</p>
           </li>
-          <li>
+          <li class="tested">
             <p>Set <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
               <code>stable</code>.</p>
           </li>
-          <li>
+          <li class="tested">
             <p>Set <var>connection</var>'s <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE connection state</a> to
               <code>new</code>.</p>
           </li>
           <li>
-            <p>Set <var>connection</var>'s <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> to
+            <p class="tested">Set <var>connection</var>'s <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> to
               <code>new</code>.</p>
           </li>
           <li>
-            <p>Set <var>connection</var>'s <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> to
+            <p class="tested">Set <var>connection</var>'s <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> to
               <code>new</code>.</p>
           </li>
-          <li>
+          <li class="tested">
             <p>Set <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
               </code>,
               <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
@@ -2072,7 +2075,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               </code> to null.
             </p>
           </li>
-          <li>
+          <li class="tested">
             <p>Return <var>connection</var>.</p>
           </li>
         </ol>
