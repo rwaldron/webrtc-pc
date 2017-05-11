@@ -2688,7 +2688,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>pendingRemoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                   </code>
                   attribute represents a remote
@@ -2700,35 +2700,35 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </p>
               </dd>
               <dt><code>signalingState</code> of type <span class="idlAttrType"><a href="#dom-rtcsignalingstate" class="internalDFN" data-link-type="dfn"><code>RTCSignalingState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-signalingstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="signalingState"><code>signalingState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> object's
                   <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a>.</p>
               </dd>
               <dt><code>iceGatheringState</code> of type <span class="idlAttrType"><a href="#dom-rtcicegatheringstate" class="internalDFN" data-link-type="dfn"><code>RTCIceGatheringState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-icegatheringstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="iceGatheringState"><code>iceGatheringState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> of the
                   <code>RTCPeerConnection</code> instance.</p>
               </dd>
               <dt><code>iceConnectionState</code> of type <span class="idlAttrType"><a href="#dom-rtciceconnectionstate" class="internalDFN" data-link-type="dfn"><code>RTCIceConnectionState</code></a></span>, readonly</dt>
-              <dd>
+              <dd needs-verification>
                 <p>The <dfn id="dom-rtcpeerconnection-iceconnectionstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="iceConnectionState"><code>iceConnectionState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE connection state</a> of the
                   <code>RTCPeerConnection</code> instance.</p>
               </dd>
               <dt><code>connectionState</code> of type <span class="idlAttrType"><a href="#dom-rtcpeerconnectionstate" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnectionState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-connectionstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="connectionState"><code>connectionState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> of the
                   <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> instance.</p>
               </dd>
               <dt><code>canTrickleIceCandidates</code> of type <span class="idlAttrType">boolean</span>, readonly, nullable</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-cantrickleicecandidates" data-idl="" data-title="canTrickleIceCandidates"><code>canTrickleIceCandidates</code></dfn> attribute indicates whether the remote peer is able to accept trickled ICE candidates [<cite><a class="bibref" href="#bib-TRICKLE-ICE">TRICKLE-ICE</a></cite>]. The value is determined based on whether a remote description indicates support for trickle ICE, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.15">section 4.1.15.</a>)</span>. Prior to the completion of
                   <a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setremotedescription" class="internalDFN" data-link-type="dfn"><code><code>setRemoteDescription</code></code></a>, this value is <code>null</code>.</p>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onnegotiationneeded" data-idl="" data-title="onnegotiationneeded"><code>onnegotiationneeded</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-negotiation" class="internalDFN" data-link-type="dfn"><code>negotiationneeded</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicecandidate" data-idl="" data-title="onicecandidate"><code>onicecandidate</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
