@@ -2079,10 +2079,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <p>Return <var>connection</var>.</p>
           </li>
         </ol>
-        <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
+        <p class="tested">An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has an
           <dfn data-dfn-type="dfn" id="dfn-operations-queue">operations queue</dfn>, [[<a href="#dfn-operations" class="internalDFN" data-link-type="dfn">operations</a>]], which ensures that only one asynchronous operation in the queue is executed concurrently. If subsequent calls are made while the returned promise of a previous call is still not settled, they are added to the queue and executed when all the previous calls have finished executing and their promises have settled.</p>
         <p>To <dfn id="enqueue-an-operation" data-dfn-type="dfn">enqueue an operation</dfn>, run the following steps:</p>
+        <section class="tested">
         <ol>
           <li>
             <p>Let <var>connection</var> be the current
@@ -2145,6 +2146,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <p>Return <var>p</var>.</p>
           </li>
         </ol>
+      </section>
+      <section class="incomplete">
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has an aggregated
           <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a>. Whenever the state of an
@@ -2179,6 +2182,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <var>connection</var>.</p>
           </li>
         </ol>
+      </section>
+      <section class="incomplete">
         <p>To <dfn id="update-ice-gathering-state" data-dfn-type="dfn">update the <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering
         state</a></dfn> of an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> instance
@@ -2212,6 +2217,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <var>connection</var>.</p>
           </li>
         </ol>
+      </section>
+      <section class="incomplete">
         <p>To <dfn id="update-ice-connection-state" data-dfn-type="dfn">update the <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE
         connection state</a></dfn> of an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code>
@@ -2239,6 +2246,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <var>connection</var>.</p>
           </li>
         </ol>
+      </section>
+
         <p>To <dfn id="set-description" data-dfn-type="dfn">set an RTCSessionDescription</dfn>
           <var>description</var> on an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code>
