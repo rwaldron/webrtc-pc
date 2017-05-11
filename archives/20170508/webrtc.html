@@ -2405,7 +2405,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <li incomplete>
                     <p>If <var>description</var> is of type "answer" or "pranswer", then run the following steps:</p>
                     <ol>
-                      <li untested>
+                      <li needs-verification>
                         <p>If <var>description</var> initiates the establishment of a new SCTP association, as defined in [
                           <cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of
                           <var>connection</var>'s [[
@@ -2413,13 +2413,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                           <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
                           </code>.</p>
                       </li>
-                      <li needs-verification>
-                        <p>If <var>description</var> negotiates the DTLS role of the SCTP transport, and there is an
+                      <li>
+                        <p tested>If <var>description</var> negotiates the DTLS role of the SCTP transport, and there is an
                           <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                           </code> with a <code>null</code>
                           <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
                           </code>, then generate an ID according to [
-                          <cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>]. If no available ID could be generated, then run the following steps:</p>
+                          <cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>]. </p>
+
+                          <p>If no available ID could be generated, then run the following steps:</p>
                         <ol>
                           <li untested>
                             <p>Let <var>channel</var> be the
@@ -2506,7 +2508,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                     </ol>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>description</var> is of type "rollback", then run the following steps:</p>
                     <ol>
                       <li>
@@ -2531,7 +2533,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       </li>
                     </ol>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> is now
                       <code>stable</code>, <a href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">update the negotiation-needed
                     flag</a>. If <var>connection</var>'s [[
