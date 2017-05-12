@@ -2774,7 +2774,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
             <h5 id="methods" resource="#methods"><span property="xhv:role" resource="xhv:heading">Methods</span></h5>
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createoffer" data-idl="" data-title="createOffer" data-lt="createoffer()|createOffer"><code>createOffer</code></dfn></dt>
-              <dd>
+              <dd incomplete>
                 <p>The createOffer method generates a blob of SDP that contains an RFC 3264 offer with the supported configurations for the session, including descriptions of the local
                   <code>MediaStreamTrack</code>s attached to this
                   <code>RTCPeerConnection</code>, the codec/RTP/RTCP options supported by this implementation, and any candidates that have been gathered by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. The <code>options</code> parameter may be supplied to provide additional control over the offer generated.</p>
@@ -2919,7 +2919,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createanswer" data-idl="" data-title="createAnswer" data-lt="createanswer()|createAnswer"><code>createAnswer</code></dfn></dt>
-              <dd >
+              <dd incomplete>
                 <p>The <code>createAnswer</code> method generates an [<cite><a class="bibref" href="#bib-SDP">SDP</a></cite>] answer with the supported configuration for the session that is compatible with the parameters in the remote configuration. Like <code>createOffer</code>, the returned blob contains descriptions of the local <code>MediaStreamTrack</code>s attached to this <code>RTCPeerConnection</code>, the codec/RTP/RTCP options negotiated for this session, and any candidates that have been gathered by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. The
                   <code>options</code> parameter may be supplied to provide additional control over the generated answer.</p>
                 <p>As an answer, the generated SDP will contain a specific configuration that, along with the corresponding offer, specifies how the media plane should be established. The generation of the SDP <em class="rfc2119" title="MUST">MUST</em> follow the appropriate process for generating an answer.</p>
