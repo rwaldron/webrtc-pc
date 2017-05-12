@@ -2841,7 +2841,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li untested>
+                  <li>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
                   <li needs-verification>
@@ -2993,7 +2993,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the answer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.7">section 4.1.7.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -4418,22 +4418,26 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
           <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> to expose local and remote session descriptions. Attributes on this interface are mutable for legacy reasons.</p>
         <div>
+          <section untested>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsessiondescription" data-idl="" data-title="RTCSessionDescription">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a></span> <span class="idlParamName">descriptionInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSessionDescription</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsessiondescription-type" data-idl="" data-title="type" data-dfn-for="rtcsessiondescription">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span> <span class="idlAttrName"><a data-lt="type" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescription"><code>type</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcsessiondescription-sdp" data-idl="" data-title="sdp" data-dfn-for="rtcsessiondescription">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>  <span class="idlAttrName"><a data-lt="sdp" href="#dom-rtcsessiondescription-sdp" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescription"><code>sdp</code></a></span>;</span>
 <span class="idlSerializer" id="idl-def-rtcsessiondescription-serializer" data-idl="" data-title="serializer" data-dfn-for="rtcsessiondescription">    <a data-lt="Serializer|undefined" data-lt-nodefault="" href="#dom-rtcsessiondescription-serializer" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescription">serializer</a> = <span class="idlSerializerValues">{attribute}</span>;</span>
 };</span></pre>
-
-          <section typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
+        </section>
+          <section incomplete typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
             <h5 id="constructors-1" resource="#constructors-1"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="constructors">
               <dt><code>RTCSessionDescription</code></dt>
               <dd>
+                <section tested>
                 The <dfn id="dom-sessiondescription" data-dfn-type="dfn"><code>RTCSessionDescription()</code></dfn> constructor takes a dictionary argument,
                 <var>descriptionInitDict</var>, whose content is used to initialize the new <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
                 </code>
                 object. This constructor is deprecated; it exists for legacy compatibility reasons only.
+                </section>
+                <section untested>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -4453,11 +4457,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
                     </tr>
                   </tbody>
                 </table>
+                </section>
               </dd>
             </dl>
           </section>
 
-          <section typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
+          <section incomplete typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
             <h5 id="attributes-2" resource="#attributes-2"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="attributes">
               <dt><dfn data-dfn-for="rtcsessiondescription" data-dfn-type="dfn" id="dom-rtcsessiondescription-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span>, readonly</dt>
@@ -4474,12 +4479,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
             </div>
           </section>
         </div>
+
         <div>
+          <section untested>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcsessiondescriptioninit" data-idl="" data-title="RTCSessionDescriptionInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCSessionDescriptionInit" href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSessionDescriptionInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcsessiondescriptioninit-type" data-idl="" data-title="type" data-dfn-for="rtcsessiondescriptioninit">    required <span class="idlMemberType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span> <span class="idlMemberName"><a data-lt="type" href="#dom-rtcsessiondescriptioninit-type" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescriptionInit"><code>type</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcsessiondescriptioninit-sdp" data-idl="" data-title="sdp" data-dfn-for="rtcsessiondescriptioninit">             <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>  <span class="idlMemberName"><a data-lt="sdp" href="#dom-rtcsessiondescriptioninit-sdp" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescriptionInit"><code>sdp</code></a></span> = <span class="idlMemberValue">""</span>;</span>
 };</span></pre>
-
+</section>
           <section typeof="bibo:Chapter" resource="#dictionary-rtcsessiondescriptioninit-members" property="bibo:hasPart">
             <h5 id="dictionary-rtcsessiondescriptioninit-members" resource="#dictionary-rtcsessiondescriptioninit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsessiondescriptioninit" data-idl="" data-title="RTCSessionDescriptionInit"><code>RTCSessionDescriptionInit</code></dfn>
             Members</span></h5>
@@ -4487,8 +4494,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
               <dt><dfn data-dfn-for="rtcsessiondescriptioninit" data-dfn-type="dfn" id="dom-rtcsessiondescriptioninit-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span>, required</dt>
               <dd>DOMString sdp</dd>
               <dt><dfn data-dfn-for="rtcsessiondescriptioninit" data-dfn-type="dfn" id="dom-rtcsessiondescriptioninit-sdp" data-idl="" data-title="sdp"><code>sdp</code></dfn> of type <span class="idlMemberType">DOMString</span></dt>
-              <dd>The string representation of the SDP [<cite><a class="bibref" href="#bib-SDP">SDP</a></cite>]; if
-                <code>type</code> is <code>rollback</code>, this member is unused.
+              <dd>The string representation of the SDP [<cite><a class="bibref" href="#bib-SDP">SDP</a></cite>]; <section untested> if
+                <code>type</code> is <code>rollback</code>, this member is unused.</section>
               </dd>
             </dl>
           </section>
