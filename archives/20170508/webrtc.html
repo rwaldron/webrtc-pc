@@ -3324,7 +3324,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-getdefaulticeservers" data-idl="" data-title="getDefaultIceServers" data-lt="getdefaulticeservers()|getDefaultIceServers"><code>getDefaultIceServers</code></dfn></dt>
-              <dd>
+              <dd untested>
                 <p>Returns a list of ICE servers that are configured into the browser. A browser might be configured to use local or private STUN or TURN servers. This method allows an application to learn about these servers and optionally use them.</p>
                 <p class="fingerprint">This list is likely to be persistent and is the same across origins. It thus increases the fingerprinting surface of the browser. In privacy-sensitive contexts, browsers can consider mitigations such as only providing this data to "trusted" origins (or not providing it at all.)<img src="images/fingerprint.png" alt="(This is a fingerprinting vector.)" width="15" height="21"></p>
                 <div>
