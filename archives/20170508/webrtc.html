@@ -3063,7 +3063,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><code>setLocalDescription</code></dt>
-              <dd>
+              <dd needs-verification>
                 <p>The <dfn id="dom-rtcpeerconnection-setlocaldescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="setLocalDescription" data-lt="setlocaldescription()|setLocalDescription"><code>setLocalDescription</code></dfn> method instructs the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> to apply the supplied
                   <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
@@ -3081,10 +3081,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <code>setLocalDescription</code>.</li>
                   <li>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
                   <li>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
-                  <li>If <code><var>description</var>.sdp</code> is
+                  <li needs-verification>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>answer</code> or <code>pranswer</code>, set <code><var>description</var>.sdp</code> to
                     <var>lastAnswer</var>.</li>
-                  <li>If <code><var>description</var>.sdp</code> is
+                  <li needs-verification>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>offer</code>, set <code><var>description</var>.sdp</code> to <var>lastOffer</var>.</li>
                   <li>If <code><var>description</var>.type</code> is
                     <code>offer</code> and <code><var>description</var>.sdp</code> does not match <var>lastOffer</var>, reject the promise with a newly
