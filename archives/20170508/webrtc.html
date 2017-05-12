@@ -3210,7 +3210,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <li>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li>
+                      <li untested>
                         <p>If <var>candidate.sdpMid</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3222,7 +3222,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li>
+                      <li untested>
                         <p>Else, if <var>candidate.sdpMLineIndex</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3233,7 +3233,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li>
+                      <li untested>
                         <p>If <code><var>candidate</var>.ufrag</code> is neither
                           <code>undefined</code> nor <code>null</code>, and is not equal to any ufrag present in the corresponding
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> of an applied remote description, reject <var>p</var> with a newly
@@ -3251,7 +3251,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> and ICE candidate
                           <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>.</p>
                         <ol>
-                          <li>
+                          <li untested>
                             <p>If <var>candidate</var> could not be successfully added the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                             <ol>
                               <li>
@@ -10226,7 +10226,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           </p>
         </li>
       </ol>
-      <p>If assertion generation fails, then the promise for the corresponding function call is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a> <code>OperationError</code>.</p>
+      <p untested>If assertion generation fails, then the promise for the corresponding function call is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a> <code>OperationError</code>.</p>
 
       <section typeof="bibo:Chapter" resource="#sec.idp-loginneeded" property="bibo:hasPart">
         <h4 id="sec.idp-loginneeded" resource="#sec.idp-loginneeded"><span property="xhv:role" resource="xhv:heading"><span class="secno">9.3.1 </span>User Login Procedure</span>
@@ -10313,7 +10313,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           <p>The <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="MAY">MAY</em> display identity information to a user in its UI. Any user identity information that is displayed in this fashion <em class="rfc2119" title="MUST">MUST</em> use a mechanism that cannot be spoofed by content.</p>
         </li>
       </ol>
-      <p>If identity validation fails, the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-peeridentity" class="internalDFN" data-link-type="dfn"><code>peerIdentity</code></a>
+      <p untested>If identity validation fails, the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-peeridentity" class="internalDFN" data-link-type="dfn"><code>peerIdentity</code></a>
         </code> promise is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
         <code>OperationError</code>.</p>
       <p>If identity validation fails and there is a <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
