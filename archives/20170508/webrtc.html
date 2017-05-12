@@ -3086,12 +3086,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <var>lastAnswer</var>.</li>
                   <li needs-verification>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>offer</code>, set <code><var>description</var>.sdp</code> to <var>lastOffer</var>.</li>
-                  <li>If <code><var>description</var>.type</code> is
+                  <li untested>If <code><var>description</var>.type</code> is
                     <code>offer</code> and <code><var>description</var>.sdp</code> does not match <var>lastOffer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidModificationError</code> and abort these steps.
                   </li>
-                  <li>If <code><var>description</var>.type</code> is
+                  <li untested>If <code><var>description</var>.type</code> is
                     <code>answer</code> or <code>pranswer</code> and
                     <code><var>description</var>.sdp</code> does not match <var>lastAnswer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -3142,7 +3142,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> has previously authenticated the identity of the peer (that is, there is a current value for <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-peeridentity" class="internalDFN" data-link-type="dfn"><code>peerIdentity</code></a>
                   </code> ), then this also establishes a <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer identity</a>.</p>
-                <p>The <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer identity</a> cannot be changed once set. Once set, if a different value is provided, the user agent <em class="rfc2119" title="MUST">MUST</em> reject the returned promise with a newly
+                <p InvalidModificationError>The <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer identity</a> cannot be changed once set. Once set, if a different value is provided, the user agent <em class="rfc2119" title="MUST">MUST</em> reject the returned promise with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidModificationError</code> and abort this operation. The <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> <em class="rfc2119" title="MUST">MUST</em> be closed if the validated peer identity does not match the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
@@ -3379,17 +3379,17 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>Let <var>connection</var> be the target
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object.</li>
-                  <li>If <code><var>configuration</var>.peerIdentity</code> is set and its value differs from the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
+                  <li untested>If <code><var>configuration</var>.peerIdentity</code> is set and its value differs from the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
                   identity</a>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.
                   </li>
-                  <li>If <code><var>configuration</var>.certificates</code> is set and the set of certificates differs from the ones used when <var>connection</var> was constructed, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
+                  <li untested>If <code><var>configuration</var>.certificates</code> is set and the set of certificates differs from the ones used when <var>connection</var> was constructed, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s bundle policy,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s rtcpMux policy, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s previously set <code>iceCandidatePoolSize</code>, and <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setlocaldescription" class="internalDFN" data-link-type="dfn"><code>setLocalDescription</code></a>
                     </code> has already been called, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
@@ -6168,7 +6168,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <code>true</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidStateError</code>.</li>
-                <li>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
+                <li untested>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
                   <code><var>sender</var>.getParameters()</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidModificationError</code>. Note that this also applies to <var>transactionId</var>.</li>
@@ -6289,7 +6289,7 @@ sender.setParameters(params)</pre>
                 <li>
                   <p>Run the following steps in parallel:</p>
                   <ol>
-                    <li>
+                    <li untested>
                       <p>Determine if negotiation is needed to transmit
                         <var>withTrack</var> in place of the sender's existing track. Negotiation is not needed if <var>withTrack</var> is null or if the sender's existing track is ended (which appears as though the track was muted). Ignore which <code>MediaStream</code> the track resides in and the <code>id</code> attribute of the track in this determination. If negotiation is needed, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -7273,7 +7273,7 @@ sender.setParameters(params)</pre>
                   <p>If <var>newDirection</var> is equal to
                     <code><var>transceiver</var>.direction</code>, abort these steps.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>newDirection</var> has a value other than <code>sendrecv</code>, <code>sendonly</code>,
                     <code>recvonly</code> or <code>inactive</code>,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</p>
