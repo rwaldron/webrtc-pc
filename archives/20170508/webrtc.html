@@ -3173,7 +3173,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><code>addIceCandidate</code></dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-addicecandidate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="addIceCandidate" data-lt="addicecandidate()|addIceCandidate"><code>addIceCandidate</code></dfn> method provides a remote candidate to the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. This method can also be used to indicate the end of remote candidates when called with an empty string for the <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn"><code>candidate</code></a>
                   </code> member. The only members of the argument used by this method are <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn"><code>candidate</code></a>
                   </code>, <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-sdpmid" class="internalDFN" data-link-type="dfn"><code>sdpMid</code></a>
@@ -3182,21 +3182,21 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-ufrag" class="internalDFN" data-link-type="dfn"><code>ufrag</code></a>
                   </code>; the rest are ignored. When the method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>Let <var>candidate</var> be the method's argument.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If both <var>sdpMid</var> and <var>sdpMLineIndex</var> are
                       <code>null</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>TypeError</code>.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
