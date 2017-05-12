@@ -3393,11 +3393,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </code> is set and its value differs from the <var>connection</var>'s previously set <code>iceCandidatePoolSize</code>, and <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setlocaldescription" class="internalDFN" data-link-type="dfn"><code>setLocalDescription</code></a>
                     </code> has already been called, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
-                  <li>
+                  <li untested>
                     <p>Set the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>'s <dfn id="ice-transports-setting" data-dfn-type="dfn">ICE transports setting</dfn> to the value of <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn"><code>iceTransportPolicy</code></a>
                       </code>. As defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.16">section 4.1.16.</a>)</span>, if the new <a href="#ice-transports-setting" class="internalDFN" data-link-type="dfn">ICE transports setting</a> changes the existing setting, no action will be taken until the next gathering phase. If a script wants this to happen immediately, it should do an ICE restart.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>Set the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>'s prefetched <dfn data-dfn-type="dfn" id="dfn-ice-candidate-pool-size">ICE candidate
                     pool size</dfn> as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.5.4">section 3.5.4.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span> to the value of <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
                       </code>. If the new <a href="#dfn-ice-candidate-pool-size" class="internalDFN" data-link-type="dfn">ICE candidate pool size</a> changes the existing setting, this may result in immediate gathering of new pooled candidates, or discarding of existing pooled candidates, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.16">section 4.1.16.</a>)</span>.</p>
@@ -3405,7 +3405,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>
                     <p>Let <var>validatedServers</var> be an empty list.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn"><code>iceServers</code></a>
                       </code> is defined, then run the following steps for each element:</p>
                     <ol>
