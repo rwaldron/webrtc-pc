@@ -2090,7 +2090,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
               </code> object.</p>
           </li>
-          <li>
+          <li untested>
             <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
               <code>true</code>, return a promise rejected with a newly
               <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2732,38 +2732,39 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <code><a href="#event-negotiation" class="internalDFN" data-link-type="dfn"><code>negotiationneeded</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicecandidate" data-idl="" data-title="onicecandidate"><code>onicecandidate</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-icecandidate" class="internalDFN" data-link-type="dfn"><code>icecandidate</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicecandidateerror" data-idl="" data-title="onicecandidateerror"><code>onicecandidateerror</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-icecandidateerror" class="internalDFN" data-link-type="dfn"><code>icecandidateerror</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onsignalingstatechange" data-idl="" data-title="onsignalingstatechange"><code>onsignalingstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-oniceconnectionstatechange" data-idl="" data-title="oniceconnectionstatechange"><code>oniceconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-iceconnectionstatechange" class="internalDFN" data-link-type="dfn"><code>iceconnectionstatechange</code></a>
                 </code>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicegatheringstatechange" data-idl="" data-title="onicegatheringstatechange"><code>onicegatheringstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-icegatheringstatechange" class="internalDFN" data-link-type="dfn"><code>icegatheringstatechange</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onconnectionstatechange" data-idl="" data-title="onconnectionstatechange"><code>onconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-connectionstatechange" class="internalDFN" data-link-type="dfn"><code>connectionstatechange</code></a>
-                </code>.</dd>
+                </code>.
+              </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onfingerprintfailure" data-idl="" data-title="onfingerprintfailure"><code>onfingerprintfailure</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-fingerprintfailure" class="internalDFN" data-link-type="dfn"><code>fingerprintfailure</code></a>
                 </code>.</dd>
             </dl>
@@ -2794,18 +2795,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p class="fingerprint">The SDP generation process exposes a subset of the media capabilities of the underlying system, which provides generally persistent cross-origin information on the device. It thus increases the fingerprinting surface of the application. In privacy-sensitive contexts, browsers can consider mitigations such as generating SDP matching only a common subset of the capabilities.<img src="images/fingerprint.png" alt="(This is a fingerprinting vector.)" width="15" height="21"></p>
                 <p>When the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code>.</p>
                   </li>
-                  <li>
+                  <li needs-verification>
                     <p>If <var>connection</var> is configured with an identity provider, and an identity assertion has not yet been generated using said identity provider, then begin <a href="#sec.identity-proxy-assertion-request">the identity
                     assertion request process</a> if it has not already begun.
                     </p>
@@ -2830,40 +2831,40 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-offer">steps to create an offer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li needs-verification>
                     <p>If the need for an identity assertion was identified when <code>createOffer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
-                  <li>
+                  <li needs-verification>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the offer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.6">section 4.1.6.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>OperationError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Queue a task that runs the <a href="#dfn-final-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">final steps to create an
                     offer</a>, given <var>p</var>.</p>
                   </li>
                 </ol>
                 <p>The <dfn data-dfn-type="dfn" id="dfn-final-steps-to-create-an-offer">final steps to create an offer</dfn> given a promise <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li>
+                  <li needs-verification>
                     <p>If <var>connection</var> was modified in such a way that additional inspection of the system state is necessary, then in parallel begin the <a href="#dfn-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">steps to create an offer</a> again, given <var>p</var>, and abort these steps.</p>
                     <div class="note">
                       <div class="note-title marker" aria-level="6" role="heading" id="h-note3"><span>Note</span></div>
@@ -2879,18 +2880,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </div>
                     </div>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Given the information that was obtained from previous inspection and the current state of <var>connection</var> and its <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code>s, generate an SDP offer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2">section 5.2.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>Let <var>offer</var> be a newly created
                       <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
                       </code> dictionary with its <code>type</code> member initialized to the string
                       <code>"offer"</code> and its <code>sdp</code> member initialized to <var>sdpString</var>.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Resolve <var>p</var> with <var>offer</var>.</p>
                   </li>
                 </ol>
@@ -2918,17 +2919,17 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createanswer" data-idl="" data-title="createAnswer" data-lt="createanswer()|createAnswer"><code>createAnswer</code></dfn></dt>
-              <dd>
+              <dd >
                 <p>The <code>createAnswer</code> method generates an [<cite><a class="bibref" href="#bib-SDP">SDP</a></cite>] answer with the supported configuration for the session that is compatible with the parameters in the remote configuration. Like <code>createOffer</code>, the returned blob contains descriptions of the local <code>MediaStreamTrack</code>s attached to this <code>RTCPeerConnection</code>, the codec/RTP/RTCP options negotiated for this session, and any candidates that have been gathered by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. The
                   <code>options</code> parameter may be supplied to provide additional control over the generated answer.</p>
                 <p>As an answer, the generated SDP will contain a specific configuration that, along with the corresponding offer, specifies how the media plane should be established. The generation of the SDP <em class="rfc2119" title="MUST">MUST</em> follow the appropriate process for generating an answer.</p>
                 <p>Session descriptions generated by createAnswer <em class="rfc2119" title="MUST">MUST</em> be immediately usable by <code>setLocalDescription</code> without causing an error as long as <code>setLocalDescription</code> is called reasonably soon. Like <code>createOffer</code>, the returned description <em class="rfc2119" title="SHOULD">SHOULD</em> reflect the current state of the system. The session descriptions <em class="rfc2119" title="MUST">MUST</em> remain usable by
                   <code>setLocalDescription</code> without causing an error until at least the end of the fulfillment callback of the returned promise. Calling this method is needed to generate the ICE username fragment and password.</p>
-                <p>An answer can be marked as provisional, as described in
+                <p untested>An answer can be marked as provisional, as described in
                   <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.8.1">section 4.1.8.1.</a>)</span>, by setting the <code><a data-for="RTCSessionDescription" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn"><code>type</code></a>
                   </code> to
                   <code>pranswer</code>.</p>
-                <p>If the <code>RTCPeerConnection</code> is configured to generate Identity assertions by calling
+                <p untested>If the <code>RTCPeerConnection</code> is configured to generate Identity assertions by calling
                   <code><a href="#dom-rtcpeerconnection-setidentityprovider" class="internalDFN" data-link-type="dfn"><code>setIdentityProvider</code></a>
                   </code>, then the session description <em class="rfc2119" title="SHALL">SHALL</em> contain an appropriate assertion.</p>
                 <p>When the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
@@ -2938,22 +2939,22 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code>.</p>
                   </li>
-                  <li>
+                  <li needs-verification>
                     <p>If <var>connection</var> is configured with an identity provider, and an identity assertion has not yet been generated using said identity provider, then begin <a href="#sec.identity-proxy-assertion-request">the identity
                     assertion request process</a> if it has not already begun.
                     </p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li untested>
                         <p>If <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                           </code> is
                           <code>null</code> return a promise rejected with a newly
@@ -2976,12 +2977,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-answer">steps to create an answer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li needs-verification>
                     <p>If the need for an identity assertion was identified when <code>createAnswer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
@@ -3199,7 +3200,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li untested>
                         <p>If <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                           </code> is
                           <code>null</code> return a promise rejected with a newly
@@ -3363,7 +3364,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                       <code>InvalidStateError</code>.</p>
@@ -5568,7 +5569,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>Let <var>streams</var> be a list of
                     <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects constructed from the method's remaining arguments, or an empty list if the method was called with a single argument.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -5718,7 +5719,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method was invoked.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -6163,7 +6164,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <li>Let <var>p</var> be a new promise.</li>
                 <li>Return <var>p</var>, performing the next steps in parallel.
                 </li>
-                <li>If <code><var>transceiver</var>.stopped</code> is
+                <li untested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidStateError</code>.</li>
@@ -6252,13 +6253,13 @@ sender.setParameters(params)</pre>
                     </code> object that created
                     <var>sender</var>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidStateError</code> and abort these steps.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <code><var>transceiver</var>.stopped</code> is
                     <code>true</code>, return a promise rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">
                   created</a> <code>InvalidStateError</code>.</p>
@@ -7336,7 +7337,7 @@ sender.setParameters(params)</pre>
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the <var>transceiver</var> is to be stopped.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -8385,7 +8386,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method is invoked.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -9094,7 +9095,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             </code>
             object on which data is to be sent.</p>
         </li>
-        <li>
+        <li untested>
           <p>If <var>channel</var>'s <a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code><code>readyState</code></code></a> attribute is
             <code>connecting</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
             <code>InvalidStateError</code>.</p>
@@ -9402,10 +9403,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
                     </code> object associated with
                     <var>sender</var>.</p>
                 </li>
-                <li>If <code><var>transceiver</var>.stopped</code> is
+                <li untested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                   <code>InvalidStateError</code>.</li>
-                <li>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
+                <li untested>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
                   <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidStateError</code>.</li>
                 <li>Let <var>tones</var> be the method's first argument.</li>
                 <li>If <var>tones</var> contains any <a href="#dtmf-unrecognized" class="internalDFN" data-link-type="dfn">unrecognized</a> characters, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidCharacterError</code>.
@@ -10426,7 +10427,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
                 <code>RTCPeerConnection</code> object. Applications need not make this call; if the browser is already configured for an IdP, then that configured IdP might be used to get an assertion.</p>
               <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-setidentityprovider" data-idl="" data-title="setIdentityProvider" data-lt="setidentityprovider()|setIdentityProvider"><code>setIdentityProvider</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object's [[
                     <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
@@ -10478,7 +10479,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
                 </code> method was called, then an identity will be automatically requested when an offer or answer is created.</p>
               <p>When <code>getIdentityAssertion</code> is invoked, queue a task to run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object's [[
                     <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
