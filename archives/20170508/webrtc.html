@@ -4668,6 +4668,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
         </h4>
         <p>This interface describes an ICE candidate.</p>
         <div>
+          <section tested>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcicecandidate" data-idl="" data-title="RTCIceCandidate">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="#dom-rtcicecandidateinit" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidateInit</code></a></span> <span class="idlParamName">candidateInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCandidate</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcicecandidate-candidate" data-idl="" data-title="candidate" data-dfn-for="rtcicecandidate">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>               <span class="idlAttrName"><a data-lt="candidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidate"><code>candidate</code></a></span>;</span>
@@ -4685,8 +4686,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
 <span class="idlAttribute" id="idl-def-rtcicecandidate-ufrag" data-idl="" data-title="ufrag" data-dfn-for="rtcicecandidate">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a>?</span>              <span class="idlAttrName"><a data-lt="ufrag" href="#dom-rtcicecandidate-ufrag" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidate"><code>ufrag</code></a></span>;</span>
 <span class="idlSerializer" id="idl-def-rtcicecandidate-serializer" data-idl="" data-title="serializer" data-dfn-for="rtcicecandidate">    <a data-lt="Serializer|undefined" data-lt-nodefault="" href="#dom-rtcicecandidate-serializer" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidate">serializer</a> = <span class="idlSerializerValues">{candidate, sdpMid, sdpMLineIndex, ufrag}</span>;</span>
 };</span></pre>
-
-          <section typeof="bibo:Chapter" resource="#constructors-2" property="bibo:hasPart">
+          </section>
+          <section tested typeof="bibo:Chapter" resource="#constructors-2" property="bibo:hasPart">
             <h5 id="constructors-2" resource="#constructors-2"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCIceCandidate" data-dfn-for="RTCIceCandidate" class="constructors">
               <dt><code>RTCIceCandidate</code></dt>
@@ -4721,22 +4722,42 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
           <section typeof="bibo:Chapter" resource="#attributes-3" property="bibo:hasPart">
             <h5 id="attributes-3" resource="#attributes-3"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCIceCandidate" data-dfn-for="RTCIceCandidate" class="attributes">
+              <section tested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-candidate" data-idl="" data-title="candidate"><code>candidate</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly</dt>
               <dd>This carries the <code>candidate-attribute</code> as defined in section 15.1 of [<cite><a class="bibref" href="#bib-ICE">ICE</a></cite>]. If this <code>RTCIceCandidate</code> represents an end-of-candidates indication,
                 <code>candidate</code> is an empty string.</dd>
+
+              </section>
+              <section tested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-sdpmid" data-idl="" data-title="sdpMid"><code>sdpMid</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>If not <code>null</code>, this contains the identifier of the "media stream identification" as defined in [<cite><a class="bibref" href="#bib-RFC5888">RFC5888</a></cite>] for the media component this candidate is associated with.</dd>
+
+              </section>
+              <section tested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-sdpmlineindex" data-idl="" data-title="sdpMLineIndex"><code>sdpMLineIndex</code></dfn> of type <span class="idlAttrType">unsigned short</span>, readonly,
               nullable</dt>
               <dd>
                 If not <code>null</code>, this indicates the index (starting at zero) of the <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> in the SDP this candidate is associated with.
               </dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-foundation" data-idl="" data-title="foundation"><code>foundation</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>A unique identifier that allows ICE to correlate candidates that appear on multiple
                 <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
                 </code>s.</dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-priority" data-idl="" data-title="priority"><code>priority</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly, nullable</dt>
               <dd>The assigned priority of the candidate.</dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-ip" data-idl="" data-title="ip"><code>ip</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>
                 <p>The IP address of the candidate.</p>
@@ -4756,29 +4777,63 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
                   </div>
                 </div>
               </dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-protocol" data-idl="" data-title="protocol"><code>protocol</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtciceprotocol" class="internalDFN" data-link-type="dfn"><code>RTCIceProtocol</code></a></span>, readonly, nullable</dt>
+
+              </section>
+              <section untested>
+
               <dd>The protocol of the candidate (<code>udp</code>/<code>tcp</code>).</dd>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-port" data-idl="" data-title="port"><code>port</code></dfn> of type <span class="idlAttrType">unsigned short</span>, readonly, nullable</dt>
               <dd>The port of the candidate.</dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicecandidatetype" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidateType</code></a></span>, readonly, nullable</dt>
               <dd>The type of the candidate.</dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-tcptype" data-idl="" data-title="tcpType"><code>tcpType</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicetcpcandidatetype" class="internalDFN" data-link-type="dfn"><code>RTCIceTcpCandidateType</code></a></span>, readonly,
               nullable</dt>
+
+              </section>
+              <section untested>
+
               <dd>If <code>protocol</code> is <code>tcp</code>,
                 <code>tcpType</code> represents the type of TCP candidate. Otherwise, <code>tcpType</code> is <code>null</code>.</dd>
               <dt><code>relatedAddress</code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
+
+              </section>
+              <section untested>
+
               <dd>For a candidate that is derived from another, such as a relay or reflexive candidate, the <dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-relatedaddress" data-idl="" data-title="relatedAddress"><code>relatedAddress</code></dfn> is the IP address of the candidate that it is derived from. For host candidates, the <code>relatedAddress</code> is
                 <code>null</code>.</dd>
+
+              </section>
+              <section untested>
+
               <dt><code>relatedPort</code> of type <span class="idlAttrType">unsigned short</span>, readonly,
               nullable</dt>
               <dd>For a candidate that is derived from another, such as a relay or reflexive candidate, the <dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-relatedport" data-idl="" data-title="relatedPort"><code>relatedPort</code></dfn> is the port of the candidate that it is derived from. For host candidates, the
                 <code>relatedPort</code> is <code>null</code>.</dd>
+
+              </section>
+              <section untested>
+
               <dt><code><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-ufrag" data-idl="" data-title="ufrag">ufrag</dfn></code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>This carries the <code>ufrag</code> as defined in section 15.4 of [<cite><a class="bibref" href="#bib-ICE">ICE</a></cite>].</dd>
+
+              </section>
             </dl>
           </section>
 
-          <section typeof="bibo:Chapter" resource="#serializer-1" property="bibo:hasPart">
+          <section untested typeof="bibo:Chapter" resource="#serializer-1" property="bibo:hasPart">
             <h5 id="serializer-1" resource="#serializer-1"><span property="xhv:role" resource="xhv:heading"><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-serializer" data-idl="" data-title="Serializer"><code>Serializer</code></dfn></span></h5>
             <div>
               <p>Instances of this interface are serialized as a map with entries for the following attributes: candidate, sdpMid, sdpMLineIndex, ufrag.</p>
@@ -4786,13 +4841,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
           </section>
         </div>
         <div>
+          <section untested>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcicecandidateinit" data-idl="" data-title="RTCIceCandidateInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCIceCandidateInit" href="#dom-rtcicecandidateinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCandidateInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcicecandidateinit-candidate" data-idl="" data-title="candidate" data-dfn-for="rtcicecandidateinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>       <span class="idlMemberName"><a data-lt="candidate" href="#dom-rtcicecandidateinit-candidate" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidateInit"><code>candidate</code></a></span> = <span class="idlMemberValue">""</span>;</span>
 <span class="idlMember" id="idl-def-rtcicecandidateinit-sdpmid" data-idl="" data-title="sdpMid" data-dfn-for="rtcicecandidateinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a>?</span>      <span class="idlMemberName"><a data-lt="sdpMid" href="#dom-rtcicecandidateinit-sdpmid" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidateInit"><code>sdpMid</code></a></span> = <span class="idlMemberValue">null</span>;</span>
 <span class="idlMember" id="idl-def-rtcicecandidateinit-sdpmlineindex" data-idl="" data-title="sdpMLineIndex" data-dfn-for="rtcicecandidateinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-unsigned-short">unsigned short</a>?</span> <span class="idlMemberName"><a data-lt="sdpMLineIndex" href="#dom-rtcicecandidateinit-sdpmlineindex" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidateInit"><code>sdpMLineIndex</code></a></span> = <span class="idlMemberValue">null</span>;</span>
 <span class="idlMember" id="idl-def-rtcicecandidateinit-ufrag" data-idl="" data-title="ufrag" data-dfn-for="rtcicecandidateinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>       <span class="idlMemberName"><a data-lt="ufrag" href="#dom-rtcicecandidateinit-ufrag" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidateInit"><code>ufrag</code></a></span>;</span>
 };</span></pre>
-
+      </section>
           <section typeof="bibo:Chapter" resource="#dictionary-rtcicecandidateinit-members" property="bibo:hasPart">
             <h5 id="dictionary-rtcicecandidateinit-members" resource="#dictionary-rtcicecandidateinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecandidateinit" data-idl="" data-title="RTCIceCandidateInit"><code>RTCIceCandidateInit</code></dfn>
             Members</span></h5>
