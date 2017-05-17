@@ -3200,7 +3200,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li untested>
+                      <li tested>
                         <p>If <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                           </code> is
                           <code>null</code> return a promise rejected with a newly
@@ -3210,7 +3210,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <li>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li untested>
+                      <li tested>
                         <p>If <var>candidate.sdpMid</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3222,7 +3222,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li untested>
+                      <li tested>
                         <p>Else, if <var>candidate.sdpMLineIndex</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3233,7 +3233,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li untested>
+                      <li tested>
                         <p>If <code><var>candidate</var>.ufrag</code> is neither
                           <code>undefined</code> nor <code>null</code>, and is not equal to any ufrag present in the corresponding
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> of an applied remote description, reject <var>p</var> with a newly
@@ -3242,7 +3242,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                         </p>
                       </li>
                       <li>
-                        <p>In parallel, add the ICE candidate
+                        <p incomplete>In parallel, add the ICE candidate
                           <var>candidate</var> as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.17">section 4.1.17.</a>)</span>. Use
                           <code><var>candidate</var>.ufrag</code> to identify the ICE <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>; if the ufrag is null, process the
                           <var>candidate</var> for the most recent ICE
@@ -3267,7 +3267,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                               </li>
                             </ol>
                           </li>
-                          <li untested>
+                          <li tested>
                             <p>If <var>candidate</var> is applied successfully, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                             <ol>
                               <li>
@@ -3294,7 +3294,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li untested>
+                      <li tested>
                         <p>Return <var>p</var>.</p>
                       </li>
                     </ol>
