@@ -1532,7 +1532,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <h3 id="h-configuration" resource="#h-configuration"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Configuration</span>
       </h3>
 
-      <section id="rtcconfiguration-dictionary" typeof="bibo:Chapter" resource="#rtcconfiguration-dictionary" property="bibo:hasPart">
+      <section incomplete id="rtcconfiguration-dictionary" typeof="bibo:Chapter" resource="#rtcconfiguration-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcconfiguration-dictionary" resource="#h-rtcconfiguration-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.1 </span>RTCConfiguration Dictionary</span>
         </h4>
         <p>The <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcconfiguration" data-idl="" data-title="RTCConfiguration"><code>RTCConfiguration</code></dfn> defines a set of parameters to configure how the peer to peer communication established via
@@ -1540,7 +1540,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </code> is established or re-established.
         </p>
         <div>
-          <section untested>
+          <section incomplete>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcconfiguration" data-idl="" data-title="RTCConfiguration">dictionary <span class="idlDictionaryID"><a data-lt="RTCConfiguration" href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCConfiguration</code></a></span> {
 <span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
@@ -1548,8 +1548,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span class="idlMember" id="idl-def-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>         <span class="idlMemberName"><a data-lt="rtcpMuxPolicy" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>rtcpMuxPolicy</code></a></span> = <span class="idlMemberValue">"require"</span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-peeridentity" data-idl="" data-title="peerIdentity" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>                <span class="idlMemberName"><a data-lt="peerIdentity" href="#dom-rtcconfiguration-peeridentity" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>peerIdentity</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-certificates" data-idl="" data-title="certificates" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn"><code>RTCCertificate</code></a>&gt;</span> <span class="idlMemberName"><a data-lt="certificates" href="#dom-rtcconfiguration-certificates" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>certificates</code></a></span>;</span>
+
+<section tested>
 <span class="idlMember" id="idl-def-rtcconfiguration-icecandidatepoolsize" data-idl="" data-title="iceCandidatePoolSize" data-dfn-for="rtcconfiguration">    [<span class="extAttr"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#EnforceRange">EnforceRange</a></span></span>]
     <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-octet">octet</a></span>                    <span class="idlMemberName"><a data-lt="iceCandidatePoolSize" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceCandidatePoolSize</code></a></span> = <span class="idlMemberValue">0</span>;</span>
+  </section>
 };</span></pre>
 </section>
           <section tested typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
