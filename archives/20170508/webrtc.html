@@ -2576,7 +2576,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </code>
           objects.</p>
         <div>
-          <section tested>
+          <section tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection" data-idl="" data-title="RTCPeerConnection">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code>RTCConfiguration</code></a></span> <span class="idlParamName">configuration</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> : <span class="idlSuperclass">EventTarget</span> {
 <span class="idlMethod" id="idl-def-rtcpeerconnection-createoffer(optional-rtcofferoptions)" data-idl="" data-title="createOffer" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-promise">Promise</a>&lt;<a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>&gt;</span> <span class="idlMethName"><a data-lt="createOffer" href="#dom-rtcpeerconnection-createoffer" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>createOffer</code></a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcofferoptions" class="internalDFN" data-link-type="dfn"><code>RTCOfferOptions</code></a></span> <span class="idlParamName">options</span></span>);</span>
@@ -4421,7 +4421,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
           <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> to expose local and remote session descriptions. Attributes on this interface are mutable for legacy reasons.</p>
         <div>
-          <section untested>
+          <section tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsessiondescription" data-idl="" data-title="RTCSessionDescription">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a></span> <span class="idlParamName">descriptionInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSessionDescription</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsessiondescription-type" data-idl="" data-title="type" data-dfn-for="rtcsessiondescription">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span> <span class="idlAttrName"><a data-lt="type" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescription"><code>type</code></a></span>;</span>
@@ -4991,12 +4991,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
           <em class="rfc2119" title="MUST">MUST</em> be set to the URL of the ICE server from which the candidate was obtained.
         </p>
         <div>
+          <section tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnectioniceevent" data-idl="" data-title="RTCPeerConnectionIceEvent">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlParamName">type</span></span>, <span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcpeerconnectioniceeventinit" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnectionIceEventInit</code></a></span> <span class="idlParamName">eventInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceEvent" href="#dom-rtcpeerconnectioniceevent" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnectionIceEvent</code></a></span> : <span class="idlSuperclass"><a href="#dfn-event" class="internalDFN" data-link-type="dfn">Event</a></span> {
 <span class="idlAttribute" id="idl-def-rtcpeerconnectioniceevent-candidate" data-idl="" data-title="candidate" data-dfn-for="rtcpeerconnectioniceevent">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a>?</span> <span class="idlAttrName"><a data-lt="candidate" href="#dom-rtcpeerconnectioniceevent-candidate" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceEvent"><code>candidate</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcpeerconnectioniceevent-url" data-idl="" data-title="url" data-dfn-for="rtcpeerconnectioniceevent">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a>?</span>       <span class="idlAttrName"><a data-lt="url" href="#dom-rtcpeerconnectioniceevent-url" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceEvent"><code>url</code></a></span>;</span>
 };</span></pre>
-
+          </section>
           <section typeof="bibo:Chapter" resource="#constructors-3" property="bibo:hasPart">
             <h5 id="constructors-3" resource="#constructors-3"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCPeerConnectionIceEvent" data-dfn-for="RTCPeerConnectionIceEvent" class="constructors">
@@ -5347,13 +5348,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         <p>The <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtccertificate" data-idl="" data-title="RTCCertificate"><code>RTCCertificate</code></dfn> interface represents a certificate used to authenticate WebRTC communications. In addition to the visible properties, internal slots contain a handle to the generated private keying materal ([[<dfn id="RTCCertificate-handle" data-dfn-type="dfn">handle</dfn>]]) and a certificate ([[<dfn id="RTCCertificate-certificate" data-dfn-type="dfn">certificate</dfn>]]) that
           <code>RTCPeerConnection</code> uses to authenticate with a peer.</p>
         <div>
+          <section tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtccertificate" data-idl="" data-title="RTCCertificate">interface <span class="idlInterfaceID"><a data-lt="RTCCertificate" href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCCertificate</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtccertificate-expires" data-idl="" data-title="expires" data-dfn-for="rtccertificate">    readonly attribute <span class="idlAttrType">DOMTimeStamp</span> <span class="idlAttrName"><a data-lt="expires" href="#dom-rtccertificate-expires" class="internalDFN" data-link-type="dfn" data-for="RTCCertificate"><code>expires</code></a></span>;</span>
 <span class="idlMethod" id="idl-def-rtccertificate-getfingerprints()" data-idl="" data-title="getFingerprints" data-dfn-for="rtccertificate">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtcdtlsfingerprint" class="internalDFN" data-link-type="dfn"><code>RTCDtlsFingerprint</code></a>&gt;</span> <span class="idlMethName"><a data-lt="getFingerprints" href="#dom-rtccertificate-getfingerprints" class="internalDFN" data-link-type="dfn" data-for="RTCCertificate"><code>getFingerprints</code></a></span>();</span>
 <span class="idlSectionComment">    // At risk due to lack of implementers' interest.</span>
 <span class="idlMethod" id="idl-def-rtccertificate-getalgorithm()" data-idl="" data-title="getAlgorithm" data-dfn-for="rtccertificate">    <span class="idlMethType">AlgorithmIdentifier</span>          <span class="idlMethName"><a data-lt="getAlgorithm" href="#dom-rtccertificate-getalgorithm" class="internalDFN" data-link-type="dfn" data-for="RTCCertificate"><code>getAlgorithm</code></a></span>();</span>
 };</span></pre>
-
+          </section>
           <section typeof="bibo:Chapter" resource="#attributes-6" property="bibo:hasPart">
             <h5 id="attributes-6" resource="#attributes-6"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCCertificate" data-dfn-for="RTCCertificate" class="attributes">
@@ -5426,7 +5428,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
     </section>
   </section>
 
-  <section id="rtp-media-api" typeof="bibo:Chapter" resource="#rtp-media-api" property="bibo:hasPart">
+  <section incomplete id="rtp-media-api" typeof="bibo:Chapter" resource="#rtp-media-api" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-rtp-media-api" resource="#h-rtp-media-api"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>RTP Media API</span>
     </h2>
@@ -7680,7 +7682,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       </section>
     </section>
 
-    <section id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
+    <section untested id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
       <h3 id="h-rtcicetransport" resource="#h-rtcicetransport"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransport" data-idl="" data-title="RTCIceTransport"><code>RTCIceTransport</code></dfn> Interface</span>
       </h3>
       <p>The <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
