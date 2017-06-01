@@ -5849,30 +5849,33 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            <section incomplete>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtransceiver" data-idl="" data-title="addTransceiver" data-lt="addtransceiver()|addTransceiver"><code>addTransceiver</code></dfn></dt>
             <dd>
-              <p>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
+              <p tested>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                 </code> and add it to the <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of transceivers</a>.</p>
-              <p>Adding a transceiver will cause future calls to
+              <p untested>Adding a transceiver will cause future calls to
                 <code>createOffer</code> to add a <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> for the corresponding transceiver, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a>)</span>.</p>
-              <p>The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
-                </code> is null. Setting a new
+              <p><section tested> The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
+                </code> is null. </section> <section untested>Setting a new
                 <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
-                </code> may change it to a non-null value, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.5">section 5.5.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.6">section 5.6.</a>)</span>.</p>
+                </code> may change it to a non-null value, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.5">section 5.5.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.6">section 5.6.</a>)</span>.
+                </section>
+              </p>
               <p>When this method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the dictionary argument is present, and it has a
                     <code>streams</code> member, let <var>streams</var> be that list of <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects, or an empty list otherwise.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If the dictionary argument is present, and it has a
                     <code>sendEncodings</code> member, let
                     <var>sendEncodings</var> be that list of
                     <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
                     </code> objects, or an empty list otherwise.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If the first argument is a string, let it be
                     <var>kind</var> and run the following steps:</p>
                   <ol>
@@ -5887,48 +5890,49 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li untested>
                   <p>If the first argument is a
                     <code><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>
                     </code>, let it be
                     <var>track</var> and let <var>kind</var> be
                     <var>track.kind</var>.</p>
                 </li>
-                <li>
-                  <p><a href="#dfn-create-an-rtcrtpsender" class="internalDFN" data-link-type="dfn">Create an RTCRtpSender</a> with <var>track</var>,
+                <li incomplete>
+                  <p tested><a href="#dfn-create-an-rtcrtpsender" class="internalDFN" data-link-type="dfn">Create an RTCRtpSender</a> with <var>track</var>,
                     <var>streams</var> and <var>sendEncodings</var> and let
                     <var>sender</var> be the result.</p>
-                  <p>If <var>sendEncodings</var> is set, then subsequent calls to <code>createOffer</code> will be configured to send multiple RTP encodings as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.1">section 5.2.1.</a>)</span>. When
+                  <p untested>If <var>sendEncodings</var> is set, then subsequent calls to <code>createOffer</code> will be configured to send multiple RTP encodings as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.1">section 5.2.1.</a>)</span>. When
                     <code>setRemoteDescription</code> is called with a corresponding remote description that is able to receive multiple RTP encodings as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.7">section 3.7.</a>)</span>, the
                     <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                     </code> may send multiple RTP encodings and the parameters retrieved via the transceiver's
                     <code>sender.getParameters()</code> will reflect the encodings negotiated.</p>
-                  <p>RID values passed into <code>init.sendEncodings</code> must be composed only of case-sensitive alphanumeric characters (a-z, A-Z, 0-9) up to a maximum of 16 characters.
+                  <p untested>RID values passed into <code>init.sendEncodings</code> must be composed only of case-sensitive alphanumeric characters (a-z, A-Z, 0-9) up to a maximum of 16 characters.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-create-an-rtcrtpreceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpReceiver</a> with <var>kind</var> and let <var>receiver</var> be the result. This specification does not define how to configure <code>createOffer</code> to receive multiple RTP encodings. However when
                     <code>setRemoteDescription</code> is called with a corresponding remote description that is able to send multiple RTP encodings as defined in [<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>], the
                     <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                     </code> may receive multiple RTP encodings and the parameters retrieved via the transceiver's
                     <code>receiver.getParameters()</code> will reflect the encodings negotiated.</p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-create-an-rtcrtptransceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpTransceiver</a> with <var>sender</var> and <var>receiver</var> and let <var>transceiver</var> be the result.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>Add <var>transceiver</var> to <var>connection</var>'s
                     <a href="#transceivers-set">set of transceivers</a></p>
                 </li>
-                <li>
+                <li untested>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>transceiver</var>.</p>
                 </li>
               </ol>
+              <section incomplete>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -5955,7 +5959,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div>
+              </section>
+              <div tested>
                 <em>Return type:</em> <code>RTCRtpTransceiver</code>
               </div>
             </dd>
@@ -5963,13 +5968,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </section>
       </div>
       <div>
+        <section untested>
         <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCRtpTransceiverInit" href="#dom-rtcrtptransceiverinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiverInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-direction" data-idl="" data-title="direction" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiverDirection</code></a></span>         <span class="idlMemberName"><a data-lt="direction" href="#dom-rtcrtptransceiverinit-direction" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>direction</code></a></span> = <span class="idlMemberValue">"sendrecv"</span>;</span>
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-streams" data-idl="" data-title="streams" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a>&gt;</span>              <span class="idlMemberName"><a data-lt="streams" href="#dom-rtcrtptransceiverinit-streams" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>streams</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-sendencodings" data-idl="" data-title="sendEncodings" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>&gt;</span> <span class="idlMemberName"><a data-lt="sendEncodings" href="#dom-rtcrtptransceiverinit-sendencodings" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>sendEncodings</code></a></span>;</span>
 };</span></pre>
-
-        <section typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
+        </section>
+        <section untested typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcrtptransceiverinit-members" resource="#dictionary-rtcrtptransceiverinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit"><code>RTCRtpTransceiverInit</code></dfn>
           Members</span></h4>
           <dl data-link-for="RTCRtpTransceiverInit" data-dfn-for="RTCRtpTransceiverInit" class="dictionary-members">
@@ -5990,12 +5996,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </section>
       </div>
       <div>
+        <section needs-verification>
         <pre class="def idl"><span class="idlEnum" id="idl-def-rtcrtptransceiverdirection" data-idl="" data-title="RTCRtpTransceiverDirection">enum <span class="idlEnumID"><a data-lt="RTCRtpTransceiverDirection" href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiverDirection</code></a></span> {
     <a href="#dom-rtcrtptransceiverdirection-sendrecv" class="idlEnumItem">"sendrecv"</a>,
     <a href="#dom-rtcrtptransceiverdirection-sendonly" class="idlEnumItem">"sendonly"</a>,
     <a href="#dom-rtcrtptransceiverdirection-recvonly" class="idlEnumItem">"recvonly"</a>,
     <a href="#dom-rtcrtptransceiverdirection-inactive" class="idlEnumItem">"inactive"</a>
 };</span></pre>
+
         <table data-link-for="RTCRtpTransceiverDirection" data-dfn-for="RTCRtpTransceiverDirection" class="simple">
           <tbody>
             <tr>
@@ -6047,6 +6055,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
             </tr>
           </tbody>
         </table>
+
+        </section>
       </div>
 
       <section id="processing-remote-mediastreamtracks" typeof="bibo:Chapter" resource="#processing-remote-mediastreamtracks" property="bibo:hasPart">
