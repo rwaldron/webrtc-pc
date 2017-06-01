@@ -4786,10 +4786,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
 
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-protocol" data-idl="" data-title="protocol"><code>protocol</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtciceprotocol" class="internalDFN" data-link-type="dfn"><code>RTCIceProtocol</code></a></span>, readonly, nullable</dt>
 
+              <dd>The protocol of the candidate (<code>udp</code>/<code>tcp</code>).</dd>
               </section>
               <section untested>
 
-              <dd>The protocol of the candidate (<code>udp</code>/<code>tcp</code>).</dd>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-port" data-idl="" data-title="port"><code>port</code></dfn> of type <span class="idlAttrType">unsigned short</span>, readonly, nullable</dt>
               <dd>The port of the candidate.</dd>
 
@@ -4805,19 +4805,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-tcptype" data-idl="" data-title="tcpType"><code>tcpType</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicetcpcandidatetype" class="internalDFN" data-link-type="dfn"><code>RTCIceTcpCandidateType</code></a></span>, readonly,
               nullable</dt>
 
-              </section>
-              <section untested>
-
               <dd>If <code>protocol</code> is <code>tcp</code>,
                 <code>tcpType</code> represents the type of TCP candidate. Otherwise, <code>tcpType</code> is <code>null</code>.</dd>
-              <dt><code>relatedAddress</code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
-
               </section>
               <section untested>
+
+              <dt><code>relatedAddress</code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
 
               <dd>For a candidate that is derived from another, such as a relay or reflexive candidate, the <dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-relatedaddress" data-idl="" data-title="relatedAddress"><code>relatedAddress</code></dfn> is the IP address of the candidate that it is derived from. For host candidates, the <code>relatedAddress</code> is
                 <code>null</code>.</dd>
-
               </section>
               <section untested>
 
