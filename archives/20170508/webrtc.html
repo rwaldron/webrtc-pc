@@ -3084,29 +3084,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <code>createAnswer</code> <em class="rfc2119" title="MUST NOT">MUST NOT</em> be changed before passing it to <code>setLocalDescription</code>. As a result, when the method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:
                 </p>
                 <ol>
-                  <li>Let <var>description</var> be the first argument to
+                  <li tested>Let <var>description</var> be the first argument to
                     <code>setLocalDescription</code>.</li>
-                  <li>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
-                  <li>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
-                  <li needs-verification>If <code><var>description</var>.sdp</code> is
+                  <li tested>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
+                  <li tested>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
+                  <li untested>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>answer</code> or <code>pranswer</code>, set <code><var>description</var>.sdp</code> to
                     <var>lastAnswer</var>.</li>
-                  <li needs-verification>If <code><var>description</var>.sdp</code> is
+                  <li tested>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>offer</code>, set <code><var>description</var>.sdp</code> to <var>lastOffer</var>.</li>
-                  <li untested>If <code><var>description</var>.type</code> is
+                  <li tested>If <code><var>description</var>.type</code> is
                     <code>offer</code> and <code><var>description</var>.sdp</code> does not match <var>lastOffer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidModificationError</code> and abort these steps.
                   </li>
-                  <li untested>If <code><var>description</var>.type</code> is
+                  <li tested>If <code><var>description</var>.type</code> is
                     <code>answer</code> or <code>pranswer</code> and
                     <code><var>description</var>.sdp</code> does not match <var>lastAnswer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidModificationError</code> and abort these steps.</li>
-                  <li>Return the result of <a href="#set-description">setting
+                  <li tested>Return the result of <a href="#set-description">setting
                   the RTCSessionDescription</a> indicated by the method's first argument.
                   </li>
                 </ol>
+
+                <section tested-idlharness>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -3126,12 +3128,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
+                </section>
+                <section tested>
                 <div>
                   <em>Return type:</em> <code>Promise&lt;void&gt;</code>
                 </div>
+                </section>
               </dd>
               <dt><code>setRemoteDescription</code></dt>
-              <dd incomplete>
+              <dd tested>
                 <p>The <dfn id="dom-rtcpeerconnection-setremotedescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="setRemoteDescription" data-lt="setremotedescription()|setRemoteDescription"><code>setRemoteDescription</code></dfn> method instructs the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> to apply the supplied
                   <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
