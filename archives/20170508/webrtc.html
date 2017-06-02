@@ -2809,23 +2809,23 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code>.</p>
                   </li>
-                  <li needs-verification>
+                  <li incomplete>
                     <p>If <var>connection</var> is configured with an identity provider, and an identity assertion has not yet been generated using said identity provider, then begin <a href="#sec.identity-proxy-assertion-request">the identity
                     assertion request process</a> if it has not already begun.
                     </p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li tested>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>In parallel, begin the <a href="#dfn-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">steps to create an
                         offer</a>, given <var>p</var>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Return <var>p</var>.</p>
                       </li>
                     </ol>
@@ -2834,40 +2834,40 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-offer">steps to create an offer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li needs-verification>
+                  <li incomplete>
                     <p>If the need for an identity assertion was identified when <code>createOffer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li untested>
+                  <li incomplete>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
-                  <li needs-verification>
+                  <li untestable>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the offer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.6">section 4.1.6.</a>)</span>.</p>
                   </li>
-                  <li untested>
+                  <li untestable>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>OperationError</code> and abort these steps.</p>
                   </li>
-                  <li incomplete>
+                  <li tested>
                     <p>Queue a task that runs the <a href="#dfn-final-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">final steps to create an
                     offer</a>, given <var>p</var>.</p>
                   </li>
                 </ol>
                 <p>The <dfn data-dfn-type="dfn" id="dfn-final-steps-to-create-an-offer">final steps to create an offer</dfn> given a promise <var>p</var> are as follows:</p>
                 <ol>
-                  <li untested>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li needs-verification>
+                  <li tested>
                     <p>If <var>connection</var> was modified in such a way that additional inspection of the system state is necessary, then in parallel begin the <a href="#dfn-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">steps to create an offer</a> again, given <var>p</var>, and abort these steps.</p>
                     <div class="note">
                       <div class="note-title marker" aria-level="6" role="heading" id="h-note3"><span>Note</span></div>
@@ -2888,16 +2888,17 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </code>s, generate an SDP offer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2">section 5.2.</a>)</span>.</p>
                   </li>
-                  <li untested>
+                  <li tested>
                     <p>Let <var>offer</var> be a newly created
                       <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
                       </code> dictionary with its <code>type</code> member initialized to the string
                       <code>"offer"</code> and its <code>sdp</code> member initialized to <var>sdpString</var>.</p>
                   </li>
-                  <li incomplete>
+                  <li tested>
                     <p>Resolve <var>p</var> with <var>offer</var>.</p>
                   </li>
                 </ol>
+                <section tested>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -2916,10 +2917,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
+                </section>
+                <section tested>
                 <div>
                   <em>Return type:</em>
                   <code>Promise&lt;RTCSessionDescriptionInit&gt;</code>
                 </div>
+                </section>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createanswer" data-idl="" data-title="createAnswer" data-lt="createanswer()|createAnswer"><code>createAnswer</code></dfn></dt>
               <dd incomplete>
