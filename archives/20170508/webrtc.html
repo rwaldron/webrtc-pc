@@ -2803,7 +2803,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li untested>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2883,7 +2883,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </div>
                     </div>
                   </li>
-                  <li incomplete>
+                  <li untestable>
                     <p>Given the information that was obtained from previous inspection and the current state of <var>connection</var> and its <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code>s, generate an SDP offer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2">section 5.2.</a>)</span>.</p>
@@ -2990,13 +2990,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li out-of-scope>
+                  <li untestable>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
-                  <li out-of-scope>
+                  <li untestable>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the answer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.7">section 4.1.7.</a>)</span>.</p>
                   </li>
-                  <li out-of-scope>
+                  <li untestable>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -3026,7 +3026,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </div>
                     </div>
                   </li>
-                  <li incomplete>
+                  <li untestable>
                     <p>Given the information that was obtained from previous inspection and the current state of <var>connection</var> and its <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code>s, generate an SDP answer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3">section 5.3.</a>)</span>.
