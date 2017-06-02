@@ -1,19 +1,24 @@
 
+*[non-normative],
 *[out-of-scope],
-*[non-normative] {
+*[untestable] {
   border: 3px solid darkgray;
   content: "...";
 }
 
+*[non-normative] p,
+*[non-normative] ul,
+*[non-normative] h2,
 *[out-of-scope] p,
 *[out-of-scope] ul,
 *[out-of-scope] h2,
-*[non-normative] p,
-*[non-normative] ul,
-*[non-normative] h2 {
+*[untestable] p,
+*[untestable] ul,
+*[untestable] h2 {
   opacity: 0.25
 }
 
+*[untestable]:before,
 *[out-of-scope]:before {
   content: "Out Of Scope";
   color: dimgray;
@@ -23,6 +28,10 @@
   border-right: 3px solid darkgray;
   border-bottom: 3px solid darkgray;
   padding: 3px 6px 3px 3px;
+}
+
+*[untestable]:before {
+  content: "Untestable";
 }
 
 *[non-normative]:before {
