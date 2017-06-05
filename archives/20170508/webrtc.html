@@ -5602,7 +5602,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             <dt><code>getTransceivers</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                 </code>
                 objects representing the RTP transceivers that are currently attached to this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5614,14 +5614,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collecttransceivers">CollectTransceivers</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be a new sequence that represents a snapshot of all the
+                <li tested>Let <var>transceivers</var> be a new sequence that represents a snapshot of all the
                   <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                   </code> objects in this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>
                   RTCPeerConnection</code></a>
                   </code> object's <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of
                   transceivers</a>. The conversion from the transceiver set to the sequence is user agent defined and the order does not have to be stable between calls.
                 </li>
-                <li>Return <var>transceivers</var>.</li>
+                <li tested>Return <var>transceivers</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
