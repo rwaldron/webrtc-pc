@@ -5566,7 +5566,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             <dt><code>getReceivers</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                 </code>
                 objects representing the RTP receivers that are currently attached to this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5578,20 +5578,20 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collectreceivers">CollectReceivers</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be the result of executing the
+                <li tested>Let <var>transceivers</var> be the result of executing the
                   <code><a href="#dfn-collecttransceivers" class="internalDFN" data-link-type="dfn">CollectTransceivers</a></code> algorithm.</li>
-                <li>Let <var>receiverset</var> be a new empty set.</li>
-                <li>For each <var>transceiver</var> in <var>transceivers</var>,
+                <li tested>Let <var>receiverset</var> be a new empty set.</li>
+                <li tested>For each <var>transceiver</var> in <var>transceivers</var>,
                   <ol>
                     <li>Let <var>receiver</var> be
                       <var>transceiver</var>.receiver.</li>
                     <li>Add <var>receiver</var> to <var>receiverset</var>.</li>
                   </ol>
                 </li>
-                <li>Let <var>receivers</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
+                <li tested>Let <var>receivers</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                   </code> objects in
                   <var>receiverset</var>. The conversion from the receivers set to the sequence is user agent defined and the order does not have to be stable between calls.</li>
-                <li>Return <var>receivers</var>.</li>
+                <li tested>Return <var>receivers</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
