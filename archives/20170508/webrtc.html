@@ -2045,7 +2045,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <li needs-verification>
             <p>Let <var>connection</var> have a [[<dfn data-dfn-type="dfn" id="dfn-neednegotiation">needNegotiation</dfn>]] internal slot, initialized to <code>false</code>.</p>
           </li>
-          <li needs-verification>
+          <li tested>
             <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-sctptransport">sctpTransport</dfn>]] internal slot, initialized to <code>null</code>.</p>
           </li>
           <li needs-verification>
@@ -8430,7 +8430,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
     </h2>
     <p>The Peer-to-peer Data API lets a web application send and receive generic application data peer-to-peer. The API for sending and receiving data models the behavior of WebSockets [<cite><a class="bibref" href="#bib-WEBSOCKETS-API">WEBSOCKETS-API</a></cite>].</p>
 
-    <section id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
+    <section incomplete id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
       <h3 id="h-rtcpeerconnection-interface-extensions-1" resource="#h-rtcpeerconnection-interface-extensions-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>RTCPeerConnection Interface Extensions</span>
       </h3>
       <p>The Peer-to-peer data API extends the
@@ -8438,7 +8438,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         </code> interface as described below.</p>
       <div>
         <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection-partial-4" data-idl="" data-title="RTCPeerConnection">partial interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> {
-<span class="idlAttribute" id="idl-def-rtcpeerconnection-sctp" data-idl="" data-title="sctp" data-dfn-for="rtcpeerconnection">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>?</span> <span class="idlAttrName"><a data-lt="sctp" href="#dom-rtcpeerconnection-sctp" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>sctp</code></a></span>;</span>
+<section tested><span class="idlAttribute" id="idl-def-rtcpeerconnection-sctp" data-idl="" data-title="sctp" data-dfn-for="rtcpeerconnection">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>?</span> <span class="idlAttrName"><a data-lt="sctp" href="#dom-rtcpeerconnection-sctp" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>sctp</code></a></span>;</span></section>
 <span class="idlMethod" id="idl-def-rtcpeerconnection-createdatachannel(usvstring,optional-rtcdatachannelinit)" data-idl="" data-title="createDataChannel" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a></span> <span class="idlMethName"><a data-lt="createDataChannel" href="#dom-rtcpeerconnection-createdatachannel" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>createDataChannel</code></a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-USVString">USVString</a></span> <span class="idlParamName">label</span></span>,
                                      <span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcdatachannelinit" class="internalDFN" data-link-type="dfn"><code>RTCDataChannelInit</code></a></span> <span class="idlParamName">dataChannelDict</span></span>);</span>
 <span class="idlAttribute" id="idl-def-rtcpeerconnection-ondatachannel" data-idl="" data-title="ondatachannel" data-dfn-for="rtcpeerconnection">             attribute <span class="idlAttrType"><a href="https://html.spec.whatwg.org/multipage/#eventhandler">EventHandler</a></span>      <span class="idlAttrName"><a data-lt="ondatachannel" href="#dom-rtcpeerconnection-ondatachannel" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>ondatachannel</code></a></span>;</span>
@@ -8449,7 +8449,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="attributes">
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-sctp" data-idl="" data-title="sctp"><code>sctp</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a></span>, readonly,
             nullable</dt>
-            <dd>
+            <dd tested>
               <p>The SCTP transport over which SCTP data is sent and received. If SCTP has not been negotiated, the value is null. This attribute <em class="rfc2119" title="MUST">MUST</em> return the <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
                 </code>
                 object stored in the [[<code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot.</p>
@@ -8610,26 +8610,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         </section>
       </div>
 
-      <section id="rtcsctptransport-interface" typeof="bibo:Chapter" resource="#rtcsctptransport-interface" property="bibo:hasPart">
+      <section tested id="rtcsctptransport-interface" typeof="bibo:Chapter" resource="#rtcsctptransport-interface" property="bibo:hasPart">
         <h4 id="h-rtcsctptransport-interface" resource="#h-rtcsctptransport-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1.1 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsctptransport" data-idl="" data-title="RTCSctpTransport"><code>RTCSctpTransport</code></dfn> Interface</span>
         </h4>
         <p>The <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
           </code> interface allows an application access to information about the SCTP data channels tied to a particular SCTP association.</p>
         <div>
+          <section untested>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsctptransport" data-idl="" data-title="RTCSctpTransport">interface <span class="idlInterfaceID"><a data-lt="RTCSctpTransport" href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSctpTransport</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsctptransport-transport" data-idl="" data-title="transport" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span> <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcsctptransport-transport" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>transport</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcsctptransport-maxmessagesize" data-idl="" data-title="maxMessageSize" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span>    <span class="idlAttrName"><a data-lt="maxMessageSize" href="#dom-rtcsctptransport-maxmessagesize" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>maxMessageSize</code></a></span>;</span>
 };</span></pre>
-
+          </section>
           <section typeof="bibo:Chapter" resource="#attributes-17" property="bibo:hasPart">
             <h5 id="attributes-17" resource="#attributes-17"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCSctpTransport" data-dfn-for="RTCSctpTransport" class="attributes">
+              <section tested>
               <dt><dfn data-dfn-for="rtcsctptransport" data-dfn-type="dfn" id="dom-rtcsctptransport-transport" data-idl="" data-title="transport"><code>transport</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span>, readonly</dt>
-              <dd>
+              </section>
+              <dd untested>
                 <p>The transport over which all SCTP packets for data channels will be sent and received.</p>
               </dd>
+              <section tested>
               <dt><dfn data-dfn-for="rtcsctptransport" data-dfn-type="dfn" id="dom-rtcsctptransport-maxmessagesize" data-idl="" data-title="maxMessageSize"><code>maxMessageSize</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly</dt>
-              <dd>
+              </section>
+              <dd untested>
                 <p>The maximum size of data that can be passed to
                   <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                   </code>'s <code><a data-for="RTCDataChannel" href="#dfn-send" class="internalDFN" data-link-type="dfn"><code>send()</code></a>
