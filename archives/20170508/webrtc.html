@@ -5532,7 +5532,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
           <h4 id="methods-4" resource="#methods-4"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
             <dt><code>getSenders</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                 </code> objects representing the RTP senders that are currently attached to this
                 <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5543,20 +5543,20 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collectsenders">CollectSenders</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be the result of executing the
+                <li tested>Let <var>transceivers</var> be the result of executing the
                   <code><a href="#dfn-collecttransceivers" class="internalDFN" data-link-type="dfn">CollectTransceivers</a></code> algorithm.</li>
-                <li>Let <var>senderset</var> be a new empty set.</li>
-                <li>For each <var>transceiver</var> in <var>transceivers</var>,
+                <li tested>Let <var>senderset</var> be a new empty set.</li>
+                <li tested>For each <var>transceiver</var> in <var>transceivers</var>,
                   <ol>
                     <li>Let <var>sender</var> be
                       <var>transceiver</var>.sender.</li>
                     <li>Add <var>sender</var> to <var>senderset</var>.</li>
                   </ol>
                 </li>
-                <li>Let <var>senders</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
+                <li tested>Let <var>senders</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                   </code> objects in
                   <var>senderset</var>. The conversion from the senders set to the sequence is user agent defined and the order does not have to be stable between calls.</li>
-                <li>Return <var>senders</var>.</li>
+                <li tested>Return <var>senders</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
