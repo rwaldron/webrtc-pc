@@ -294,8 +294,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       font-family: sans-serif;
       font-weight: bold;
       margin: -1em 0 1em -1em;
-      height: 28px;
-      line-height: 28px;
     }
 
     .idlType {
@@ -601,59 +599,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       border-collapse: collapse;
       width: 100%;
     }
-
-    .respec-button-copy-paste:focus {
-      text-decoration: none;
-      border-color: #51a7e8;
-      outline: none;
-      box-shadow: 0 0 5px rgba(81, 167, 232, 0.5);
-    }
-
-    .respec-button-copy-paste:focus:hover,
-    .respec-button-copy-paste.selected:focus {
-      border-color: #51a7e8;
-    }
-
-    .respec-button-copy-paste:hover,
-    .respec-button-copy-paste:active,
-    .respec-button-copy-paste.zeroclipboard-is-hover,
-    .respec-button-copy-paste.zeroclipboard-is-active {
-      text-decoration: none;
-      background-color: #ddd;
-      background-image: linear-gradient(#eee, #ddd);
-      border-color: #ccc;
-    }
-
-    .respec-button-copy-paste:active,
-    .respec-button-copy-paste.selected,
-    .respec-button-copy-paste.zeroclipboard-is-active {
-      background-color: #dcdcdc;
-      background-image: none;
-      border-color: #b5b5b5;
-      box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.15)
-    }
-
-    .respec-button-copy-paste.selected:hover {
-      background-color: #cfcfcf;
-    }
-
-    .respec-button-copy-paste:disabled,
-    .respec-button-copy-paste:disabled:hover,
-    .respec-button-copy-paste.disabled,
-    .respec-button-copy-paste.disabled:hover {
-      color: rgba(102, 102, 102, 0.5);
-      cursor: default;
-      background-color: rgba(229, 229, 229, 0.5);
-      background-image: none;
-      border-color: rgba(197, 197, 197, 0.5);
-      box-shadow: none;
-    }
   </style>
-
-  <link href="webrtc.css" rel="stylesheet">
-  <title>WebRTC 1.0: Real-time Communication Between Browsers</title>
-
-
   <style id="respec-mainstyle">
     /*****************************************************************
  * ReSpec 3 CSS
@@ -834,7 +780,6 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       {
         "name": "Bernard Aboba",
         "company": "Microsoft Corporation",
-        "note": "until March 2017",
         "w3cid": "65611"
       },
       {
@@ -897,6 +842,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       }
     }
   </script>
+
+  <!-- rwaldron annotation styles -->
+  <link rel="stylesheet" href="annotation.css">
+
 </head>
 <body aria-busy="false" class="h-entry" id="respecDocument">
   <div class="head" role="contentinfo" id="respecHeader">
@@ -1262,7 +1211,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     </ol>
   </nav>
 
-  <section class="informative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
+  <section non-normative class="informative" id="intro" typeof="bibo:Chapter" resource="#intro" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-intro" resource="#h-intro"><span property="xhv:role" resource="xhv:heading"><span class="secno">1. </span>Introduction</span>
     </h2>
@@ -1278,7 +1227,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <cite><a class="bibref" href="#bib-RTCWEB-OVERVIEW">RTCWEB-OVERVIEW</a></cite>] and [<cite><a class="bibref" href="#bib-RTCWEB-SECURITY">RTCWEB-SECURITY</a></cite>].</p>
   </section>
 
-  <section id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
+  <section non-normative id="conformance" typeof="bibo:Chapter" resource="#conformance" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-conformance" resource="#h-conformance"><span property="xhv:role" resource="xhv:heading"><span class="secno">2. </span>Conformance</span>
     </h2>
@@ -1293,8 +1242,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     <p>Conformance requirements phrased as algorithms or specific steps may be implemented in any manner, so long as the end result is equivalent. (In particular, the algorithms defined in this specification are intended to be easy to follow, and not intended to be performant.)</p>
     <p>Implementations that use ECMAScript to implement the APIs defined in this specification <em class="rfc2119" title="MUST">MUST</em> implement them in a manner consistent with the ECMAScript Bindings defined in the Web IDL specification [<cite><a class="bibref" href="#bib-WEBIDL-1">WEBIDL-1</a></cite>], as this specification uses that specification and terminology.</p>
   </section>
-
-  <section id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
+  <section out-of-scope id="terminology" typeof="bibo:Chapter" resource="#terminology" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-terminology" resource="#h-terminology"><span property="xhv:role" resource="xhv:heading"><span class="secno">3. </span>Terminology</span>
     </h2>
@@ -1339,15 +1287,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <h3 id="h-configuration" resource="#h-configuration"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2 </span>Configuration</span>
       </h3>
 
-      <section id="rtcconfiguration-dictionary" typeof="bibo:Chapter" resource="#rtcconfiguration-dictionary" property="bibo:hasPart">
+      <section incomplete id="rtcconfiguration-dictionary" typeof="bibo:Chapter" resource="#rtcconfiguration-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcconfiguration-dictionary" resource="#h-rtcconfiguration-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.1 </span>RTCConfiguration Dictionary</span>
         </h4>
-        <p>The <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcconfiguration" data-idl="" data-title="RTCConfiguration"><code>RTCConfiguration</code></dfn> defines a set of parameters to configure how the peer-to-peer communication established via
+        <p>The <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcconfiguration" data-idl="" data-title="RTCConfiguration"><code>RTCConfiguration</code></dfn> defines a set of parameters to configure how the peer to peer communication established via
           <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> is established or re-established.
         </p>
         <div>
-          <div>
+          <div incomplete>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcconfiguration" data-idl="" data-title="RTCConfiguration">dictionary <span class="idlDictionaryID"><a data-lt="RTCConfiguration" href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCConfiguration</code></a></span> {
 <span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
@@ -1355,12 +1303,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span class="idlMember" id="idl-def-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>         <span class="idlMemberName"><a data-lt="rtcpMuxPolicy" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>rtcpMuxPolicy</code></a></span> = <span class="idlMemberValue">"require"</span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-peeridentity" data-idl="" data-title="peerIdentity" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>                <span class="idlMemberName"><a data-lt="peerIdentity" href="#dom-rtcconfiguration-peeridentity" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>peerIdentity</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-certificates" data-idl="" data-title="certificates" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn"><code>RTCCertificate</code></a>&gt;</span> <span class="idlMemberName"><a data-lt="certificates" href="#dom-rtcconfiguration-certificates" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>certificates</code></a></span>;</span>
+
+<section tested>
 <span class="idlMember" id="idl-def-rtcconfiguration-icecandidatepoolsize" data-idl="" data-title="iceCandidatePoolSize" data-dfn-for="rtcconfiguration">    [<span class="extAttr"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#EnforceRange">EnforceRange</a></span></span>]
     <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-octet">octet</a></span>                    <span class="idlMemberName"><a data-lt="iceCandidatePoolSize" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceCandidatePoolSize</code></a></span> = <span class="idlMemberValue">0</span>;</span>
+  </section>
 };</span></pre>
           </div>
-
-          <section typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
             <h5 id="dictionary-rtcconfiguration-members" resource="#dictionary-rtcconfiguration-members"><span property="xhv:role" resource="xhv:heading">Dictionary <a class="idlType internalDFN" href="#dom-rtcconfiguration" data-link-type="dfn"><code>RTCConfiguration</code></a> Members</span></h5>
             <dl data-link-for="RTCConfiguration" data-dfn-for="RTCConfiguration" class="dictionary-members">
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-iceservers" data-idl="" data-title="iceServers"><code>iceServers</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span></dt>
@@ -1419,7 +1369,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <h4 id="h-rtcicecredentialtype-enum" resource="#h-rtcicecredentialtype-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType"><code>RTCIceCredentialType</code></dfn> Enum</span>
         </h4>
         <div>
-          <div>
+          <div untested>
             <pre class="def idl"><span class="idlEnum" id="idl-def-rtcicecredentialtype" data-idl="" data-title="RTCIceCredentialType">enum <span class="idlEnumID"><a data-lt="RTCIceCredentialType" href="#dom-rtcicecredentialtype" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCredentialType</code></a></span> {
     <a href="#dom-rtcicecredentialtype-password" class="idlEnumItem">"password"</a>,
     <a href="#dom-rtcicecredentialtype-oauth" class="idlEnumItem">"oauth"</a>
@@ -1507,7 +1457,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
+      <section untested id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcoauthcredential-dictionary" resource="#h-rtcoauthcredential-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcoauthcredential" data-idl="" data-title="RTCOAuthCredential"><code>RTCOAuthCredential</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCOAuthCredential</code> dictionary is used to describe the OAuth auth credential information which is used by the STUN/TURN client (inside the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>) to authenticate against a STUN/TURN server, as described in [<cite><a class="bibref" href="#bib-RFC7635">RFC7635</a></cite>]. Note that the <code>kid</code> parameter is not located in this dictionary, but in
@@ -1547,7 +1497,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
+      <section untested id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
         <h4 id="h-rtciceserver-dictionary" resource="#h-rtciceserver-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceserver" data-idl="" data-title="RTCIceServer"><code>RTCIceServer</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCIceServer</code> dictionary is used to describe the STUN and TURN servers that can be used by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> to establish a connection with a peer.</p>
@@ -1623,7 +1573,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcicetransportpolicy-enum" typeof="bibo:Chapter" resource="#rtcicetransportpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcicetransportpolicy-enum" resource="#h-rtcicetransportpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.5 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransportpolicy" data-idl="" data-title="RTCIceTransportPolicy"><code>RTCIceTransportPolicy</code></dfn> Enum</span>
         </h4>
         <p>As noted in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, if the
@@ -1678,7 +1628,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcbundlepolicy-enum" resource="#h-rtcbundlepolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcbundlepolicy" data-idl="" data-title="RTCBundlePolicy"><code>RTCBundlePolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, bundle policy affects which media tracks are negotiated if the remote endpoint is not bundle-aware, and what ICE candidates are gathered. If the remote endpoint is bundle-aware, all media tracks and data channels are bundled onto the same transport.</p>
@@ -1714,7 +1664,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
+      <section untested id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcrtcpmuxpolicy-enum" resource="#h-rtcrtcpmuxpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.7 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtcpmuxpolicy" data-idl="" data-title="RTCRtcpMuxPolicy"><code>RTCRtcpMuxPolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, the RtcpMuxPolicy affects what ICE candidates are gathered to support non-multiplexed RTCP.</p>
@@ -1759,7 +1709,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
+      <section  untested id="offer-answer-options" typeof="bibo:Chapter" resource="#offer-answer-options" property="bibo:hasPart">
         <h4 id="h-offer-answer-options" resource="#h-offer-answer-options"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.8 </span>Offer/Answer Options</span>
         </h4>
         <p>These dictionaries describe the options that can be used to control the offer/answer creation process.</p>
@@ -1828,10 +1778,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
       <section id="operation" typeof="bibo:Chapter" resource="#operation" property="bibo:hasPart">
         <h4 id="h-operation" resource="#h-operation"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1 </span>Operation</span>
         </h4>
-        <p>Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
+        <p tested>Calling <code>new <a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>(<var>configuration</var>)
           </code> creates an <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object.</p>
-        <p><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
+        <p untested><code><var>configuration</var>.servers</code> contains information used to find and access the servers used by ICE. The application can supply multiple servers of each type, and any TURN server <em class="rfc2119" title="MAY">MAY</em> also be used as a STUN server for the purposes of gathering server reflexive candidates.
         </p>
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> object has a <dfn data-dfn-type="dfn" id="dfn-signaling-state">signaling
@@ -1861,57 +1811,57 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </h5>
           <p>When the <dfn id="dom-peerconnection" data-dfn-type="dfn"><code>RTCPeerConnection()</code></dfn> constructor is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
           <ol>
-            <li>
+            <li tested>
               <p>Let <var>connection</var> be a newly created
                 <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                 </code> object.</p>
             </li>
-            <li>
+            <li tested>
               <p>If the <code>certificates</code> value in
                 <var>configuration</var> is non-empty, check that the <code>expires</code> on each value is in the future. If a certificate has expired, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                 <code>InvalidAccessError</code>; otherwise, store the certificates. If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
             </li>
-            <li>
+            <li untested>
               <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
                 </code> is
                 <code>negotiate</code>, and the user agent does not implement non-muxed RTCP, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>NotSupportedError</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Initialize <var>connection</var>'s <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
             </li>
-            <li>
+            <li needs-verification>
               <p><a href="#set-pc-configuration" class="internalDFN" data-link-type="dfn">Set the configuration</a> specified by
                 <var>configuration</var>.</p>
             </li>
-            <li>
+            <li needs-verification>
               <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-isclosed">isClosed</dfn>]] internal slot, initialized to <code>false</code>.</p>
             </li>
-            <li>
+            <li needs-verification>
               <p>Let <var>connection</var> have a [[<dfn data-dfn-type="dfn" id="dfn-neednegotiation">needNegotiation</dfn>]] internal slot, initialized to <code>false</code>.</p>
             </li>
-            <li>
+            <li needs-verification>
               <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-sctptransport">sctpTransport</dfn>]] internal slot, initialized to <code>null</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Let <var>connection</var> have an [[<dfn data-dfn-type="dfn" id="dfn-operations">operations</dfn>]] internal slot, representing an <a href="#dfn-operations-queue" class="internalDFN" data-link-type="dfn">operations queue</a>, initialized to an empty list.</p>
             </li>
-            <li>
+            <li tested>
               <p>Set <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
                 <code>stable</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Set <var>connection</var>'s <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE connection state</a> to
                 <code>new</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Set <var>connection</var>'s <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> to
                 <code>new</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Set <var>connection</var>'s <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> to
                 <code>new</code>.</p>
             </li>
-            <li>
+            <li tested>
               <p>Set <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                 </code>,
                 <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
@@ -1922,11 +1872,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 </code> to null.
               </p>
             </li>
-            <li>
+            <li tested>
               <p>Return <var>connection</var>.</p>
             </li>
           </ol>
-          <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
+          <p tested>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object has an
             <dfn data-dfn-type="dfn" id="dfn-operations-queue">operations queue</dfn>, [[<a href="#dfn-operations" class="internalDFN" data-link-type="dfn">operations</a>]], which ensures that only one asynchronous operation in the queue is executed concurrently. If subsequent calls are made while the returned promise of a previous call is still not settled, they are added to the queue and executed when all the previous calls have finished executing and their promises have settled.</p>
         </section>
@@ -1935,6 +1885,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           <h5 id="h-enqueue-an-operation" resource="#h-enqueue-an-operation"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1.2 </span>Enqueue an operation</span>
           </h5>
           <p>To <dfn data-dfn-type="dfn" id="dfn-enqueue-an-operation">enqueue an operation</dfn>, run the following steps:</p>
+          <section tested>
           <ol>
             <li>
               <p>Let <var>connection</var> be the current
@@ -1997,9 +1948,10 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <p>Return <var>p</var>.</p>
             </li>
           </ol>
+          </section>
         </section>
 
-        <section id="update-the-connection-state" typeof="bibo:Chapter" resource="#update-the-connection-state" property="bibo:hasPart">
+        <section incomplete id="update-the-connection-state" typeof="bibo:Chapter" resource="#update-the-connection-state" property="bibo:hasPart">
           <h5 id="h-update-the-connection-state" resource="#h-update-the-connection-state"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1.3 </span>Update the connection state</span>
           </h5>
           <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -2038,7 +1990,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </ol>
         </section>
 
-        <section id="update-the-ice-gathering-state" typeof="bibo:Chapter" resource="#update-the-ice-gathering-state" property="bibo:hasPart">
+        <section incomplete id="update-the-ice-gathering-state" typeof="bibo:Chapter" resource="#update-the-ice-gathering-state" property="bibo:hasPart">
           <h5 id="h-update-the-ice-gathering-state" resource="#h-update-the-ice-gathering-state"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1.4 </span>Update the ICE gathering state</span>
           </h5>
           <p>To <dfn id="update-ice-gathering-state" data-dfn-type="dfn">update the <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering
@@ -2076,7 +2028,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </ol>
         </section>
 
-        <section id="update-the-ice-connection-state" typeof="bibo:Chapter" resource="#update-the-ice-connection-state" property="bibo:hasPart">
+        <section incomplete id="update-the-ice-connection-state" typeof="bibo:Chapter" resource="#update-the-ice-connection-state" property="bibo:hasPart">
           <h5 id="h-update-the-ice-connection-state" resource="#h-update-the-ice-connection-state"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.1.5 </span>Update the ICE connection state</span>
           </h5>
           <p>To <dfn id="update-ice-connection-state" data-dfn-type="dfn">update the <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE
@@ -2130,28 +2082,28 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                         <code>true</code>, then abort these steps.</p>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If elements of the SDP were modified, then reject
                         <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                         <code>InvalidModificationError</code> and abort these steps.</p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>If the <var>description</var>'s <code><a data-for="RTCSessionDescription" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn"><code>type</code></a>
                         </code> is invalid for the current <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> of <var>connection</var>, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                         <code>InvalidStateError</code> and abort these steps.</p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>If the content of <var>description</var> is not valid SDP syntax, then reject <var>p</var> with an
                         <code>RTCError</code> (with <code>errorDetail</code> set to "sdp-syntax-error" and the sdpLineNumber attribute set to the line number in the SDP where the syntax error was detected) and abort these steps.</p>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If the content of <var>description</var> is invalid, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                         <code>InvalidAccessError</code> and abort these steps.</p>
                     </li>
-                    <li>
+                    <li untested>
                       <p>For all other errors, for example if
                         <var>description</var> cannot be applied at the media layer, reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2170,7 +2122,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>If <var>description</var> is set as a local description, then run one of the following steps:</p>
                       <ul>
                         <!-- A) transition stable to haveLocalOffer -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "offer", set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
@@ -2178,8 +2130,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>have-local-offer</code>.</p>
                         </li>
                         <!-- C) transition haveRemoteOffer or haveLocalProvAnswer to
-                      stable -->
-                        <li>
+                        stable -->
+                        <li untested>
                           <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                             <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                             </code>
@@ -2194,7 +2146,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- B) transition rollback to haveLocalOffer to stable -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
@@ -2202,7 +2154,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- G) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2214,16 +2166,16 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>Otherwise, if <var>description</var> is set as a remote description, then run one of the following steps:</p>
                       <ul>
                         <!-- D) transition stable to haveRemoteOffer -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "offer", set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
                             attribute to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling
-                        state</a> to <code>have-remote-offer</code>.</p>
+                          state</a> to <code>have-remote-offer</code>.</p>
                         </li>
                         <!-- F) transition haveRemoteOffer or haveLocalProvAnswer to
-                      stable -->
-                        <li>
+                        stable -->
+                        <li untested>
                           <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                             <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                             </code>
@@ -2238,7 +2190,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- E) transition rollback to haveRemoteOffer to stable -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
@@ -2246,7 +2198,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- H) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li>
+                        <li untested>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2254,21 +2206,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ul>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> changed above, fire a simple event named
                         <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                         </code> at
                         <var>connection</var>.</p>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>description</var> is of type "answer", and it initiates the closure of an existing SCTP association, as defined in [<cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of <var>connection</var>'s [[
                         <code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot to
                         <code>null</code>.</p>
                     </li>
-                    <li>
+                    <li incomplete>
                       <p>If <var>description</var> is of type "answer" or "pranswer", then run the following steps:</p>
                       <ol>
-                        <li>
+                        <li needs-verification>
                           <p>If <var>description</var> initiates the establishment of a new SCTP association, as defined in [
                             <cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of
                             <var>connection</var>'s [[
@@ -2277,30 +2229,30 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             </code>.</p>
                         </li>
                         <li>
-                          <p>If <var>description</var> negotiates the DTLS role of the SCTP transport, and there is an
+                          <p tested>If <var>description</var> negotiates the DTLS role of the SCTP transport, and there is an
                             <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                             </code> with a <code>null</code>
                             <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
                             </code>, then generate an ID according to [
                             <cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>]. If no available ID could be generated, then run the following steps:</p>
                           <ol>
-                            <li>
+                            <li untested>
                               <p>Let <var>channel</var> be the
                                 <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                                 </code> object for which an ID could not be generated.</p>
                             </li>
                             <li>
-                              <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
+                              <p untested>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
                                 </code> attribute to
                                 <code>closed</code>.</p>
                             </li>
-                            <li>
+                            <li untested>
                               <p>Fire an event named <code><a data-for="RTCDataChannel" href="#event-datachannel-error" class="internalDFN" data-link-type="dfn"><code>error</code></a>
                                 </code> with a
                                 <code>ResourceInUse</code> exception at
                                 <var>channel</var>.</p>
                             </li>
-                            <li>
+                            <li untested>
                               <p>Fire a simple event named <code title="event-RTCDataChannel-close"><a href="#event-datachannel-close" class="internalDFN" data-link-type="dfn"><code>close</code></a>
                                 </code> at
                                 <var>channel</var>.</p>
@@ -2309,7 +2261,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>description</var> is set as a local description, then run the following steps for each media description in <var>description</var> that is not yet associated with an <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code> object:</p>
                       <ol>
@@ -2324,7 +2276,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>description</var> is set as a remote description, then run the following steps for each media description in
                         <var>description</var>:</p>
                       <ol>
@@ -2372,7 +2324,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>description</var> is of type "rollback", then run the following steps:</p>
                       <ol>
                         <li>
@@ -2397,7 +2349,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li>
+                    <li untested>
                       <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> is now
                         <code>stable</code>, <a href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">update the negotiation-needed
                     flag</a>. If <var>connection</var>'s [[
@@ -2436,7 +2388,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
           </code>
           objects.</p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection" data-idl="" data-title="RTCPeerConnection">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code>RTCConfiguration</code></a></span> <span class="idlParamName">configuration</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> : <span class="idlSuperclass">EventTarget</span> {
 <span class="idlMethod" id="idl-def-rtcpeerconnection-createoffer(options)" data-idl="" data-title="createOffer" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-promise">Promise</a>&lt;<a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>&gt;</span> <span class="idlMethName"><a data-lt="createOffer" href="#dom-rtcpeerconnection-createoffer" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>createOffer</code></a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcofferoptions" class="internalDFN" data-link-type="dfn"><code>RTCOfferOptions</code></a></span> <span class="idlParamName">options</span></span>);</span>
@@ -2469,8 +2421,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
 <span class="idlAttribute" id="idl-def-rtcpeerconnection-onfingerprintfailure" data-idl="" data-title="onfingerprintfailure" data-dfn-for="rtcpeerconnection">             attribute <span class="idlAttrType"><a href="https://html.spec.whatwg.org/multipage/#eventhandler">EventHandler</a></span>           <span class="idlAttrName"><a data-lt="onfingerprintfailure" href="#dom-rtcpeerconnection-onfingerprintfailure" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>onfingerprintfailure</code></a></span>;</span>
 };</span></pre>
           </div>
-
-          <section typeof="bibo:Chapter" resource="#constructors" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#constructors" property="bibo:hasPart">
             <h5 id="constructors" resource="#constructors"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="constructors">
               <dt><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcpeerconnection" data-idl="" data-title="RTCPeerConnection"><code>RTCPeerConnection</code></dfn></dt>
@@ -2504,14 +2455,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="attributes">
               <dt><code>localDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <dfn id="dom-rtcpeerconnection-localdescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="localDescription"><code>localDescription</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                   </code> if it is not null and otherwise it <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                   </code>.</p>
               </dd>
               <dt><code>currentLocalDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                   </code>
                   attribute represents the local
@@ -2522,7 +2473,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>pendingLocalDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                   </code>
                   attribute represents a local
@@ -2534,14 +2485,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>remoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <dfn id="dom-rtcpeerconnection-remotedescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="remoteDescription"><code>remoteDescription</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                   </code> if it is not null and otherwise it <em class="rfc2119" title="MUST">MUST</em> return <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                   </code>.</p>
               </dd>
               <dt><code>currentRemoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                   </code>
                   attribute represents the last remote
@@ -2552,7 +2503,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
               </dd>
               <dt><code>pendingRemoteDescription</code> of type <span class="idlAttrType"><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a></span>, readonly,
               nullable</dt>
-              <dd>
+              <dd untested>
                 <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                   </code>
                   attribute represents a remote
@@ -2564,70 +2515,70 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </p>
               </dd>
               <dt><code>signalingState</code> of type <span class="idlAttrType"><a href="#dom-rtcsignalingstate" class="internalDFN" data-link-type="dfn"><code>RTCSignalingState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-signalingstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="signalingState"><code>signalingState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> object's
                   <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a>.</p>
               </dd>
               <dt><code>iceGatheringState</code> of type <span class="idlAttrType"><a href="#dom-rtcicegatheringstate" class="internalDFN" data-link-type="dfn"><code>RTCIceGatheringState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-icegatheringstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="iceGatheringState"><code>iceGatheringState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-ice-gathering-state" class="internalDFN" data-link-type="dfn">ICE gathering state</a> of the
                   <code>RTCPeerConnection</code> instance.</p>
               </dd>
               <dt><code>iceConnectionState</code> of type <span class="idlAttrType"><a href="#dom-rtciceconnectionstate" class="internalDFN" data-link-type="dfn"><code>RTCIceConnectionState</code></a></span>, readonly</dt>
-              <dd>
+              <dd needs-verification>
                 <p>The <dfn id="dom-rtcpeerconnection-iceconnectionstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="iceConnectionState"><code>iceConnectionState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-ice-connection-state" class="internalDFN" data-link-type="dfn">ICE connection state</a> of the
                   <code>RTCPeerConnection</code> instance.</p>
               </dd>
               <dt><code>connectionState</code> of type <span class="idlAttrType"><a href="#dom-rtcpeerconnectionstate" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnectionState</code></a></span>, readonly</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-connectionstate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="connectionState"><code>connectionState</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the <a href="#dfn-connection-state" class="internalDFN" data-link-type="dfn">connection state</a> of the
                   <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> instance.</p>
               </dd>
               <dt><code>canTrickleIceCandidates</code> of type <span class="idlAttrType">boolean</span>, readonly, nullable</dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-cantrickleicecandidates" data-idl="" data-title="canTrickleIceCandidates"><code>canTrickleIceCandidates</code></dfn> attribute indicates whether the remote peer is able to accept trickled ICE candidates [<cite><a class="bibref" href="#bib-TRICKLE-ICE">TRICKLE-ICE</a></cite>]. The value is determined based on whether a remote description indicates support for trickle ICE, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.15">section 4.1.15.</a>)</span>. Prior to the completion of
                   <a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setremotedescription" class="internalDFN" data-link-type="dfn"><code><code>setRemoteDescription</code></code></a>, this value is <code>null</code>.</p>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onnegotiationneeded" data-idl="" data-title="onnegotiationneeded"><code>onnegotiationneeded</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-negotiation" class="internalDFN" data-link-type="dfn"><code>negotiationneeded</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicecandidate" data-idl="" data-title="onicecandidate"><code>onicecandidate</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-icecandidate" class="internalDFN" data-link-type="dfn"><code>icecandidate</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicecandidateerror" data-idl="" data-title="onicecandidateerror"><code>onicecandidateerror</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-icecandidateerror" class="internalDFN" data-link-type="dfn"><code>icecandidateerror</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onsignalingstatechange" data-idl="" data-title="onsignalingstatechange"><code>onsignalingstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-oniceconnectionstatechange" data-idl="" data-title="oniceconnectionstatechange"><code>oniceconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-iceconnectionstatechange" class="internalDFN" data-link-type="dfn"><code>iceconnectionstatechange</code></a>
                 </code>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicegatheringstatechange" data-idl="" data-title="onicegatheringstatechange"><code>onicegatheringstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd incomplete>The event type of this event handler is
                 <code><a href="#event-icegatheringstatechange" class="internalDFN" data-link-type="dfn"><code>icegatheringstatechange</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onconnectionstatechange" data-idl="" data-title="onconnectionstatechange"><code>onconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-connectionstatechange" class="internalDFN" data-link-type="dfn"><code>connectionstatechange</code></a>
                 </code>.</dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onfingerprintfailure" data-idl="" data-title="onfingerprintfailure"><code>onfingerprintfailure</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
-              <dd>The event type of this event handler is
+              <dd untested>The event type of this event handler is
                 <code><a href="#event-fingerprintfailure" class="internalDFN" data-link-type="dfn"><code>fingerprintfailure</code></a>
                 </code>.</dd>
             </dl>
@@ -2637,10 +2588,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
             <h5 id="methods" resource="#methods"><span property="xhv:role" resource="xhv:heading">Methods</span></h5>
             <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createoffer" data-idl="" data-title="createOffer" data-lt="createoffer()|createOffer"><code>createOffer</code></dfn></dt>
-              <dd>
+              <dd incomplete>
                 <p>The createOffer method generates a blob of SDP that contains an RFC 3264 offer with the supported configurations for the session, including descriptions of the local
                   <code>MediaStreamTrack</code>s attached to this
-                  <code>RTCPeerConnection</code>, the codec/RTP/RTCP capabilities supported by this implementation, and parameters of the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE 
+                  <code>RTCPeerConnection</code>, the codec/RTP/RTCP capabilities supported by this implementation, and parameters of the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE
                 agent</a> and the DTLS connection. The <code>options</code> parameter may be supplied to provide additional control over the offer generated.</p>
                 <p>Session descriptions generated by <code>createOffer</code>
                   <em class="rfc2119" title="MUST">MUST</em> be immediately usable by <code>setLocalDescription</code> without causing an error as long as
@@ -2662,34 +2613,34 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p class="fingerprint">The process of generating an SDP exposes a subset of the media capabilities of the underlying system, which provides generally persistent cross-origin information on the device. It thus increases the fingerprinting surface of the application. In privacy-sensitive contexts, browsers can consider mitigations such as generating SDP matching only a common subset of the capabilities.<img src="images/fingerprint.png" alt="(This is a fingerprinting vector.)" width="15" height="21"></p>
                 <p>When the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code>.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>If <var>connection</var> is configured with an identity provider, and an identity assertion has not yet been generated using said identity provider, then begin <a href="#sec.identity-proxy-assertion-request">the identity
                     assertion request process</a> if it has not already begun.
                     </p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li tested>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>In parallel, begin the <a href="#dfn-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">steps to create an
                         offer</a>, given <var>p</var>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Return <var>p</var>.</p>
                       </li>
                     </ol>
@@ -2698,40 +2649,40 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-offer">steps to create an offer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li incomplete>
                     <p>If the need for an identity assertion was identified when <code>createOffer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the offer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.6">section 4.1.6.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>OperationError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Queue a task that runs the <a href="#dfn-final-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">final steps to create an
                     offer</a>, given <var>p</var>.</p>
                   </li>
                 </ol>
                 <p>The <dfn data-dfn-type="dfn" id="dfn-final-steps-to-create-an-offer">final steps to create an offer</dfn> given a promise <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If <var>connection</var> was modified in such a way that additional inspection of the system state is necessary, then in parallel begin the <a href="#dfn-steps-to-create-an-offer" class="internalDFN" data-link-type="dfn">steps to create an offer</a> again, given <var>p</var>, and abort these steps.</p>
                     <div class="note">
                       <div class="note-title marker" aria-level="6" role="heading" id="h-note5"><span>Note</span></div>
@@ -2747,21 +2698,22 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </div>
                     </div>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>Given the information that was obtained from previous inspection and the current state of <var>connection</var> and its <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code>s, generate an SDP offer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2">section 5.2.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Let <var>offer</var> be a newly created
                       <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
                       </code> dictionary with its <code>type</code> member initialized to the string
                       <code>"offer"</code> and its <code>sdp</code> member initialized to <var>sdpString</var>.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Resolve <var>p</var> with <var>offer</var>.</p>
                   </li>
                 </ol>
+                <section tested>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -2780,13 +2732,16 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
+                </section>
+                <section tested>
                 <div>
                   <em>Return type:</em>
                   <code>Promise&lt;RTCSessionDescriptionInit&gt;</code>
                 </div>
+                </section>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-createanswer" data-idl="" data-title="createAnswer" data-lt="createanswer()|createAnswer"><code>createAnswer</code></dfn></dt>
-              <dd>
+              <dd incomplete>
                 <p>The <code>createAnswer</code> method generates an [<cite><a class="bibref" href="#bib-SDP">SDP</a></cite>] answer with the supported configuration for the session that is compatible with the parameters in the remote configuration. Like <code>createOffer</code>, the returned blob of SDP contains descriptions of the local <code>MediaStreamTrack</code>s attached to this <code>RTCPeerConnection</code>, the codec/RTP/RTCP options negotiated for this session, and any candidates that have been gathered by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. The
                   <code>options</code> parameter may be supplied to provide additional control over the generated answer.</p>
                 <p>Session descriptions generated by createAnswer <em class="rfc2119" title="MUST">MUST</em> be immediately usable by <code>setLocalDescription</code> without causing an error as long as <code>setLocalDescription</code> is called reasonably soon. Like <code>createOffer</code>, the returned description <em class="rfc2119" title="SHOULD">SHOULD</em> reflect the current state of the system. The session descriptions <em class="rfc2119" title="MUST">MUST</em> remain usable by
@@ -2809,41 +2764,41 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   </code>, then the session description <em class="rfc2119" title="SHALL">SHALL</em> contain an appropriate assertion.</p>
                 <p>When the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>InvalidStateError</code>.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>If <var>connection</var> is configured with an identity provider, and an identity assertion has not yet been generated using said identity provider, then begin <a href="#sec.identity-proxy-assertion-request">the identity
                     assertion request process</a> if it has not already begun.
                     </p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li tested>
                         <p>If <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                           </code> is
                           <code>null</code> return a promise rejected with a newly
                           <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created
                         </a> <code>InvalidStateError</code>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li>
+                      <li incomplete>
                         <p>In parallel, begin the <a href="#dfn-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">steps to create an
                         answer</a>, given <var>p</var>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Return <var>p</var>.</p>
                       </li>
                     </ol>
@@ -2852,40 +2807,40 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-answer">steps to create an answer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li incomplete>
                     <p>If the need for an identity assertion was identified when <code>createAnswer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li>
+                  <li needs-verification>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>If <var>connection</var> was not constructed with a set of certificates, and one has not yet been generated, wait for it to be generated.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>Inspect the system state to determine the currently available resources as necessary for generating the answer, as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.7">section 4.1.7.</a>)</span>.</p>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>If this inspection failed for any reason, reject
                       <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>OperationError</code> and abort these steps.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>Queue a task that runs the <a href="#dfn-final-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">final steps to create an
                     answer</a>, given <var>p</var>.</p>
                   </li>
                 </ol>
                 <p>The <dfn data-dfn-type="dfn" id="dfn-final-steps-to-create-an-answer">final steps to create an answer</dfn> given a promise <var>p</var> are as follows:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li>
+                  <li incomplete>
                     <p>If <var>connection</var> was modified in such a way that additional inspection of the system state is necessary, then in parallel begin the <a href="#dfn-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">steps to create an answer</a> again, given <var>p</var>, and abort these steps.</p>
                     <div class="note">
                       <div class="note-title marker" aria-level="6" role="heading" id="h-note6"><span>Note</span></div>
@@ -2898,22 +2853,23 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       </div>
                     </div>
                   </li>
-                  <li>
+                  <li untestable>
                     <p>Given the information that was obtained from previous inspection and the current state of <var>connection</var> and its <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                       </code>s, generate an SDP answer, <var>sdpString</var>, as described in
                       <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3">section 5.3.</a>)</span>.
                     </p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Let <var>answer</var> be a newly created
                       <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
                       </code> dictionary with its <code>type</code> member initialized to the string
                       <code>"answer"</code> and its <code>sdp</code> member initialized to <var>sdpString</var>.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Resolve <var>p</var> with <var>answer</var>.</p>
                   </li>
                 </ol>
+                <section tested>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -2932,13 +2888,16 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
+                </section>
+                <section tested>
                 <div>
                   <em>Return type:</em>
                   <code>Promise&lt;RTCSessionDescriptionInit&gt;</code>
                 </div>
+              </section>
               </dd>
               <dt><code>setLocalDescription</code></dt>
-              <dd>
+              <dd incomplete>
                 <p>The <dfn id="dom-rtcpeerconnection-setlocaldescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="setLocalDescription" data-lt="setlocaldescription()|setLocalDescription"><code>setLocalDescription</code></dfn> method instructs the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> to apply the supplied
                   <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
@@ -2952,29 +2911,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <code>createAnswer</code> <em class="rfc2119" title="MUST NOT">MUST NOT</em> be changed before passing it to <code>setLocalDescription</code>. As a result, when the method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:
                 </p>
                 <ol>
-                  <li>Let <var>description</var> be the first argument to
+                  <li tested>Let <var>description</var> be the first argument to
                     <code>setLocalDescription</code>.</li>
-                  <li>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
-                  <li>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
-                  <li>If <code><var>description</var>.sdp</code> is
+                  <li tested>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
+                  <li tested>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
+                  <li untested>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>answer</code> or <code>pranswer</code>, set <code><var>description</var>.sdp</code> to
                     <var>lastAnswer</var>.</li>
-                  <li>If <code><var>description</var>.sdp</code> is
+                  <li tested>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>offer</code>, set <code><var>description</var>.sdp</code> to <var>lastOffer</var>.</li>
-                  <li>If <code><var>description</var>.type</code> is
+                  <li tested>If <code><var>description</var>.type</code> is
                     <code>offer</code> and <code><var>description</var>.sdp</code> does not match <var>lastOffer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidModificationError</code> and abort these steps.
                   </li>
-                  <li>If <code><var>description</var>.type</code> is
+                  <li tested>If <code><var>description</var>.type</code> is
                     <code>answer</code> or <code>pranswer</code> and
                     <code><var>description</var>.sdp</code> does not match <var>lastAnswer</var>, reject the promise with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidModificationError</code> and abort these steps.</li>
-                  <li>Return the result of <a href="#set-description">setting
+                  <li tested>Return the result of <a href="#set-description">setting
                   the RTCSessionDescription</a> indicated by the method's first argument.
                   </li>
                 </ol>
+
+                <section tested-idlharness>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -2994,12 +2955,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
+                </section>
+                <section tested>
                 <div>
                   <em>Return type:</em> <code>Promise&lt;void&gt;</code>
                 </div>
+                </section>
               </dd>
               <dt><code>setRemoteDescription</code></dt>
-              <dd>
+              <dd tested>
                 <p>The <dfn id="dom-rtcpeerconnection-setremotedescription" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="setRemoteDescription" data-lt="setremotedescription()|setRemoteDescription"><code>setRemoteDescription</code></dfn> method instructs the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code> to apply the supplied
                   <code><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a>
@@ -3048,7 +3012,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><code>addIceCandidate</code></dt>
-              <dd>
+              <dd tested>
                 <p>The <dfn id="dom-rtcpeerconnection-addicecandidate" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="addIceCandidate" data-lt="addicecandidate()|addIceCandidate"><code>addIceCandidate</code></dfn> method provides a remote candidate to the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>. This method can also be used to indicate the end of remote candidates when called with an empty string for the <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn"><code>candidate</code></a>
                   </code> member. The only members of the argument used by this method are <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn"><code>candidate</code></a>
                   </code>, <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-sdpmid" class="internalDFN" data-link-type="dfn"><code>sdpMid</code></a>
@@ -3057,25 +3021,25 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-ufrag" class="internalDFN" data-link-type="dfn"><code>ufrag</code></a>
                   </code>; the rest are ignored. When the method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li tested>
                     <p>Let <var>candidate</var> be the method's argument.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> object on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>If both <var>sdpMid</var> and <var>sdpMLineIndex</var> are
                       <code>null</code>, return a promise rejected with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>TypeError</code>.</p>
                   </li>
-                  <li>
+                  <li tested>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
-                      <li>
+                      <li tested>
                         <p>If <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                           </code> is
                           <code>null</code> return a promise rejected with a newly
@@ -3085,7 +3049,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <li>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <var>candidate.sdpMid</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3097,7 +3061,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Else, if <var>candidate.sdpMLineIndex</var> is not null, run the following steps:</p>
                         <ol>
                           <li>
@@ -3108,7 +3072,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <code><var>candidate</var>.ufrag</code> is neither
                           <code>undefined</code> nor <code>null</code>, and is not equal to any ufrag present in the corresponding
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> of an applied remote description, reject <var>p</var> with a newly
@@ -3117,7 +3081,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                         </p>
                       </li>
                       <li>
-                        <p>In parallel, add the ICE candidate
+                        <p tested>In parallel, add the ICE candidate
                           <var>candidate</var> as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.17">section 4.1.17.</a>)</span>. Use
                           <code><var>candidate</var>.ufrag</code> to identify the ICE <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>; if the ufrag is null, process the
                           <var>candidate</var> for the most recent ICE
@@ -3126,7 +3090,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> and ICE candidate
                           <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>.</p>
                         <ol>
-                          <li>
+                          <li tested>
                             <p>If <var>candidate</var> could not be successfully added the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                             <ol>
                               <li>
@@ -3142,7 +3106,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                               </li>
                             </ol>
                           </li>
-                          <li>
+                          <li tested>
                             <p>If <var>candidate</var> is applied successfully, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                             <ol>
                               <li>
@@ -3169,7 +3133,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           </li>
                         </ol>
                       </li>
-                      <li>
+                      <li tested>
                         <p>Return <var>p</var>.</p>
                       </li>
                     </ol>
@@ -3199,7 +3163,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-getdefaulticeservers" data-idl="" data-title="getDefaultIceServers" data-lt="getdefaulticeservers()|getDefaultIceServers"><code>getDefaultIceServers</code></dfn></dt>
-              <dd>
+              <dd untested>
                 <p>Returns a list of ICE servers that are configured into the browser. A browser might be configured to use local or private STUN or TURN servers. This method allows an application to learn about these servers and optionally use them.</p>
                 <p class="fingerprint">This list is likely to be persistent and is the same across origins. It thus increases the fingerprinting surface of the browser. In privacy-sensitive contexts, browsers can consider mitigations such as only providing this data to whitelisted origins (or not providing it at all.)<img src="images/fingerprint.png" alt="(This is a fingerprinting vector.)" width="15" height="21"></p>
                 <div>
@@ -3210,7 +3174,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-getconfiguration" data-idl="" data-title="getConfiguration" data-lt="getconfiguration()|getConfiguration"><code>getConfiguration</code></dfn></dt>
-              <dd>
+              <dd tested>
                 <p>Returns a <code><a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code>RTCConfiguration</code></a>
                   </code> object representing the current configuration of this
                   <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -3227,7 +3191,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><code>setConfiguration</code></dt>
-              <dd>
+              <dd incomplete>
                 <p>The <code>setConfiguration</code> method updates the configuration of this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                   </code>
                   object. This includes changing the configuration of the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE
@@ -3239,7 +3203,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> on which the method was invoked.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                       <code>InvalidStateError</code>.</p>
@@ -3254,25 +3218,25 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>Let <var>connection</var> be the target
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object.</li>
-                  <li>If <code><var>configuration</var>.peerIdentity</code> is set and its value differs from the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
+                  <li untested>If <code><var>configuration</var>.peerIdentity</code> is set and its value differs from the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
                   identity</a>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.
                   </li>
-                  <li>If <code><var>configuration</var>.certificates</code> is set and the set of certificates differs from the ones used when <var>connection</var> was constructed, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
+                  <li tested>If <code><var>configuration</var>.certificates</code> is set and the set of certificates differs from the ones used when <var>connection</var> was constructed, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s bundle policy,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s rtcpMux policy, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
+                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s previously set <code>iceCandidatePoolSize</code>, and <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setlocaldescription" class="internalDFN" data-link-type="dfn"><code>setLocalDescription</code></a>
                     </code> has already been called, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
-                  <li>
+                  <li untested>
                     <p>Set the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>'s <dfn id="ice-transports-setting" data-dfn-type="dfn">ICE transports setting</dfn> to the value of <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn"><code>iceTransportPolicy</code></a>
                       </code>. As defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.16">section 4.1.16.</a>)</span>, if the new <a href="#ice-transports-setting" class="internalDFN" data-link-type="dfn">ICE transports setting</a> changes the existing setting, no action will be taken until the next gathering phase. If a script wants this to happen immediately, it should do an ICE restart.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>Set the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>'s prefetched <dfn data-dfn-type="dfn" id="dfn-ice-candidate-pool-size">ICE candidate
                     pool size</dfn> as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.5.4">section 3.5.4.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span> to the value of <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
                       </code>. If the new <a href="#dfn-ice-candidate-pool-size" class="internalDFN" data-link-type="dfn">ICE candidate pool size</a> changes the existing setting, this may result in immediate gathering of new pooled candidates, or discarding of existing pooled candidates, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.16">section 4.1.16.</a>)</span>.</p>
@@ -3280,7 +3244,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>
                     <p>Let <var>validatedServers</var> be an empty list.</p>
                   </li>
-                  <li>
+                  <li untested>
                     <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn"><code>iceServers</code></a>
                       </code> is defined, then run the following steps for each element:</p>
                     <ol>
@@ -3363,7 +3327,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               <dt><code>close</code></dt>
-              <dd>
+              <dd untested>
                 <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-close" data-idl="" data-title="close" data-lt="close()|close"><code>close</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
                   <li>
@@ -3466,7 +3430,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </div>
       </section>
 
-      <section id="legacy-interface-extensions" typeof="bibo:Chapter" resource="#legacy-interface-extensions" property="bibo:hasPart">
+      <section out-of-scope id="legacy-interface-extensions" typeof="bibo:Chapter" resource="#legacy-interface-extensions" property="bibo:hasPart">
         <h4 id="h-legacy-interface-extensions" resource="#h-legacy-interface-extensions"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.3 </span>Legacy Interface Extensions</span>
         </h4>
         <p>Supporting the methods in this section is optional. However, if these methods are supported it is mandatory to implement according to what is specified here.</p>
@@ -3944,7 +3908,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </section>
       </section>
 
-      <section id="garbage-collection" typeof="bibo:Chapter" resource="#garbage-collection" property="bibo:hasPart">
+      <section out-of-scope id="garbage-collection" typeof="bibo:Chapter" resource="#garbage-collection" property="bibo:hasPart">
         <h4 id="h-garbage-collection" resource="#h-garbage-collection"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.3.4 </span>Garbage collection</span>
         </h4>
         <p>An <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -3965,7 +3929,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
       <h3 id="h-state-definitions" resource="#h-state-definitions"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4 </span>State Definitions</span>
       </h3>
 
-      <section id="rtcsignalingstate-enum" typeof="bibo:Chapter" resource="#rtcsignalingstate-enum" property="bibo:hasPart">
+      <section incomplete id="rtcsignalingstate-enum" typeof="bibo:Chapter" resource="#rtcsignalingstate-enum" property="bibo:hasPart">
         <h4 id="h-rtcsignalingstate-enum" resource="#h-rtcsignalingstate-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.1 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsignalingstate" data-idl="" data-title="RTCSignalingState"><code>RTCSignalingState</code></dfn> Enum</span>
         </h4>
         <div>
@@ -4042,7 +4006,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </dl>
       </section>
 
-      <section id="rtcicegatheringstate-enum" typeof="bibo:Chapter" resource="#rtcicegatheringstate-enum" property="bibo:hasPart">
+      <section incomplete id="rtcicegatheringstate-enum" typeof="bibo:Chapter" resource="#rtcicegatheringstate-enum" property="bibo:hasPart">
         <h4 id="h-rtcicegatheringstate-enum" resource="#h-rtcicegatheringstate-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicegatheringstate" data-idl="" data-title="RTCIceGatheringState"><code>RTCIceGatheringState</code></dfn> Enum</span>
         </h4>
         <div>
@@ -4083,7 +4047,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </div>
       </section>
 
-      <section id="rtcpeerconnectionstate-enum" typeof="bibo:Chapter" resource="#rtcpeerconnectionstate-enum" property="bibo:hasPart">
+      <section incomplete id="rtcpeerconnectionstate-enum" typeof="bibo:Chapter" resource="#rtcpeerconnectionstate-enum" property="bibo:hasPart">
         <h4 id="h-rtcpeerconnectionstate-enum" resource="#h-rtcpeerconnectionstate-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcpeerconnectionstate" data-idl="" data-title="RTCPeerConnectionState"><code>RTCPeerConnectionState</code></dfn> Enum</span>
         </h4>
         <div>
@@ -4161,7 +4125,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </div>
       </section>
 
-      <section id="rtciceconnectionstate-enum" typeof="bibo:Chapter" resource="#rtciceconnectionstate-enum" property="bibo:hasPart">
+      <section incomplete id="rtciceconnectionstate-enum" typeof="bibo:Chapter" resource="#rtciceconnectionstate-enum" property="bibo:hasPart">
         <h4 id="h-rtciceconnectionstate-enum" resource="#h-rtciceconnectionstate-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.4.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceconnectionstate" data-idl="" data-title="RTCIceConnectionState"><code>RTCIceConnectionState</code></dfn> Enum</span>
         </h4>
         <div>
@@ -4259,7 +4223,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
       <h3 id="h-session-description-model" resource="#h-session-description-model"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6 </span>Session Description Model</span>
       </h3>
 
-      <section id="rtcsdptype" typeof="bibo:Chapter" resource="#rtcsdptype" property="bibo:hasPart">
+      <section incomplete id="rtcsdptype" typeof="bibo:Chapter" resource="#rtcsdptype" property="bibo:hasPart">
         <h4 id="h-rtcsdptype" resource="#h-rtcsdptype"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6.1 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsdptype" data-idl="" data-title="RTCSdpType"><code>RTCSdpType</code></dfn></span>
         </h4>
         <p>The RTCSdpType enum describes the type of an
@@ -4318,7 +4282,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
           <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
           </code> to expose local and remote session descriptions. Attributes on this interface are mutable for legacy reasons.</p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsessiondescription" data-idl="" data-title="RTCSessionDescription">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescriptionInit</code></a></span> <span class="idlParamName">descriptionInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSessionDescription</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsessiondescription-type" data-idl="" data-title="type" data-dfn-for="rtcsessiondescription">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span> <span class="idlAttrName"><a data-lt="type" href="#dom-rtcsessiondescription-type" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescription"><code>type</code></a></span>;</span>
@@ -4327,15 +4291,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
 };</span></pre>
           </div>
 
-          <section typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
+          <section incomplete typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
             <h5 id="constructors-1" resource="#constructors-1"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="constructors">
               <dt><code>RTCSessionDescription</code></dt>
               <dd>
+                <section tested>
                 The <dfn id="dom-sessiondescription" data-dfn-type="dfn"><code>RTCSessionDescription()</code></dfn> constructor takes a dictionary argument,
                 <var>descriptionInitDict</var>, whose content is used to initialize the new <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
                 </code>
                 object. This constructor is deprecated; it exists for legacy compatibility reasons only.
+                </section>
+                <section untested>
                 <table class="parameters">
                   <tbody>
                     <tr>
@@ -4355,11 +4322,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
                     </tr>
                   </tbody>
                 </table>
+                </section>
               </dd>
             </dl>
           </section>
 
-          <section typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
+          <section incomplete typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
             <h5 id="attributes-2" resource="#attributes-2"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="attributes">
               <dt><dfn data-dfn-for="rtcsessiondescription" data-dfn-type="dfn" id="dom-rtcsessiondescription-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span>, readonly</dt>
@@ -4560,7 +4528,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
       <h3 id="h-interfaces-for-connectivity-establishment" resource="#h-interfaces-for-connectivity-establishment"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.8 </span>Interfaces for Connectivity Establishment</span>
       </h3>
 
-      <section id="rtcicecandidate-interface" typeof="bibo:Chapter" resource="#rtcicecandidate-interface" property="bibo:hasPart">
+      <section needs-verification id="rtcicecandidate-interface" typeof="bibo:Chapter" resource="#rtcicecandidate-interface" property="bibo:hasPart">
         <h4 id="h-rtcicecandidate-interface" resource="#h-rtcicecandidate-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.8.1 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecandidate" data-idl="" data-title="RTCIceCandidate"><code>RTCIceCandidate</code></dfn> Interface</span>
         </h4>
         <p>This interface describes an ICE candidate.</p>
@@ -4586,7 +4554,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
 };</span></pre>
           </div>
 
-          <section typeof="bibo:Chapter" resource="#constructors-2" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#constructors-2" property="bibo:hasPart">
             <h5 id="constructors-2" resource="#constructors-2"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCIceCandidate" data-dfn-for="RTCIceCandidate" class="constructors">
               <dt><code>RTCIceCandidate</code></dt>
@@ -4622,24 +4590,35 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
             <h5 id="attributes-3" resource="#attributes-3"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <p>Most attributes below are defined in section 15.1 of [<cite><a class="bibref" href="#bib-ICE">ICE</a></cite>].</p>
             <dl data-link-for="RTCIceCandidate" data-dfn-for="RTCIceCandidate" class="attributes">
+              <section tested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-candidate" data-idl="" data-title="candidate"><code>candidate</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly</dt>
               <dd>This carries the <code>candidate-attribute</code> as defined in section 15.1 of [<cite><a class="bibref" href="#bib-ICE">ICE</a></cite>]. If this <code>RTCIceCandidate</code> represents an end-of-candidates indication,
                 <code>candidate</code> is an empty string.</dd>
+              </section>
+              <section tested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-sdpmid" data-idl="" data-title="sdpMid"><code>sdpMid</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>If not <code>null</code>, this contains the identifier of the "media stream identification" as defined in [<cite><a class="bibref" href="#bib-RFC5888">RFC5888</a></cite>] for the media component this candidate is associated with.</dd>
+              </section>
+              <section tested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-sdpmlineindex" data-idl="" data-title="sdpMLineIndex"><code>sdpMLineIndex</code></dfn> of type <span class="idlAttrType">unsigned short</span>, readonly,
               nullable</dt>
               <dd>
                 If not <code>null</code>, this indicates the index (starting at zero) of the <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> in the SDP this candidate is associated with.
               </dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-foundation" data-idl="" data-title="foundation"><code>foundation</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>A unique identifier that allows ICE to correlate candidates that appear on multiple
                 <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
                 </code>s.</dd>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-component" data-idl="" data-title="component"><code>component</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicecomponent" class="internalDFN" data-link-type="dfn"><code>RTCIceComponent</code></a></span>, readonly, nullable</dt>
               <dd>The assigned network component of the candidate (<code>rtp</code> or <code>rtcp</code>).</dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-priority" data-idl="" data-title="priority"><code>priority</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly, nullable</dt>
               <dd>The assigned priority of the candidate.</dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-ip" data-idl="" data-title="ip"><code>ip</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>
                 <p>The IP address of the candidate.</p>
@@ -4659,29 +4638,46 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
                   </div>
                 </div>
               </dd>
+
+              </section>
+              <section untested>
+
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-protocol" data-idl="" data-title="protocol"><code>protocol</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtciceprotocol" class="internalDFN" data-link-type="dfn"><code>RTCIceProtocol</code></a></span>, readonly, nullable</dt>
               <dd>The protocol of the candidate (<code>udp</code>/<code>tcp</code>).</dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-port" data-idl="" data-title="port"><code>port</code></dfn> of type <span class="idlAttrType">unsigned short</span>, readonly, nullable</dt>
               <dd>The port of the candidate.</dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicecandidatetype" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidateType</code></a></span>, readonly, nullable</dt>
               <dd>The type of the candidate.</dd>
+              </section>
+              <section untested>
               <dt><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-tcptype" data-idl="" data-title="tcpType"><code>tcpType</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicetcpcandidatetype" class="internalDFN" data-link-type="dfn"><code>RTCIceTcpCandidateType</code></a></span>, readonly,
               nullable</dt>
               <dd>If <code>protocol</code> is <code>tcp</code>,
                 <code>tcpType</code> represents the type of TCP candidate. Otherwise, <code>tcpType</code> is <code>null</code>.</dd>
+              </section>
+              <section untested>
               <dt><code>relatedAddress</code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>For a candidate that is derived from another, such as a relay or reflexive candidate, the <dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-relatedaddress" data-idl="" data-title="relatedAddress"><code>relatedAddress</code></dfn> is the IP address of the candidate that it is derived from. For host candidates, the <code>relatedAddress</code> is
                 <code>null</code>.</dd>
+              </section>
+              <section untested>
               <dt><code>relatedPort</code> of type <span class="idlAttrType">unsigned short</span>, readonly,
               nullable</dt>
               <dd>For a candidate that is derived from another, such as a relay or reflexive candidate, the <dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-relatedport" data-idl="" data-title="relatedPort"><code>relatedPort</code></dfn> is the port of the candidate that it is derived from. For host candidates, the
                 <code>relatedPort</code> is <code>null</code>.</dd>
+              </section>
+              <section untested>
               <dt><code><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-ufrag" data-idl="" data-title="ufrag">ufrag</dfn></code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
               <dd>This carries the <code>ufrag</code> as defined in section 15.4 of [<cite><a class="bibref" href="#bib-ICE">ICE</a></cite>].</dd>
+              </section>
             </dl>
           </section>
 
-          <section typeof="bibo:Chapter" resource="#serializer-1" property="bibo:hasPart">
+          <section untested typeof="bibo:Chapter" resource="#serializer-1" property="bibo:hasPart">
             <h5 id="serializer-1" resource="#serializer-1"><span property="xhv:role" resource="xhv:heading"><dfn data-dfn-for="rtcicecandidate" data-dfn-type="dfn" id="dom-rtcicecandidate-serializer" data-idl="" data-title="Serializer"><code>Serializer</code></dfn></span></h5>
             <div>
               <p>Instances of this interface are serialized as a map with entries for the following attributes: candidate, sdpMid, sdpMLineIndex, ufrag.</p>
@@ -4843,7 +4839,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIceCandidate" href="#dom-r
           <em class="rfc2119" title="MUST">MUST</em> be set to the URL of the ICE server from which the candidate was obtained.
         </p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnectioniceevent" data-idl="" data-title="RTCPeerConnectionIceEvent">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlParamName">type</span></span>, <span class="idlParam">optional <span class="idlParamType"><a href="#dom-rtcpeerconnectioniceeventinit" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnectionIceEventInit</code></a></span> <span class="idlParamName">eventInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceEvent" href="#dom-rtcpeerconnectioniceevent" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnectionIceEvent</code></a></span> : <span class="idlSuperclass"><a href="#dfn-event" class="internalDFN" data-link-type="dfn">Event</a></span> {
 <span class="idlAttribute" id="idl-def-rtcpeerconnectioniceevent-candidate" data-idl="" data-title="candidate" data-dfn-for="rtcpeerconnectioniceevent">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a>?</span> <span class="idlAttrName"><a data-lt="candidate" href="#dom-rtcpeerconnectioniceevent-candidate" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceEvent"><code>candidate</code></a></span>;</span>
@@ -5097,7 +5093,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
       <p>Applications that use this API should be aware that often better overall user experience is obtained by lowering the priority of things that are not as important rather than raising the priority of the things that are.</p>
     </section>
 
-    <section typeof="bibo:Chapter" resource="#sec.cert-mgmt" property="bibo:hasPart">
+    <section tested typeof="bibo:Chapter" resource="#sec.cert-mgmt" property="bibo:hasPart">
       <h3 id="sec.cert-mgmt" resource="#sec.cert-mgmt"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.10 </span>Certificate Management</span>
       </h3>
       <p>The certificates that <code>RTCPeerConnection</code> instances use to authenticate with peers use the <a href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn"><code><code>RTCCertificate</code></code></a> interface. These objects can be explicitly generated by applications using the <a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-generatecertificate" class="internalDFN" data-link-type="dfn"><code><code>generateCertificate</code></code></a> method on the connection and provided in the <a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code><code>RTCConfiguration</code></code></a> when constructing a new <code>RTCPeerConnection</code> instance.</p>
@@ -5116,13 +5112,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-generatecertificate" data-idl="" data-title="generateCertificate" data-lt="generatecertificate()|generateCertificate"><code>generateCertificate</code></dfn>, static</dt>
             <dd>
-              <p>The <code>generateCertificate</code> function causes the
+              <p tested>The <code>generateCertificate</code> function causes the
                 <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> to create and store an X.509 certificate [
                 <cite><a class="bibref" href="#bib-X509V3">X509V3</a></cite>] and corresponding private key. A handle to information is provided in the form of the
                 <code>RTCCertificate</code> interface. The returned
                 <code>RTCCertificate</code> can be used to control the certificate that is offered in the DTLS sessions established by
                 <code>RTCPeerConnection</code>.</p>
-              <p>The <var>keygenAlgorithm</var> argument is used to control how the private key associated with the certificate is generated. The
+              <p><section out-of-scope>The <var>keygenAlgorithm</var> argument is used to control how the private key associated with the certificate is generated. The
                 <var>keygenAlgorithm</var> argument uses the WebCrypto [
                 <cite><a class="bibref" href="#bib-WebCryptoAPI">WebCryptoAPI</a></cite>] <a href="https://w3c.github.io/webcrypto/Overview.html#dfn-AlgorithmIdentifier">
               <code>AlgorithmIdentifier</code></a> type. The
@@ -5131,17 +5127,21 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <code>window.crypto.subtle.generateKey</code></a>; that is, the value <em class="rfc2119" title="MUST">MUST</em> produce a non-error result when normalized according to the WebCrypto <a href="https://w3c.github.io/webcrypto/Overview.html#algorithm-normalization">
               algorithm normalization process</a> [<cite><a class="bibref" href="#bib-WebCryptoAPI">WebCryptoAPI</a></cite>] with an operation name of <code>generateKey</code> and a [[<a href="https://w3c.github.io/webcrypto/Overview.html#dfn-supportedAlgorithms">supportedAlgorithms</a>]] value specific to production of certificates for
                 <code>RTCPeerConnection</code>. If the algorithm normalization process produces an error, the call to
+              </section>
+              <section needs-verification>
+                If the algorithm normalization process produces an error, the call to
                 <code>generateCertificate</code> <em class="rfc2119" title="MUST">MUST</em> be rejected with that error.
+              </section>
               </p>
-              <p>Signatures produced by the generated key are used to authenticate the DTLS connection. The identified algorithm (as identified by the <code>name</code> of the normalized
+              <p out-of-scope>Signatures produced by the generated key are used to authenticate the DTLS connection. The identified algorithm (as identified by the <code>name</code> of the normalized
                 <code>AlgorithmIdentifier</code>) <em class="rfc2119" title="MUST">MUST</em> be an asymmetric algorithm that can be used to produce a signature.</p>
-              <p>The certificate produced by this process also contains a signature. The validity of this signature is only relevant for compatibility reasons. Only the public key and the resulting certificate fingerprint are used by
+              <p out-of-scope>The certificate produced by this process also contains a signature. The validity of this signature is only relevant for compatibility reasons. Only the public key and the resulting certificate fingerprint are used by
                 <code>RTCPeerConnection</code>, but it is more likely that a certificate will be accepted if the certificate is well formed. The browser selects the algorithm used to sign the certificate; a browser <em class="rfc2119" title="SHOULD">SHOULD</em> select SHA-256 [<cite><a class="bibref" href="#bib-FIPS-180-4">FIPS-180-4</a></cite>] if a hash algorithm is needed.</p>
-              <p>The resulting certificate <em class="rfc2119" title="MUST NOT">MUST NOT</em> include information that can be linked to a user or <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a>. Randomized values for distinguished name and serial number <em class="rfc2119" title="SHOULD">SHOULD</em> be used.</p>
-              <p>A <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="MUST">MUST</em> reject a call to
+              <p needs-verification>The resulting certificate <em class="rfc2119" title="MUST NOT">MUST NOT</em> include information that can be linked to a user or <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a>. Randomized values for distinguished name and serial number <em class="rfc2119" title="SHOULD">SHOULD</em> be used.</p>
+              <p tested>A <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="MUST">MUST</em> reject a call to
                 <code>generateCertificate()</code> with a
                 <code>DOMException</code> of type <code>NotSupportedError</code> if the <var>keygenAlgorithm</var> parameter identifies an algorithm that the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> cannot or will not use to generate a certificate for <code>RTCPeerConnection</code>.</p>
-              <p>The following values <em class="rfc2119" title="MUST">MUST</em> be supported by a <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a>:
+              <p tested>The following values <em class="rfc2119" title="MUST">MUST</em> be supported by a <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a>:
                 <code>{ name: "<a href="https://w3c.github.io/webcrypto/Overview.html#rsassa-pkcs1">RSASSA-PKCS1-v1_5</a>",
               modulusLength: 2048, publicExponent: new Uint8Array([1, 0, 1]),
               hash: "SHA-256" }</code>, and <code>{ name: "<a href="https://w3c.github.io/webcrypto/Overview.html#ecdsa">ECDSA</a>",
@@ -5151,6 +5151,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <div class="note-title marker" aria-level="5" role="heading" id="h-note13"><span>Note</span></div>
                 <p class="">It is expected that a <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> will have a small or even fixed set of values that it will accept.</p>
               </div>
+              <section tested-idlharness>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -5169,7 +5170,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div>
+              </section>
+              <div tested>
                 <em>Return type:</em>
                 <code>Promise&lt;RTCCertificate&gt;</code>
               </div>
@@ -5213,7 +5215,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         <p>The <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtccertificate" data-idl="" data-title="RTCCertificate"><code>RTCCertificate</code></dfn> interface represents a certificate used to authenticate WebRTC communications. In addition to the visible properties, internal slots contain a handle to the generated private keying materal ([[<dfn id="RTCCertificate-handle" data-dfn-type="dfn">handle</dfn>]]) and a certificate ([[<dfn id="RTCCertificate-certificate" data-dfn-type="dfn">certificate</dfn>]]) that
           <code>RTCPeerConnection</code> uses to authenticate with a peer.</p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtccertificate" data-idl="" data-title="RTCCertificate">interface <span class="idlInterfaceID"><a data-lt="RTCCertificate" href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCCertificate</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtccertificate-expires" data-idl="" data-title="expires" data-dfn-for="rtccertificate">    readonly attribute <span class="idlAttrType">DOMTimeStamp</span> <span class="idlAttrName"><a data-lt="expires" href="#dom-rtccertificate-expires" class="internalDFN" data-link-type="dfn" data-for="RTCCertificate"><code>expires</code></a></span>;</span>
 <span class="idlMethod" id="idl-def-rtccertificate-getfingerprints()" data-idl="" data-title="getFingerprints" data-dfn-for="rtccertificate">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtcdtlsfingerprint" class="internalDFN" data-link-type="dfn"><code>RTCDtlsFingerprint</code></a>&gt;</span> <span class="idlMethName"><a data-lt="getFingerprints" href="#dom-rtccertificate-getfingerprints" class="internalDFN" data-link-type="dfn" data-for="RTCCertificate"><code>getFingerprints</code></a></span>();</span>
@@ -5226,7 +5228,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
             <h5 id="attributes-6" resource="#attributes-6"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCCertificate" data-dfn-for="RTCCertificate" class="attributes">
               <dt><dfn data-dfn-for="rtccertificate" data-dfn-type="dfn" id="dom-rtccertificate-expires" data-idl="" data-title="expires"><code>expires</code></dfn> of type <span class="idlAttrType">DOMTimeStamp</span>, readonly</dt>
-              <dd>
+              <dd tested>
                 <p>The <var>expires</var> attribute indicates the date and time in milliseconds relative to 1970-01-01T00:00:00Z after which the certificate will be considered invalid by the browser. After this time, attempts to construct an
                   <code>RTCPeerConnection</code> using this certificate fail.</p>
                 <p>Note that this value might not be reflected in a
@@ -5239,7 +5241,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
             <h5 id="methods-3" resource="#methods-3"><span property="xhv:role" resource="xhv:heading">Methods</span></h5>
             <dl data-link-for="RTCCertificate" data-dfn-for="RTCCertificate" class="methods">
               <dt><dfn data-dfn-for="rtccertificate" data-dfn-type="dfn" id="dom-rtccertificate-getfingerprints" data-idl="" data-title="getFingerprints" data-lt="getfingerprints()|getFingerprints"><code>getFingerprints</code></dfn></dt>
-              <dd>
+              <dd tested>
                 <p>Returns the list of certificate fingerprints, one of which is computed with the digest algorithm used in the certificate signature.
                 </p>
                 <div>
@@ -5250,7 +5252,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 </div>
               </dd>
               <dt><dfn data-dfn-for="rtccertificate" data-dfn-type="dfn" id="dom-rtccertificate-getalgorithm" data-idl="" data-title="getAlgorithm" data-lt="getalgorithm()|getAlgorithm"><code>getAlgorithm</code></dfn></dt>
-              <dd>
+              <dd out-of-scope>
                 <p>Returns the result of the WebCrypto <a href="https://w3c.github.io/webcrypto/Overview.html#algorithm-normalization"> algorithm
                 normalization process</a> [<cite><a class="bibref" href="#bib-WebCryptoAPI">WebCryptoAPI</a></cite>] that occurred when this certificate was generated with <code>generateCertificate()</code>.</p>
                 <div class="issue atrisk" id="issue-2">
@@ -5294,7 +5296,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
     </section>
   </section>
 
-  <section id="rtp-media-api" typeof="bibo:Chapter" resource="#rtp-media-api" property="bibo:hasPart">
+  <section incomplete id="rtp-media-api" typeof="bibo:Chapter" resource="#rtp-media-api" property="bibo:hasPart">
     <!--OddPage-->
     <h2 id="h-rtp-media-api" resource="#h-rtp-media-api"><span property="xhv:role" resource="xhv:heading"><span class="secno">5. </span>RTP Media API</span>
     </h2>
@@ -5385,7 +5387,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
           <h4 id="methods-4" resource="#methods-4"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
             <dt><code>getSenders</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                 </code> objects representing the RTP senders that are currently attached to this
                 <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5396,20 +5398,20 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collectsenders">CollectSenders</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be the result of executing the
+                <li tested>Let <var>transceivers</var> be the result of executing the
                   <code><a href="#dfn-collecttransceivers" class="internalDFN" data-link-type="dfn">CollectTransceivers</a></code> algorithm.</li>
-                <li>Let <var>senderset</var> be a new empty set.</li>
-                <li>For each <var>transceiver</var> in <var>transceivers</var>,
+                <li tested>Let <var>senderset</var> be a new empty set.</li>
+                <li tested>For each <var>transceiver</var> in <var>transceivers</var>,
                   <ol>
                     <li>Let <var>sender</var> be
                       <var>transceiver</var>.sender.</li>
                     <li>Add <var>sender</var> to <var>senderset</var>.</li>
                   </ol>
                 </li>
-                <li>Let <var>senders</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
+                <li tested>Let <var>senders</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                   </code> objects in
                   <var>senderset</var>. The conversion from the senders set to the sequence is user agent defined and the order does not have to be stable between calls.</li>
-                <li>Return <var>senders</var>.</li>
+                <li tested>Return <var>senders</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
@@ -5419,7 +5421,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             <dt><code>getReceivers</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                 </code>
                 objects representing the RTP receivers that are currently attached to this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5431,20 +5433,20 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collectreceivers">CollectReceivers</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be the result of executing the
+                <li tested>Let <var>transceivers</var> be the result of executing the
                   <code><a href="#dfn-collecttransceivers" class="internalDFN" data-link-type="dfn">CollectTransceivers</a></code> algorithm.</li>
-                <li>Let <var>receiverset</var> be a new empty set.</li>
-                <li>For each <var>transceiver</var> in <var>transceivers</var>,
+                <li tested>Let <var>receiverset</var> be a new empty set.</li>
+                <li tested>For each <var>transceiver</var> in <var>transceivers</var>,
                   <ol>
                     <li>Let <var>receiver</var> be
                       <var>transceiver</var>.receiver.</li>
                     <li>Add <var>receiver</var> to <var>receiverset</var>.</li>
                   </ol>
                 </li>
-                <li>Let <var>receivers</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
+                <li tested>Let <var>receivers</var> be a new sequence consisting of all the <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                   </code> objects in
                   <var>receiverset</var>. The conversion from the receivers set to the sequence is user agent defined and the order does not have to be stable between calls.</li>
-                <li>Return <var>receivers</var>.</li>
+                <li tested>Return <var>receivers</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
@@ -5455,7 +5457,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             <dt><code>getTransceivers</code></dt>
-            <dd>
+            <dd tested>
               <p>Returns a sequence of <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                 </code>
                 objects representing the RTP transceivers that are currently attached to this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5467,14 +5469,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <p>We define the <dfn data-dfn-type="dfn" id="dfn-collecttransceivers">CollectTransceivers</dfn> algorithm as follows:
               </p>
               <ol>
-                <li>Let <var>transceivers</var> be a new sequence that represents a snapshot of all the
+                <li tested>Let <var>transceivers</var> be a new sequence that represents a snapshot of all the
                   <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                   </code> objects in this <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>
                   RTCPeerConnection</code></a>
                   </code> object's <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of
                   transceivers</a>. The conversion from the transceiver set to the sequence is user agent defined and the order does not have to be stable between calls.
                 </li>
-                <li>Return <var>transceivers</var>.</li>
+                <li tested>Return <var>transceivers</var>.</li>
               </ol>
               <div>
                 <em>No parameters.</em>
@@ -5505,7 +5507,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>Let <var>streams</var> be a list of
                     <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects constructed from the method's remaining arguments, or an empty list if the method was called with a single argument.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -5655,7 +5657,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method was invoked.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -5721,14 +5723,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            <section incomplete>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtransceiver" data-idl="" data-title="addTransceiver" data-lt="addtransceiver()|addTransceiver"><code>addTransceiver</code></dfn></dt>
             <dd>
-              <p>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
+              <p tested>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                 </code> and add it to the <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of transceivers</a>.</p>
-              <p>Adding a transceiver will cause future calls to
+              <p untested>Adding a transceiver will cause future calls to
                 <code>createOffer</code> to add a <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> for the corresponding transceiver, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a>)</span>.</p>
-              <p>The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
-                </code> is null. Setting a new
+              <p><section tested> The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
+                </code> is null. </section> <section untested>Setting a new
                 <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
                 </code> may change it to a non-null value, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.5">section 5.5.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.6">section 5.6.</a>)</span>.</p>
               <p>The <code>sendEncodings</code> argument can be used to specify the number of offered simulcast encodings, and optionally their RIDs and encoding parameters. Aside from
@@ -5738,18 +5741,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 </code>, must be left unset, or an error will be thrown.</p>
               <p>When this method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the dictionary argument is present, and it has a
                     <code>streams</code> member, let <var>streams</var> be that list of <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects, or an empty list otherwise.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If the dictionary argument is present, and it has a
                     <code>sendEncodings</code> member, let
                     <var>sendEncodings</var> be that list of
                     <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
                     </code> objects, or an empty list otherwise.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If the first argument is a string, let it be
                     <var>kind</var> and run the following steps:</p>
                   <ol>
@@ -5764,7 +5767,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li untested>
                   <p>If the first argument is a
                     <code><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>
                     </code>, let it be
@@ -5795,29 +5798,30 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </code> may send multiple RTP encodings and the parameters retrieved via the transceiver's
                     <code>sender.getParameters()</code> will reflect the encodings negotiated.</p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-create-an-rtcrtpreceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpReceiver</a> with <var>kind</var> and let <var>receiver</var> be the result. This specification does not define how to configure <code>createOffer</code> to receive multiple RTP encodings. However when
                     <code>setRemoteDescription</code> is called with a corresponding remote description that is able to send multiple RTP encodings as defined in [<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>], the
                     <code><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>
                     </code> may receive multiple RTP encodings and the parameters retrieved via the transceiver's
                     <code>receiver.getParameters()</code> will reflect the encodings negotiated.</p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-create-an-rtcrtptransceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpTransceiver</a> with <var>sender</var> and <var>receiver</var> and let <var>transceiver</var> be the result.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>Add <var>transceiver</var> to <var>connection</var>'s
                     <a href="#transceivers-set">set of transceivers</a></p>
                 </li>
-                <li>
+                <li untested>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>transceiver</var>.</p>
                 </li>
               </ol>
+              <section incomplete>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -5844,7 +5848,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div>
+              </section>
+              <div tested>
                 <em>Return type:</em> <code>RTCRtpTransceiver</code>
               </div>
             </dd>
@@ -5852,7 +5857,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </section>
       </div>
       <div>
-        <div>
+        <div untested>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCRtpTransceiverInit" href="#dom-rtcrtptransceiverinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiverInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-direction" data-idl="" data-title="direction" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiverDirection</code></a></span>         <span class="idlMemberName"><a data-lt="direction" href="#dom-rtcrtptransceiverinit-direction" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>direction</code></a></span> = <span class="idlMemberValue">"sendrecv"</span>;</span>
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-streams" data-idl="" data-title="streams" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a>&gt;</span>              <span class="idlMemberName"><a data-lt="streams" href="#dom-rtcrtptransceiverinit-streams" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>streams</code></a></span>;</span>
@@ -5860,7 +5865,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
 };</span></pre>
         </div>
 
-        <section typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
+        <section untested typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcrtptransceiverinit-members" resource="#dictionary-rtcrtptransceiverinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit"><code>RTCRtpTransceiverInit</code></dfn>
           Members</span></h4>
           <dl data-link-for="RTCRtpTransceiverInit" data-dfn-for="RTCRtpTransceiverInit" class="dictionary-members">
@@ -5881,7 +5886,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </section>
       </div>
       <div>
-        <div>
+        <div needs-verification>
           <pre class="def idl"><span class="idlEnum" id="idl-def-rtcrtptransceiverdirection" data-idl="" data-title="RTCRtpTransceiverDirection">enum <span class="idlEnumID"><a data-lt="RTCRtpTransceiverDirection" href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiverDirection</code></a></span> {
     <a href="#dom-rtcrtptransceiverdirection-sendrecv" class="idlEnumItem">"sendrecv"</a>,
     <a href="#dom-rtcrtptransceiverdirection-sendonly" class="idlEnumItem">"sendonly"</a>,
@@ -6139,11 +6144,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <li>Let <var>p</var> be a new promise.</li>
                 <li>Return <var>p</var>, performing the next steps in parallel.
                 </li>
-                <li>If <code><var>transceiver</var>.stopped</code> is
+                <li untested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidStateError</code>.</li>
-                <li>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
+                <li untested>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
                   <code><var>sender</var>.getParameters()</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidModificationError</code>. Note that this also applies to <var>transactionId</var>.</li>
@@ -6272,13 +6277,13 @@ sender.setParameters(params)</pre>
                     </code> object that created
                     <var>sender</var>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidStateError</code> and abort these steps.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <code><var>transceiver</var>.stopped</code> is
                     <code>true</code>, return a promise rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">
                   created</a> <code>InvalidStateError</code>.</p>
@@ -6308,7 +6313,7 @@ sender.setParameters(params)</pre>
                 <li>
                   <p>Run the following steps in parallel:</p>
                   <ol>
-                    <li>
+                    <li untested>
                       <p>Determine if negotiation is needed to transmit
                         <var>withTrack</var> in place of the sender's existing track. Negotiation is not needed if <var>withTrack</var> is null or if the sender's existing track is ended (which appears as though the track was muted). Ignore which <code>MediaStream</code> the track resides in and the <code>id</code> attribute of the track in this determination. If negotiation is needed, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -7383,6 +7388,11 @@ sender.setParameters(params)</pre>
                   <p>If <var>newDirection</var> is equal to
                     <code><var>transceiver</var>.direction</code>, abort these steps.</p>
                 </li>
+                <li untested>
+                  <p>If <var>newDirection</var> has a value other than <code>sendrecv</code>, <code>sendonly</code>,
+                    <code>recvonly</code> or <code>inactive</code>,
+                    <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</p>
+                </li>
                 <li>
                   <p>Set <code><var>transceiver</var>.direction</code> to <var>newDirection</var>.</p>
                 </li>
@@ -7442,7 +7452,7 @@ sender.setParameters(params)</pre>
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the <var>transceiver</var> is to be stopped.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -7725,7 +7735,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       </section>
     </section>
 
-    <section id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
+    <section untested id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
       <h3 id="h-rtcicetransport" resource="#h-rtcicetransport"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransport" data-idl="" data-title="RTCIceTransport"><code>RTCIceTransport</code></dfn> Interface</span>
       </h3>
       <p>The <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
@@ -8088,12 +8098,10 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         </section>
       </div>
       <div>
-        <div>
-          <pre class="def idl"><span class="idlDictionary" id="idl-def-rtciceparameters" data-idl="" data-title="RTCIceParameters">dictionary <span class="idlDictionaryID"><a data-lt="RTCIceParameters" href="#dom-rtciceparameters" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceParameters</code></a></span> {
+        <pre class="def idl"><span class="idlDictionary" id="idl-def-rtciceparameters" data-idl="" data-title="RTCIceParameters">dictionary <span class="idlDictionaryID"><a data-lt="RTCIceParameters" href="#dom-rtciceparameters" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceParameters</code></a></span> {
 <span class="idlMember" id="idl-def-rtciceparameters-usernamefragment" data-idl="" data-title="usernameFragment" data-dfn-for="rtciceparameters">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlMemberName"><a data-lt="usernameFragment" href="#dom-rtciceparameters-usernamefragment" class="internalDFN" data-link-type="dfn" data-for="RTCIceParameters"><code>usernameFragment</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtciceparameters-password" data-idl="" data-title="password" data-dfn-for="rtciceparameters">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlMemberName"><a data-lt="password" href="#dom-rtciceparameters-password" class="internalDFN" data-link-type="dfn" data-for="RTCIceParameters"><code>password</code></a></span>;</span>
 };</span></pre>
-        </div>
 
         <section typeof="bibo:Chapter" resource="#dictionary-rtciceparameters-members" property="bibo:hasPart">
           <h4 id="dictionary-rtciceparameters-members" resource="#dictionary-rtciceparameters-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceparameters" data-idl="" data-title="RTCIceParameters"><code>RTCIceParameters</code></dfn> Members</span></h4>
@@ -8111,12 +8119,10 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         </section>
       </div>
       <div>
-        <div>
-          <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcicecandidatepair" data-idl="" data-title="RTCIceCandidatePair">dictionary <span class="idlDictionaryID"><a data-lt="RTCIceCandidatePair" href="#dom-rtcicecandidatepair" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCandidatePair</code></a></span> {
+        <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcicecandidatepair" data-idl="" data-title="RTCIceCandidatePair">dictionary <span class="idlDictionaryID"><a data-lt="RTCIceCandidatePair" href="#dom-rtcicecandidatepair" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceCandidatePair</code></a></span> {
 <span class="idlMember" id="idl-def-rtcicecandidatepair-local" data-idl="" data-title="local" data-dfn-for="rtcicecandidatepair">    <span class="idlMemberType"><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a></span> <span class="idlMemberName"><a data-lt="local" href="#dom-rtcicecandidatepair-local" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidatePair"><code>local</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcicecandidatepair-remote" data-idl="" data-title="remote" data-dfn-for="rtcicecandidatepair">    <span class="idlMemberType"><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a></span> <span class="idlMemberName"><a data-lt="remote" href="#dom-rtcicecandidatepair-remote" class="internalDFN" data-link-type="dfn" data-for="RTCIceCandidatePair"><code>remote</code></a></span>;</span>
 };</span></pre>
-        </div>
 
         <section typeof="bibo:Chapter" resource="#dictionary-rtcicecandidatepair-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcicecandidatepair-members" resource="#dictionary-rtcicecandidatepair-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicecandidatepair" data-idl="" data-title="RTCIceCandidatePair"><code>RTCIceCandidatePair</code></dfn>
@@ -8466,7 +8472,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
     </h2>
     <p>The Peer-to-peer Data API lets a web application send and receive generic application data peer-to-peer. The API for sending and receiving data models the behavior of WebSockets [<cite><a class="bibref" href="#bib-WEBSOCKETS-API">WEBSOCKETS-API</a></cite>].</p>
 
-    <section id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
+    <section incomplete id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
       <h3 id="h-rtcpeerconnection-interface-extensions-1" resource="#h-rtcpeerconnection-interface-extensions-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>RTCPeerConnection Interface Extensions</span>
       </h3>
       <p>The Peer-to-peer data API extends the
@@ -8487,7 +8493,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="attributes">
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-sctp" data-idl="" data-title="sctp"><code>sctp</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a></span>, readonly,
             nullable</dt>
-            <dd>
+            <dd tested>
               <p>The SCTP transport over which SCTP data is sent and received. If SCTP has not been negotiated, the value is null. This attribute <em class="rfc2119" title="MUST">MUST</em> return the <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
                 </code>
                 object stored in the [[<code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot.</p>
@@ -8517,7 +8523,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method is invoked.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -8654,7 +8660,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         <p>The <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
           </code> interface allows an application access to information about the SCTP data channels tied to a particular SCTP association.</p>
         <div>
-          <div>
+          <div untested>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsctptransport" data-idl="" data-title="RTCSctpTransport">interface <span class="idlInterfaceID"><a data-lt="RTCSctpTransport" href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSctpTransport</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsctptransport-transport" data-idl="" data-title="transport" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span> <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcsctptransport-transport" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>transport</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcsctptransport-maxmessagesize" data-idl="" data-title="maxMessageSize" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span>    <span class="idlAttrName"><a data-lt="maxMessageSize" href="#dom-rtcsctptransport-maxmessagesize" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>maxMessageSize</code></a></span>;</span>
@@ -8664,12 +8670,16 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           <section typeof="bibo:Chapter" resource="#attributes-17" property="bibo:hasPart">
             <h5 id="attributes-17" resource="#attributes-17"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCSctpTransport" data-dfn-for="RTCSctpTransport" class="attributes">
+              <section tested>
               <dt><dfn data-dfn-for="rtcsctptransport" data-dfn-type="dfn" id="dom-rtcsctptransport-transport" data-idl="" data-title="transport"><code>transport</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span>, readonly</dt>
-              <dd>
+              </section>
+              <dd untested>
                 <p>The transport over which all SCTP packets for data channels will be sent and received.</p>
               </dd>
+              <section tested>
               <dt><dfn data-dfn-for="rtcsctptransport" data-dfn-type="dfn" id="dom-rtcsctptransport-maxmessagesize" data-idl="" data-title="maxMessageSize"><code>maxMessageSize</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly</dt>
-              <dd>
+              </section>
+              <dd untested>
                 <p>The maximum size of data that can be passed to
                   <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                   </code>'s <code><a data-for="RTCDataChannel" href="#dfn-send" class="internalDFN" data-link-type="dfn"><code>send()</code></a>
@@ -9232,7 +9242,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             </code>
             object on which data is to be sent.</p>
         </li>
-        <li>
+        <li untested>
           <p>If <var>channel</var>'s <a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code><code>readyState</code></code></a> attribute is
             <code>connecting</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
             <code>InvalidStateError</code>.</p>
@@ -9550,10 +9560,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
                     </code> object associated with
                     <var>sender</var>.</p>
                 </li>
-                <li>If <code><var>transceiver</var>.stopped</code> is
+                <li untested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                   <code>InvalidStateError</code>.</li>
-                <li>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
+                <li untested>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
                   <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidStateError</code>.</li>
                 <li>Let <var>tones</var> be the method's first argument.</li>
                 <li>If <var>tones</var> contains any <a href="#dtmf-unrecognized" class="internalDFN" data-link-type="dfn">unrecognized</a> characters, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidCharacterError</code>.
@@ -10389,7 +10399,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           </p>
         </li>
       </ol>
-      <p>If assertion generation fails, then the promise for the corresponding function call is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a> <code>OperationError</code>.</p>
+      <p untested>If assertion generation fails, then the promise for the corresponding function call is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a> <code>OperationError</code>.</p>
 
       <section typeof="bibo:Chapter" resource="#sec.idp-loginneeded" property="bibo:hasPart">
         <h4 id="sec.idp-loginneeded" resource="#sec.idp-loginneeded"><span property="xhv:role" resource="xhv:heading"><span class="secno">9.3.1 </span>User Login Procedure</span>
@@ -10476,7 +10486,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           <p>The <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a> <em class="rfc2119" title="MAY">MAY</em> display identity information to a user in its UI. Any user identity information that is displayed in this fashion <em class="rfc2119" title="MUST">MUST</em> use a mechanism that cannot be spoofed by content.</p>
         </li>
       </ol>
-      <p>If identity validation fails, the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-peeridentity" class="internalDFN" data-link-type="dfn"><code>peerIdentity</code></a>
+      <p untested>If identity validation fails, the <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-peeridentity" class="internalDFN" data-link-type="dfn"><code>peerIdentity</code></a>
         </code> promise is rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
         <code>OperationError</code>.</p>
       <p>If identity validation fails and there is a <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
@@ -10592,7 +10602,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
                 <code>RTCPeerConnection</code> object. Applications need not make this call; if the browser is already configured for an IdP, then that configured IdP might be used to get an assertion.</p>
               <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-setidentityprovider" data-idl="" data-title="setIdentityProvider" data-lt="setidentityprovider()|setIdentityProvider"><code>setIdentityProvider</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object's [[
                     <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
@@ -10644,7 +10654,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
                 </code> method was called, then an identity will be automatically requested when an offer or answer is created.</p>
               <p>When <code>getIdentityAssertion</code> is invoked, queue a task to run the following steps:</p>
               <ol>
-                <li>
+                <li untested>
                   <p>If the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object's [[
                     <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
