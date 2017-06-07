@@ -8528,16 +8528,16 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>channel</var> be a newly created
                     <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                     </code> object.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Initialize <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-label" class="internalDFN" data-link-type="dfn"><code>label</code></a>
                     </code> attribute to the value of the first argument.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-ordered" class="internalDFN" data-link-type="dfn"><code>ordered</code></a>
                     </code>, <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
                     </code>,
@@ -8563,14 +8563,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                       </code>.</div>
                   </div>
                 </li>
-                <li>If <code>negotiated</code> is false and <code>label</code> is longer than 65535 bytes long, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
+                <li tested>If <code>negotiated</code> is false and <code>label</code> is longer than 65535 bytes long, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                   <code>TypeError</code>.
                 </li>
-                <li>If <code>negotiated</code> is false and
+                <li tested>If <code>negotiated</code> is false and
                   <code>protocol</code> is longer than 65535 bytes long,
                   <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>TypeError</code>.
                 </li>
-                <li>
+                <li needs-verification>
                   <p>If both the <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
                     </code> and
                     <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxretransmits" class="internalDFN" data-link-type="dfn"><code>maxRetransmits</code></a>
@@ -8578,18 +8578,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     attributes are set (not null), <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                     <code>SyntaxError</code>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If an attribute, either <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
                     </code> or
                     <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxretransmits" class="internalDFN" data-link-type="dfn"><code>maxRetransmits</code></a>
                     </code>, has been set to indicate unreliable mode, and that value exceeds the maximum value supported by the user agent, the value <em class="rfc2119" title="MUST">MUST</em> be set to the user agents maximum value.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
                     </code> is equal to 65535, which is greater than the maximum allowed ID of 65534 but still qualifies as an <span class="idlMemberType">unsigned short</span>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                     <code>TypeError</code>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If the <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
                     </code>
                     attribute is <code>null</code> (due to no ID being passed into <code>createDataChannel</code>), and the DTLS role of the SCTP transport has already been negotiated, then initialize <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
@@ -8606,14 +8606,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     </div>
                   </div>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>channel</var> and continue the following steps in the background.</p>
                 </li>
-                <li>
+                <li needs-verification>
                   <p>Create <var>channel</var>'s associated <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data
                   transport</a> and configure it according to the relevant properties of <var>channel</var>.</p>
                 </li>
-                <li>
+                <li needs-verification>
                   <p>If <var>channel</var> was the first
                     <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                     </code> created on
@@ -8621,6 +8621,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                   flag</a> for <var>connection</var>.</p>
                 </li>
               </ol>
+
+              <section tested>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -8646,7 +8648,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                   </tr>
                 </tbody>
               </table>
-              <div>
+              </section>
+              <div tested>
                 <em>Return type:</em> <code>RTCDataChannel</code>
               </div>
             </dd>
