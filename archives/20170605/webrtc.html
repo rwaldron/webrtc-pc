@@ -8499,7 +8499,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                 object stored in the [[<code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot.</p>
             </dd>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-ondatachannel" data-idl="" data-title="ondatachannel"><code>ondatachannel</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
-            <dd>The event type of this event handler is
+            <dd tested>The event type of this event handler is
               <code><a href="#event-datachannel" class="internalDFN" data-link-type="dfn"><code>datachannel</code></a>
               </code>.</dd>
           </dl>
@@ -8694,7 +8694,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
       </section>
     </section>
 
-    <section id="rtcdatachannel" typeof="bibo:Chapter" resource="#rtcdatachannel" property="bibo:hasPart">
+    <section incomplete id="rtcdatachannel" typeof="bibo:Chapter" resource="#rtcdatachannel" property="bibo:hasPart">
       <h3 id="h-rtcdatachannel" resource="#h-rtcdatachannel"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcdatachannel" data-idl="" data-title="RTCDataChannel"><code>RTCDataChannel</code></dfn></span>
       </h3>
       <p>The <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
@@ -8776,24 +8776,24 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             <var>channel</var>.</p>
         </li>
       </ol>
-      <p>When an <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> is to be announced (the other peer created a channel with <code><a data-for="RTCDataChannelInit" href="#dom-rtcdatachannelinit-negotiated" class="internalDFN" data-link-type="dfn"><code>negotiated</code></a>
+      <p tested>When an <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> is to be announced (the other peer created a channel with <code><a data-for="RTCDataChannelInit" href="#dom-rtcdatachannelinit-negotiated" class="internalDFN" data-link-type="dfn"><code>negotiated</code></a>
         </code> unset or set to false), the user agent of the peer that did not initiate the creation process <em class="rfc2119" title="MUST">MUST</em> queue a task to run the following steps:</p>
-      <ol>
-        <li>
+      <ol incomplete>
+        <li untested>
           <p>If the associated <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object's [[
             <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li tested>
           <p>Let <var>channel</var> be a newly created
             <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
             </code> object.</p>
         </li>
-        <li>
+        <li needs-verification>
           <p>Let <var>configuration</var> be an information bundle received from the other peer as a part of the process to establish the
             <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> described by the WebRTC DataChannel Protocol specification [<cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>].</p>
         </li>
-        <li>
+        <li tested>
           <p>Initialize <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-label" class="internalDFN" data-link-type="dfn"><code>label</code></a>
             </code>, <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-ordered" class="internalDFN" data-link-type="dfn"><code>ordered</code></a>
             </code>, <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
@@ -8803,12 +8803,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             </code> and <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
             </code> attributes to their corresponding values in <var>configuration</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
             </code> attribute to
             <code>connecting</code>.</p>
         </li>
-        <li>
+        <li tested>
           <p><a href="#fire-a-datachannel-event" class="internalDFN" data-link-type="dfn">Fire a datachannel event</a> named
             <code><a href="#event-datachannel" class="internalDFN" data-link-type="dfn"><code>datachannel</code></a>
             </code> with <var>channel</var> at the
