@@ -9293,14 +9293,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           </dl>
         </section>
       </div>
-      <p>The <dfn data-dfn-type="dfn" id="dfn-send"><code>send()</code></dfn> method is overloaded to handle different data argument types. When any version of the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
+      <p tested>The <dfn data-dfn-type="dfn" id="dfn-send"><code>send()</code></dfn> method is overloaded to handle different data argument types. When any version of the method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
       <ol>
-        <li>
+        <li tested>
           <p>Let <var>channel</var> be the <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
             </code>
             object on which data is to be sent.</p>
         </li>
-        <li untested>
+        <li tested>
           <p>If <var>channel</var>'s <a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code><code>readyState</code></code></a> attribute is
             <code>connecting</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
             <code>InvalidStateError</code>.</p>
@@ -9309,7 +9309,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           <p>Execute the sub step that corresponds to the type of the methods argument:
           </p>
           <ul>
-            <li>
+            <li tested>
               <p><code>string</code> object:</p>
               <p>Let <var>data</var> be the object and increase the
                 <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-bufferedamount" class="internalDFN" data-link-type="dfn"><code>bufferedAmount</code></a>
@@ -9317,13 +9317,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                 attribute by the number of bytes needed to express
                 <var>data</var> as UTF-8.</p>
             </li>
-            <li>
+            <li tested>
               <p><code>Blob</code> object:</p>
               <p>Let <var>data</var> be the raw data represented by the
                 <code>Blob</code> object and increase the <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-bufferedamount" class="internalDFN" data-link-type="dfn"><code>bufferedAmount</code></a>
                 </code> attribute by the size of data, in bytes.</p>
             </li>
-            <li>
+            <li tested>
               <p><code>ArrayBuffer</code> object:</p>
               <p>Let <var>data</var> be the data stored in the buffer described by the <code>ArrayBuffer</code> object and increase the
                 <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-bufferedamount" class="internalDFN" data-link-type="dfn"><code>bufferedAmount</code></a>
@@ -9331,7 +9331,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                 attribute by the length of the <code>ArrayBuffer</code> in bytes.
               </p>
             </li>
-            <li>
+            <li tested>
               <p><code>ArrayBufferView</code> object:</p>
               <p>Let <var>data</var> be the data stored in the section of the buffer described by the <code>ArrayBuffer</code> object that the
                 <code>ArrayBufferView</code> object references and increase the
@@ -9342,10 +9342,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             </li>
           </ul>
         </li>
-        <li>
+        <li tested>
           <p>If <var>channel</var>'s <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> is not established yet, or if the <code><a href="#data-transport-closing-procedure" class="internalDFN" data-link-type="dfn">closing procedure</a></code> has started, then abort these steps.</p>
         </li>
-        <li>
+        <li untested>
           <p>Attempt to send <var>data</var> on <var>channel</var>'s
             <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a>; if the data cannot be sent, e.g. because it would need to be buffered but the buffer is full, the user agent <em class="rfc2119" title="MUST">MUST</em> abruptly <a href="#event-datachannel-close" class="internalDFN" data-link-type="dfn"><code>close</code></a> <var>channel</var>'s <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying
           data transport</a> <a href="#data-transport-closed-error" class="internalDFN" data-link-type="dfn">with an error</a>.</p>
