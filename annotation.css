@@ -2,6 +2,7 @@
 *[non-normative],
 *[out-of-scope],
 *[untestable] {
+  margin: 5px 0;
   border: 3px solid darkgray;
   content: "...";
 }
@@ -46,6 +47,7 @@
 }
 
 *[tested] {
+  margin: 5px 0;
   border: 3px solid darkgreen;
 }
 
@@ -60,7 +62,9 @@
   padding: 3px 6px 3px 3px;
 }
 
+
 *[tested-idlharness] {
+  margin: 5px 0;
   border: 3px solid darkgreen;
 }
 
@@ -76,6 +80,7 @@
 }
 
 *[untested] {
+  margin: 5px 0;
   border: 3px solid crimson;
 }
 
@@ -91,6 +96,7 @@
 }
 
 *[needs-verification] {
+  margin: 5px 0;
   border: 3px solid darkblue;
 }
 
@@ -106,6 +112,7 @@
 }
 
 *[incomplete] {
+  margin: 5px 0;
   border: 3px solid darkorange;
 }
 
@@ -127,4 +134,14 @@ pre [untested],
 pre [needs-verification],
 pre [incomplete] {
   padding: 3px 0px;
+}
+
+
+*[out-of-scope]
+*[non-normative]
+*[incomplete]
+*[untested]
+*[untestable]
+*[tested], dt {
+  margin: 3px;
 }
