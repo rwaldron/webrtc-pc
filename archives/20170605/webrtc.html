@@ -5610,6 +5610,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             </section>
+            <section incomplete>
             <dt><code>addTrack</code></dt>
             <dd>
               <p>Adds a new track to the <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -5631,19 +5632,19 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>Let <var>streams</var> be a list of
                     <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects constructed from the method's remaining arguments, or an empty list if the method was called with a single argument.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>senders</var> be the result of executing the
                     <code><a href="#dfn-collectsenders" class="internalDFN" data-link-type="dfn">CollectSenders</a></code> algorithm. If an
                     <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                     </code> for <var>track</var> already exists in <var>senders</var>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidAccessError</code>.</p>
                 </li>
-                <li>
+                <li incomplete>
                   <p>The steps below describe how to determine if an existing sender can be reused. Doing so will cause future calls to
                     <code>createOffer</code> and <code>createAnswer</code> to mark the corresponding <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> as
                     <code>sendrecv</code> or <code>sendonly</code> and add the MSID of the track added, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3.2">section 5.3.2.</a>)</span>.</p>
@@ -5661,7 +5662,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                         <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code>, associated with the sender, matches <var>track</var>'s kind.</p>
                     </li>
-                    <li>
+                    <li incomplete>
                       <p>The sender has never been used to send. More precisely, the <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code>
                         associated with the sender has never had a <code><a data-link-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-currentdirection" class="internalDFN" data-link-type="dfn"><code>currentDirection</code></a>
@@ -5691,15 +5692,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <li>
                   <p>If <var>sender</var> is <code>null</code>, run the following steps:</p>
                   <ol>
-                    <li>
+                    <li tested>
                       <p><a href="#dfn-create-an-rtcrtpsender" class="internalDFN" data-link-type="dfn">Create an RTCRtpSender</a> with <var>track</var> and <var>streams</var> and let <var>sender</var> be the result.
                       </p>
                     </li>
-                    <li>
+                    <li untested>
                       <p><a href="#dfn-create-an-rtcrtpreceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpReceiver</a> with
                         <var>track.kind</var> as kind and let <var>receiver</var> be the result.</p>
                     </li>
-                    <li>
+                    <li untested>
                       <p><a href="#dfn-create-an-rtcrtptransceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpTransceiver</a> with
                         <var>sender</var> and <var>receiver</var> and let
                         <var>transceiver</var> be the result.</p>
@@ -5758,6 +5759,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>RTCRtpSender</code>
               </div>
             </dd>
+            </section>
+            <section incomplete>
             <dt><code>removeTrack</code></dt>
             <dd>
               <p>Stops sending media from <var>sender</var>. The
@@ -5781,46 +5784,46 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method was invoked.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>sender</var> was not created by
                     <var>connection</var>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidAccessError</code>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>Let <var>senders</var> be the result of executing the
                     <code><a href="#dfn-collectsenders" class="internalDFN" data-link-type="dfn">CollectSenders</a></code> algorithm.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>sender</var> is not in <var>senders</var> (which indicates that it was removed due to <a href="#set-description">setting an RTCSessionDescription</a> of type "rollback"), then abort these steps.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Set <code><var>sender</var>.track</code> to null.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>transceiver</var> be the
                     <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                     </code> object corresponding to <var>sender</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>, then abort these steps.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <code><var>transceiver</var>.currentDirection</code> is <code>sendrecv</code> set
                     <code><var>transceiver</var>.direction</code> to
                     <code>recvonly</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <code><var>transceiver</var>.currentDirection</code> is <code>sendonly</code> set
                     <code><var>transceiver</var>.direction</code> to
                     <code>inactive</code>.</p>
                 </li>
-                <li>
+                <li untested>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
@@ -5843,10 +5846,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div>
+              <div untested>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            </section>
             <section incomplete>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtransceiver" data-idl="" data-title="addTransceiver" data-lt="addtransceiver()|addTransceiver"><code>addTransceiver</code></dfn></dt>
             <dd>
