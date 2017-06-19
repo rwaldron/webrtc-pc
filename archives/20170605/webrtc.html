@@ -5895,14 +5895,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If the first argument is a
                     <code><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>
                     </code>, let it be
                     <var>track</var> and let <var>kind</var> be
                     <var>track.kind</var>.</p>
                 </li>
-                <li>
+                <li needs-verification>
                   <p>Verify that each <code><a data-link-for="RTCRtpEncodingParameters" href="#dom-rtcrtpencodingparameters-rid" class="internalDFN" data-link-type="dfn"><code>rid</code></a>
                     </code>
                     value in <var>sendEncodings</var> is composed only of case-sensitive alphanumeric characters (a-z, A-Z, 0-9) up to a maximum of 16 characters. If one of the RIDs does not meet these requirements, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>TypeError</code>.</p>
@@ -6383,35 +6383,36 @@ sender.setParameters(params)</pre>
                 <em>Return type:</em> <code>RTCRtpParameters</code>
               </div>
             </dd>
+            <section incomplete>
             <dt><code>replaceTrack</code></dt>
             <dd>
               <p>Attempts to replace the track being sent with another track provided (or with a null track), without renegotiation.</p>
               <p>To avoid track identifiers changing on the remote receiving end when a track is replaced, the sender <em class="rfc2119" title="MUST">MUST</em> retain the original track identifier and stream associations and use these in subsequent negotiations.</p>
               <p>When the <dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-replacetrack" data-idl="" data-title="replaceTrack" data-lt="replacetrack()|replaceTrack"><code>replaceTrack</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>Let <var>sender</var> be the
+                <li tested>Let <var>sender</var> be the
                   <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                   </code> object on which
                   <code>replaceTrack</code> is invoked.</li>
-                <li>
+                <li tested>
                   <p>Let <var>transceiver</var> be the
                     <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                     </code> object associated with
                     <var>sender</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object that created
                     <var>sender</var>.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidStateError</code> and abort these steps.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If <code><var>transceiver</var>.stopped</code> is
                     <code>true</code>, return a promise rejected with a newly <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">
                   created</a> <code>InvalidStateError</code>.</p>
@@ -6420,14 +6421,14 @@ sender.setParameters(params)</pre>
                   <p>Let <var>withTrack</var> be the argument to this method.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <code><var>withTrack</var></code> is non-null and
                     <code><var>withTrack</var>.kind</code> differs from the
                     <a href="#dfn-transceiver-kind" class="internalDFN" data-link-type="dfn">transceiver kind</a> of <var>transceiver</var>, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>TypeError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>transceiver</var> is not yet associated with a
                     <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.4.1">section 3.4.1.</a>)</span>, then set
                     <var>sender</var>'s <code><a data-for="RTCRtpSender" href="#dom-rtcrtpsender-track" class="internalDFN" data-link-type="dfn"><code>track</code></a>
@@ -6435,35 +6436,35 @@ sender.setParameters(params)</pre>
                     <var>withTrack</var>, and return a promise resolved with
                     <code>undefined</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>p</var> be a new promise.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Run the following steps in parallel:</p>
                   <ol>
-                    <li untested>
+                    <li untestable>
                       <p>Determine if negotiation is needed to transmit
                         <var>withTrack</var> in place of the sender's existing track. Negotiation is not needed if <var>withTrack</var> is null or if the sender's existing track is ended (which appears as though the track was muted). Ignore which <code>MediaStream</code> the track resides in and the <code>id</code> attribute of the track in this determination. If negotiation is needed, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                         <code>InvalidModificationError</code> and abort these steps.
                       </p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>If <var>withTrack</var> is null, have the sender stop sending, without negotiating. Otherwise, have the sender switch seamlessly to transmitting
                         <var>withTrack</var> instead of the sender's existing track, without negotiating.</p>
                     </li>
                     <li>
                       <p>Queue a task that runs the following steps:</p>
                       <ol>
-                        <li>
+                        <li tested>
                           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
                         </li>
-                        <li>
+                        <li tested>
                           <p>Set <var>sender</var>'s <code><a data-for="RTCRtpSender" href="#dom-rtcrtpsender-track" class="internalDFN" data-link-type="dfn"><code>track</code></a>
                             </code> attribute to
                             <var>withTrack</var>.</p>
                         </li>
-                        <li>
+                        <li tested>
                           <p>Resolve <var>p</var> with
                             <code>undefined</code>.</p>
                         </li>
@@ -6471,7 +6472,7 @@ sender.setParameters(params)</pre>
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>p</var>.</p>
                 </li>
               </ol>
@@ -6509,10 +6510,11 @@ sender.setParameters(params)</pre>
                   </tr>
                 </tbody>
               </table>
-              <div>
+              <div untested>
                 <em>Return type:</em> <code>Promise&lt;void&gt;</code>
               </div>
             </dd>
+            </section>
             <dt><code>getStats</code></dt>
             <dd>
               <p>Gathers stats for this sender only and reports the result asynchronously.
