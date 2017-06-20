@@ -2645,7 +2645,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                 </code>.</dd>
               </section>
-              <section incomplete>
+              <section tested>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-oniceconnectionstatechange" data-idl="" data-title="oniceconnectionstatechange"><code>oniceconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
               <dd>The event type of this event handler is
@@ -2653,14 +2653,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </code>
               </dd>
               </section>
-              <section incomplete>
+              <section tested>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onicegatheringstatechange" data-idl="" data-title="onicegatheringstatechange"><code>onicegatheringstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
               <dd>The event type of this event handler is
                 <code><a href="#event-icegatheringstatechange" class="internalDFN" data-link-type="dfn"><code>icegatheringstatechange</code></a>
                 </code>.</dd>
               </section>
-              <section untested>
+              <section tested>
               <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-onconnectionstatechange" data-idl="" data-title="onconnectionstatechange"><code>onconnectionstatechange</code></dfn> of type
               <span class="idlAttrType">EventHandler</span></dt>
               <dd>The event type of this event handler is
@@ -7324,7 +7324,7 @@ sender.setParameters(params)</pre>
           </code> return information from a single point in the RTP stream.</div>
       </div>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtpcontributingsource" data-idl="" data-title="RTCRtpContributingSource">interface <span class="idlInterfaceID"><a data-lt="RTCRtpContributingSource" href="#dom-rtcrtpcontributingsource" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpContributingSource</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtpcontributingsource-timestamp" data-idl="" data-title="timestamp" data-dfn-for="rtcrtpcontributingsource">    readonly attribute <span class="idlAttrType">DOMHighResTimeStamp</span> <span class="idlAttrName"><a data-lt="timestamp" href="#dom-rtcrtpcontributingsource-timestamp" class="internalDFN" data-link-type="dfn" data-for="RTCRtpContributingSource"><code>timestamp</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcrtpcontributingsource-source" data-idl="" data-title="source" data-dfn-for="rtcrtpcontributingsource">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span>       <span class="idlAttrName"><a data-lt="source" href="#dom-rtcrtpcontributingsource-source" class="internalDFN" data-link-type="dfn" data-for="RTCRtpContributingSource"><code>source</code></a></span>;</span>
@@ -7353,7 +7353,7 @@ sender.setParameters(params)</pre>
         </section>
       </div>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtpsynchronizationsource" data-idl="" data-title="RTCRtpSynchronizationSource">interface <span class="idlInterfaceID"><a data-lt="RTCRtpSynchronizationSource" href="#dom-rtcrtpsynchronizationsource" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpSynchronizationSource</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtpsynchronizationsource-timestamp" data-idl="" data-title="timestamp" data-dfn-for="rtcrtpsynchronizationsource">    readonly attribute <span class="idlAttrType">DOMHighResTimeStamp</span> <span class="idlAttrName"><a data-lt="timestamp" href="#dom-rtcrtpsynchronizationsource-timestamp" class="internalDFN" data-link-type="dfn" data-for="RTCRtpSynchronizationSource"><code>timestamp</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcrtpsynchronizationsource-source" data-idl="" data-title="source" data-dfn-for="rtcrtpsynchronizationsource">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span>       <span class="idlAttrName"><a data-lt="source" href="#dom-rtcrtpsynchronizationsource-source" class="internalDFN" data-link-type="dfn" data-for="RTCRtpSynchronizationSource"><code>source</code></a></span>;</span>
@@ -7865,7 +7865,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       </section>
     </section>
 
-    <section untested id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
+    <section incomplete id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
       <h3 id="h-rtcicetransport" resource="#h-rtcicetransport"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransport" data-idl="" data-title="RTCIceTransport"><code>RTCIceTransport</code></dfn> Interface</span>
       </h3>
       <p>The <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
@@ -7895,17 +7895,17 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
             </code>
             for which candidate gathering began.</p>
         </li>
-        <li>
+        <li tested>
           <p>Set <var>transport</var>'s <code><a data-link-for="RTCIceTransport" href="#dom-rtcicetransport-gatheringstate" class="internalDFN" data-link-type="dfn"><code>gatheringState</code></a>
             </code> to <code><a data-link-for="RTCIceGathererState" href="#dom-rtcicegathererstate-gathering" class="internalDFN" data-link-type="dfn"><code>gathering</code></a>
             </code>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Fire a simple event named <code><a href="#event-icetransport-gatheringstatechange" class="internalDFN" data-link-type="dfn"><code>gatheringstatechange</code></a>
             </code>
             at <var>transport</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p><a href="#update-ice-gathering-state" class="internalDFN" data-link-type="dfn">Update the ICE gathering state</a> of <var>connection</var>.</p>
         </li>
       </ol>
@@ -7958,17 +7958,17 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
             </div>
           </div>
         </li>
-        <li>
+        <li tested>
           <p>Set <var>transport</var>'s <code><a data-link-for="RTCIceTransport" href="#dom-rtcicetransport-gatheringstate" class="internalDFN" data-link-type="dfn"><code>gatheringState</code></a>
             </code> to <code><a data-link-for="RTCIceGathererState" href="#dom-rtcicegathererstate-complete" class="internalDFN" data-link-type="dfn"><code>complete</code></a>
             </code>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Fire a simple event named <code><a href="#event-icetransport-gatheringstatechange" class="internalDFN" data-link-type="dfn"><code>gatheringstatechange</code></a>
             </code>
             at <var>transport</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p><a href="#update-ice-gathering-state" class="internalDFN" data-link-type="dfn">Update the ICE gathering state</a> of <var>connection</var>.</p>
         </li>
       </ol>
@@ -9694,7 +9694,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
       <h3 id="h-rtcdtmfsender" resource="#h-rtcdtmfsender"><span property="xhv:role" resource="xhv:heading"><span class="secno">7.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcdtmfsender" data-idl="" data-title="RTCDTMFSender"><code>RTCDTMFSender</code></dfn></span>
       </h3>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcdtmfsender" data-idl="" data-title="RTCDTMFSender">interface <span class="idlInterfaceID"><a data-lt="RTCDTMFSender" href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCDTMFSender</code></a></span> : <span class="idlSuperclass">EventTarget</span> {
 <span class="idlMethod" id="idl-def-rtcdtmfsender-insertdtmf(tones,duration,intertonegap)" data-idl="" data-title="insertDTMF" data-dfn-for="rtcdtmfsender">    <span class="idlMethType">void</span> <span class="idlMethName"><a data-lt="insertDTMF" href="#dom-rtcdtmfsender-insertdtmf" class="internalDFN" data-link-type="dfn" data-for="RTCDTMFSender"><code>insertDTMF</code></a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlParamName">tones</span></span>,
                     <span class="idlParam">optional <span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span> <span class="idlParamName">duration</span> = <span class="idlDefaultValue">100</span></span>,
@@ -9838,7 +9838,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
         </code> attribute set to
         <var>tone</var>, <em class="rfc2119" title="MUST">MUST</em> be created and dispatched at the given target.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcdtmftonechangeevent" data-idl="" data-title="RTCDTMFToneChangeEvent">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlParamName">type</span></span>, <span class="idlParam"><span class="idlParamType"><a href="#dom-rtcdtmftonechangeeventinit" class="internalDFN" data-link-type="dfn"><code>RTCDTMFToneChangeEventInit</code></a></span> <span class="idlParamName">eventInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href="#dom-rtcdtmftonechangeevent" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCDTMFToneChangeEvent</code></a></span> : <span class="idlSuperclass"><a href="#dfn-event" class="internalDFN" data-link-type="dfn">Event</a></span> {
 <span class="idlAttribute" id="idl-def-rtcdtmftonechangeevent-tone" data-idl="" data-title="tone" data-dfn-for="rtcdtmftonechangeevent">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlAttrName"><a data-lt="tone" href="#dom-rtcdtmftonechangeevent-tone" class="internalDFN" data-link-type="dfn" data-for="RTCDTMFToneChangeEvent"><code>tone</code></a></span>;</span>
@@ -10322,7 +10322,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderGlobalScop
         <code>register()</code> function on the
         <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcidentityproviderregistrar" data-idl="" data-title="RTCIdentityProviderRegistrar"><code>RTCIdentityProviderRegistrar</code></dfn> instance during script execution. If an IdP is not registered during this script execution, the user agent cannot use the IdP proxy and <em class="rfc2119" title="MUST">MUST</em> fail any future attempt to interact with the IdP.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcidentityproviderregistrar" data-idl="" data-title="RTCIdentityProviderRegistrar">[<span class="extAttr"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Exposed">Exposed</a></span>=<span class="extAttrRhs">RTCIdentityProviderGlobalScope</span></span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar" href="#dom-rtcidentityproviderregistrar" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIdentityProviderRegistrar</code></a></span> {
 <span class="idlMethod" id="idl-def-rtcidentityproviderregistrar-register(idp)" data-idl="" data-title="register" data-dfn-for="rtcidentityproviderregistrar">    <span class="idlMethType">void</span> <span class="idlMethName"><a data-lt="register" href="#dom-rtcidentityproviderregistrar-register" class="internalDFN" data-link-type="dfn" data-for="RTCIdentityProviderRegistrar"><code>register</code></a></span>(<span class="idlParam"><span class="idlParamType"><a href="#dom-rtcidentityprovider" class="internalDFN" data-link-type="dfn"><code>RTCIdentityProvider</code></a></span> <span class="idlParamName">idp</span></span>);</span>
@@ -10459,7 +10459,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
         <h4 id="h-identity-assertion-and-validation-results" resource="#h-identity-assertion-and-validation-results"><span property="xhv:role" resource="xhv:heading"><span class="secno">9.2.2 </span>Identity Assertion and Validation Results</span>
         </h4>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcidentityassertionresult" data-idl="" data-title="RTCIdentityAssertionResult">dictionary <span class="idlDictionaryID"><a data-lt="RTCIdentityAssertionResult" href="#dom-rtcidentityassertionresult" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIdentityAssertionResult</code></a></span> {
 <span class="idlMember" id="idl-def-rtcidentityassertionresult-idp" data-idl="" data-title="idp" data-dfn-for="rtcidentityassertionresult">    required <span class="idlMemberType"><a href="#dom-rtcidentityproviderdetails" class="internalDFN" data-link-type="dfn"><code>RTCIdentityProviderDetails</code></a></span> <span class="idlMemberName"><a data-lt="idp" href="#dom-rtcidentityassertionresult-idp" class="internalDFN" data-link-type="dfn" data-for="RTCIdentityAssertionResult"><code>idp</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcidentityassertionresult-assertion" data-idl="" data-title="assertion" data-dfn-for="rtcidentityassertionresult">    required <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>                  <span class="idlMemberName"><a data-lt="assertion" href="#dom-rtcidentityassertionresult-assertion" class="internalDFN" data-link-type="dfn" data-for="RTCIdentityAssertionResult"><code>assertion</code></a></span>;</span>
