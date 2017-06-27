@@ -62,6 +62,22 @@
   padding: 3px 6px 3px 3px;
 }
 
+*[todo] {
+  margin: 5px 0;
+  border: 3px solid darkmagenta;
+}
+
+*[todo]:before {
+  content: "TODO";
+  color: darkmagenta;
+  font-weight: bold;
+  background: thistle;
+  border-top: 3px solid darkmagenta;
+  border-right: 3px solid darkmagenta;
+  border-bottom: 3px solid darkmagenta;
+  padding: 3px 6px 3px 3px;
+}
+
 
 *[tested-idlharness] {
   margin: 5px 0;
@@ -129,6 +145,7 @@
 
 
 pre [tested],
+pre [todo],
 pre [tested-idlharness],
 pre [untested],
 pre [needs-verification],
@@ -142,6 +159,7 @@ pre [incomplete] {
 *[incomplete]
 *[untested]
 *[untestable]
-*[tested], dt {
+*[tested]
+*[todo], dt {
   margin: 3px;
 }
