@@ -5854,12 +5854,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
             <section incomplete>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtransceiver" data-idl="" data-title="addTransceiver" data-lt="addtransceiver()|addTransceiver"><code>addTransceiver</code></dfn></dt>
             <dd>
-              <p tested>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
+              <p>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                 </code> and add it to the <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of transceivers</a>.</p>
-              <p untested>Adding a transceiver will cause future calls to
+              <p>Adding a transceiver will cause future calls to
                 <code>createOffer</code> to add a <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> for the corresponding transceiver, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a>)</span>.</p>
-              <p><section tested> The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
-                </code> is null. </section> <section untested>Setting a new
+              <p>The initial value of <code><a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code>mid</code></a>
+                </code> is null. Setting a new
                 <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
                 </code> may change it to a non-null value, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.5">section 5.5.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.6">section 5.6.</a>)</span>.</p>
               <p>The <code>sendEncodings</code> argument can be used to specify the number of offered simulcast encodings, and optionally their RIDs and encoding parameters. Aside from
@@ -5869,11 +5869,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 </code>, must be left unset, or an error will be thrown.</p>
               <p>When this method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li untested>
+                <li todo>
                   <p>If the dictionary argument is present, and it has a
                     <code>streams</code> member, let <var>streams</var> be that list of <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects, or an empty list otherwise.</p>
                 </li>
-                <li untested>
+                <li todo>
                   <p>If the dictionary argument is present, and it has a
                     <code>sendEncodings</code> member, let
                     <var>sendEncodings</var> be that list of
@@ -5902,12 +5902,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <var>track</var> and let <var>kind</var> be
                     <var>track.kind</var>.</p>
                 </li>
-                <li needs-verification>
+                <li todo>
                   <p>Verify that each <code><a data-link-for="RTCRtpEncodingParameters" href="#dom-rtcrtpencodingparameters-rid" class="internalDFN" data-link-type="dfn"><code>rid</code></a>
                     </code>
                     value in <var>sendEncodings</var> is composed only of case-sensitive alphanumeric characters (a-z, A-Z, 0-9) up to a maximum of 16 characters. If one of the RIDs does not meet these requirements, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>TypeError</code>.</p>
                 </li>
-                <li>
+                <li todo>
                   <p>If any <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
                     </code>
                     dictionary in <var>sendEncodings</var> contains a
@@ -5916,7 +5916,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </code>,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidAccessError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-create-an-rtcrtpsender" class="internalDFN" data-link-type="dfn">Create an RTCRtpSender</a> with <var>track</var>,
                     <var>streams</var> and <var>sendEncodings</var> and let
                     <var>sender</var> be the result.</p>
@@ -5941,7 +5941,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>Add <var>transceiver</var> to <var>connection</var>'s
                     <a href="#transceivers-set">set of transceivers</a></p>
                 </li>
-                <li untested>
+                <li tested>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
@@ -5949,7 +5949,6 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>Return <var>transceiver</var>.</p>
                 </li>
               </ol>
-              <section incomplete>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -5976,7 +5975,6 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              </section>
               <div tested>
                 <em>Return type:</em> <code>RTCRtpTransceiver</code>
               </div>
