@@ -7493,29 +7493,33 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#methods-7" property="bibo:hasPart">
           <h4 id="methods-7" resource="#methods-7"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCRtpTransceiver" data-dfn-for="RTCRtpTransceiver" class="methods">
+            <section incomplete>
             <dt><code>setDirection</code></dt>
             <dd>
-              <p>The <dfn id="dom-rtcrtptransceiver-setdirection" data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" data-idl="" data-title="setDirection" data-lt="setdirection()|setDirection"><code>setDirection</code></dfn> method sets the direction of the <code>RTCRtpTransceiver</code>. Calls to <code>setDirection()</code> do not take effect immediately. Instead, future calls to <code>createOffer</code> and <code>createAnswer</code> mark the corresponding media description as <code>sendrecv</code>, <code>sendonly</code>,
+              <p>The <dfn id="dom-rtcrtptransceiver-setdirection" data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" data-idl="" data-title="setDirection" data-lt="setdirection()|setDirection"><code>setDirection</code></dfn> method sets the direction of the <code>RTCRtpTransceiver</code>.
+                <section todo>Calls to <code>setDirection()</code> do not take effect immediately. Instead, future calls to <code>createOffer</code> and <code>createAnswer</code> mark the corresponding media description as <code>sendrecv</code>, <code>sendonly</code>,
                 <code>recvonly</code> or <code>inactive</code> as defined in
                 <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3.2">section 5.3.2.</a>)</span>. Calling
                 <code>setDirection()</code> <a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">updates the
               negotiation-needed flag</a> for the
                 <code>RTCRtpTransceiver</code>'s associated
                 <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
-                </code>.</p>
+                </code>.
+              </section>
+              </p>
               <p>When this method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li tested>
                   <p>Let <var>transceiver</var> be the
                     <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                     </code>
                     object on which the method is invoked.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>newDirection</var> be the argument to <code>setDirection</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>newDirection</var> is equal to
                     <code><var>transceiver</var>.direction</code>, abort these steps.</p>
                 </li>
@@ -7524,15 +7528,15 @@ sender.setParameters(params)</pre>
                     <code>recvonly</code> or <code>inactive</code>,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Set <code><var>transceiver</var>.direction</code> to <var>newDirection</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object associated with <var>transceiver</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p><a href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the negotiation-needed flag</a> for
                     <var>connection</var>.</p>
                 </li>
@@ -7556,10 +7560,11 @@ sender.setParameters(params)</pre>
                   </tr>
                 </tbody>
               </table>
-              <div>
+              <div tested>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            </section>
             <dt><code>stop</code></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-stop" data-idl="" data-title="stop" data-lt="stop()|stop"><code>stop</code></dfn> method irreversibly stops the <a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpTransceiver</code></code></a>. The sender of this transceiver will no longer send, the receiver will no longer receive. Calling
