@@ -3137,7 +3137,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>TypeError</code>.</p>
                   </li>
-                  <li tested>
+                  <li>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
@@ -3187,10 +3187,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           <var>candidate</var> as described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.17">section 4.1.17.</a>)</span>. Use
                           <code><var>candidate</var>.ufrag</code> to identify the ICE <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>; if the ufrag is null, process the
                           <var>candidate</var> for the most recent ICE
-                          <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>. If
+                          <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>.
+                          <section untestable>If
                           <code><var>candidate</var>.candidate</code> is an empty string, process <var>candidate</var> as an end-of-candidates indication for the corresponding
                           <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> and ICE candidate
-                          <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>.</p>
+                          <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a>.
+                          </section>
+                        </p>
                         <ol>
                           <li tested>
                             <p>If <var>candidate</var> could not be successfully added the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
@@ -3215,7 +3218,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                                 <p>If <var>connection</var>'s [[
                                   <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, then abort these steps.</p>
                               </li>
-                              <li>
+                              <li untestable>
                                 <p>Let <var>remoteDescription</var> be
                                   <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                                   </code>
@@ -3223,7 +3226,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                                   <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                                   </code>.</p>
                               </li>
-                              <li>
+                              <li untestable>
                                 <p>Add <var>candidate</var> to
                                   <var>remoteDescription</var>.</p>
                               </li>
@@ -3260,7 +3263,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     </tr>
                   </tbody>
                 </table>
-                <div>
+                <div tested>
                   <em>Return type:</em> <code>Promise&lt;void&gt;</code>
                 </div>
               </dd>
