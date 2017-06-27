@@ -5618,17 +5618,17 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <code>MediaStream</code>s.</p>
               <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtrack" data-idl="" data-title="addTrack" data-lt="addtrack()|addTrack"><code>addTrack</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li tested>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which this method was invoked.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>track</var> be the
                     <code><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>
                     </code> object indicated by the method's first argument.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>streams</var> be a list of
                     <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects constructed from the method's remaining arguments, or an empty list if the method was called with a single argument.</p>
                 </li>
@@ -5644,7 +5644,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </code> for <var>track</var> already exists in <var>senders</var>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidAccessError</code>.</p>
                 </li>
-                <li incomplete>
+                <li tested>
                   <p>The steps below describe how to determine if an existing sender can be reused. Doing so will cause future calls to
                     <code>createOffer</code> and <code>createAnswer</code> to mark the corresponding <a href="#dfn-media-description" class="internalDFN" data-link-type="dfn">media description</a> as
                     <code>sendrecv</code> or <code>sendonly</code> and add the MSID of the track added, as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.2">section 5.2.2.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3.2">section 5.3.2.</a>)</span>.</p>
@@ -5654,15 +5654,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <var>sender</var> be that object, or <code>null</code> otherwise:
                   </p>
                   <ul>
-                    <li>
+                    <li tested>
                       <p>The sender's track is null.</p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>The <a href="#dfn-transceiver-kind" class="internalDFN" data-link-type="dfn">transceiver kind</a> of the
                         <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code>, associated with the sender, matches <var>track</var>'s kind.</p>
                     </li>
-                    <li incomplete>
+                    <li tested>
                       <p>The sender has never been used to send. More precisely, the <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code>
                         associated with the sender has never had a <code><a data-link-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-currentdirection" class="internalDFN" data-link-type="dfn"><code>currentDirection</code></a>
@@ -5671,7 +5671,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ul>
                 </li>
-                <li>
+                <li tested>
                   <p>If <var>sender</var> is not <code>null</code>, run the following steps to use that sender:</p>
                   <ol>
                     <li>
@@ -5689,7 +5689,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li incomplete>
                   <p>If <var>sender</var> is <code>null</code>, run the following steps:</p>
                   <ol>
                     <li tested>
@@ -5711,7 +5711,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li todo>
                   <p>A track could have contents that are inaccessible to the application. This can be due to being marked with a
                     <code>peerIdentity</code> option or anything that would make a track <a href="http://www.w3.org/html/wg/drafts/html/master/infrastructure.html#cors-cross-origin">
                   CORS cross-origin</a>. These tracks can be supplied to the
@@ -5722,11 +5722,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>All other tracks that are not accessible to the application <em class="rfc2119" title="MUST NOT">MUST NOT</em> be sent to the peer, with silence (audio), black frames (video) or equivalently absent content being sent in place of track content.</p>
                   <p>Note that this property can change over time.</p>
                 </li>
-                <li>
+                <li todo>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>sender</var>.</p>
                 </li>
               </ol>
@@ -5755,7 +5755,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div>
+              <div tested>
                 <em>Return type:</em> <code>RTCRtpSender</code>
               </div>
             </dd>
