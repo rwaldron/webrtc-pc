@@ -2129,7 +2129,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             </code>
             object <var>connection</var>, <a href="#enqueue-an-operation">enqueue</a> the following steps:</p>
           <ol>
-            <li>
+            <li tested>
               <p>Let <var>p</var> be a new promise.</p>
             </li>
             <li>
@@ -2139,11 +2139,11 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <p>If the process to apply <var>description</var> fails for any reason, then user agent <em class="rfc2119" title="MUST">MUST</em> queue a task runs the following steps:
                   </p>
                   <ol>
-                    <li>
+                    <li tested>
                       <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                         <code>true</code>, then abort these steps.</p>
                     </li>
-                    <li untested>
+                    <li tested>
                       <p>If elements of the SDP were modified, then reject
                         <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2159,12 +2159,12 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>If the content of <var>description</var> is not valid SDP syntax, then reject <var>p</var> with an
                         <code>RTCError</code> (with <code>errorDetail</code> set to "sdp-syntax-error" and the sdpLineNumber attribute set to the line number in the SDP where the syntax error was detected) and abort these steps.</p>
                     </li>
-                    <li untested>
+                    <li untestable>
                       <p>If the content of <var>description</var> is invalid, then reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                         <code>InvalidAccessError</code> and abort these steps.</p>
                     </li>
-                    <li untested>
+                    <li untestable>
                       <p>For all other errors, for example if
                         <var>description</var> cannot be applied at the media layer, reject <var>p</var> with a newly
                         <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
@@ -2175,7 +2175,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <li>
                   <p>If <var>description</var> is applied successfully, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                   <ol>
-                    <li>
+                    <li tested>
                       <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                         <code>true</code>, then abort these steps.</p>
                     </li>
@@ -2183,7 +2183,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>If <var>description</var> is set as a local description, then run one of the following steps:</p>
                       <ul>
                         <!-- A) transition stable to haveLocalOffer -->
-                        <li untested>
+                        <li tested>
                           <p>If <var>description</var> is of type "offer", set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
@@ -2192,7 +2192,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                         <!-- C) transition haveRemoteOffer or haveLocalProvAnswer to
                         stable -->
-                        <li untested>
+                        <li tested>
                           <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                             <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentlocaldescription" class="internalDFN" data-link-type="dfn"><code>currentLocalDescription</code></a>
                             </code>
@@ -2207,7 +2207,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- B) transition rollback to haveLocalOffer to stable -->
-                        <li untested>
+                        <li todo>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
@@ -2215,7 +2215,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- G) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li untested>
+                        <li todo>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2227,7 +2227,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                       <p>Otherwise, if <var>description</var> is set as a remote description, then run one of the following steps:</p>
                       <ul>
                         <!-- D) transition stable to haveRemoteOffer -->
-                        <li untested>
+                        <li tested>
                           <p>If <var>description</var> is of type "offer", set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
@@ -2236,7 +2236,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                         <!-- F) transition haveRemoteOffer or haveLocalProvAnswer to
                         stable -->
-                        <li untested>
+                        <li tested>
                           <p>If <var>description</var> is of type "answer", then this completes an offer answer negotiation. Set
                             <var>connection</var>'s <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-currentremotedescription" class="internalDFN" data-link-type="dfn"><code>currentRemoteDescription</code></a>
                             </code>
@@ -2251,7 +2251,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- E) transition rollback to haveRemoteOffer to stable -->
-                        <li untested>
+                        <li todo>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
@@ -2259,7 +2259,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- H) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li untested>
+                        <li todo>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2267,21 +2267,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ul>
                     </li>
-                    <li untested>
+                    <li tested>
                       <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> changed above, fire a simple event named
                         <code><a href="#event-signalingstatechange" class="internalDFN" data-link-type="dfn"><code>signalingstatechange</code></a>
                         </code> at
                         <var>connection</var>.</p>
                     </li>
-                    <li untested>
+                    <li todo>
                       <p>If <var>description</var> is of type "answer", and it initiates the closure of an existing SCTP association, as defined in [<cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of <var>connection</var>'s [[
                         <code><a href="#dfn-sctptransport" class="internalDFN" data-link-type="dfn">sctpTransport</a></code>]] internal slot to
                         <code>null</code>.</p>
                     </li>
-                    <li incomplete>
+                    <li>
                       <p>If <var>description</var> is of type "answer" or "pranswer", then run the following steps:</p>
                       <ol>
-                        <li needs-verification>
+                        <li tested>
                           <p>If <var>description</var> initiates the establishment of a new SCTP association, as defined in [
                             <cite><a class="bibref" href="#bib-SCTP-SDP">SCTP-SDP</a></cite>], Sections 10.3 and 10.4, set the value of
                             <var>connection</var>'s [[
@@ -2297,23 +2297,23 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             </code>, then generate an ID according to [
                             <cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>]. If no available ID could be generated, then run the following steps:</p>
                           <ol>
-                            <li untested>
+                            <li untestable>
                               <p>Let <var>channel</var> be the
                                 <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                                 </code> object for which an ID could not be generated.</p>
                             </li>
                             <li>
-                              <p untested>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
+                              <p untestable>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
                                 </code> attribute to
                                 <code>closed</code>.</p>
                             </li>
-                            <li untested>
+                            <li untestable>
                               <p>Fire an event named <code><a data-for="RTCDataChannel" href="#event-datachannel-error" class="internalDFN" data-link-type="dfn"><code>error</code></a>
                                 </code> with a
                                 <code>ResourceInUse</code> exception at
                                 <var>channel</var>.</p>
                             </li>
-                            <li untested>
+                            <li untestable>
                               <p>Fire a simple event named <code title="event-RTCDataChannel-close"><a href="#event-datachannel-close" class="internalDFN" data-link-type="dfn"><code>close</code></a>
                                 </code> at
                                 <var>channel</var>.</p>
@@ -2322,7 +2322,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li untested>
+                    <li todo>
                       <p>If <var>description</var> is set as a local description, then run the following steps for each media description in <var>description</var> that is not yet associated with an <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code> object:</p>
                       <ol>
@@ -2337,7 +2337,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li untested>
+                    <li todo>
                       <p>If <var>description</var> is set as a remote description, then run the following steps for each media description in
                         <var>description</var>:</p>
                       <ol>
@@ -2385,7 +2385,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li untested>
+                    <li todo>
                       <p>If <var>description</var> is of type "rollback", then run the following steps:</p>
                       <ol>
                         <li>
@@ -2410,7 +2410,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li untested>
+                    <li tested>
                       <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> is now
                         <code>stable</code>, <a href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">update the negotiation-needed
                     flag</a>. If <var>connection</var>'s [[
@@ -2427,14 +2427,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li>
+                    <li tested>
                       <p>Resolve <var>p</var> with <var>undefined</var>.</p>
                     </li>
                   </ol>
                 </li>
               </ol>
             </li>
-            <li>
+            <li tested>
               <p>Return <var>p</var>.</p>
             </li>
           </ol>
@@ -3019,7 +3019,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <code>setLocalDescription</code>.</li>
                   <li tested>Let <var>lastOffer</var> be the result returned by the last call to <code>createOffer</code>.</li>
                   <li tested>Let <var>lastAnswer</var> be the result returned by the last call to <code>createAnswer</code>.</li>
-                  <li untested>If <code><var>description</var>.sdp</code> is
+                  <li todo>If <code><var>description</var>.sdp</code> is
                     <code>null</code> and <code><var>description</var>.type</code> is <code>answer</code> or <code>pranswer</code>, set <code><var>description</var>.sdp</code> to
                     <var>lastAnswer</var>.</li>
                   <li tested>If <code><var>description</var>.sdp</code> is
@@ -3078,7 +3078,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 RTCSessionDescription</a> indicated by the method's first argument.
                 </p>
                 <p>In addition, a remote description is processed to determine and verify the identity of the peer.</p>
-                <p>If an <code>a=identity</code> attribute is present in the session description, the browser <a href="#sec.identity-verify-assertion">validates the identity
+                <p todo>If an <code>a=identity</code> attribute is present in the session description, the browser <a href="#sec.identity-verify-assertion">validates the identity
                 assertion.</a>.</p>
                 <p>If the "peerIdentity" configuration is applied to the
                   <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
@@ -4343,7 +4343,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
       <h3 id="h-session-description-model" resource="#h-session-description-model"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6 </span>Session Description Model</span>
       </h3>
 
-      <section incomplete id="rtcsdptype" typeof="bibo:Chapter" resource="#rtcsdptype" property="bibo:hasPart">
+      <section tested id="rtcsdptype" typeof="bibo:Chapter" resource="#rtcsdptype" property="bibo:hasPart">
         <h4 id="h-rtcsdptype" resource="#h-rtcsdptype"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6.1 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsdptype" data-idl="" data-title="RTCSdpType"><code>RTCSdpType</code></dfn></span>
         </h4>
         <p>The RTCSdpType enum describes the type of an
@@ -4352,7 +4352,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
           <code><a href="#dom-rtcsessiondescription" class="internalDFN" data-link-type="dfn"><code>RTCSessionDescription</code></a>
           </code> instance.</p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlEnum" id="idl-def-rtcsdptype" data-idl="" data-title="RTCSdpType">enum <span class="idlEnumID"><a data-lt="RTCSdpType" href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSdpType</code></a></span> {
     <a href="#dom-rtcsdptype-offer" class="idlEnumItem">"offer"</a>,
     <a href="#dom-rtcsdptype-pranswer" class="idlEnumItem">"pranswer"</a>,
@@ -4534,14 +4534,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
         </h4>
         <p>The process below occurs where referenced elsewhere in this document. It also may occur as a result of internal changes within the implementation that affect negotiation. If such changes occur, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task to <a href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">update the negotiation-needed
         flag</a>.</p>
+        <section incomplete>
         <p>To <dfn data-dfn-type="dfn" id="dfn-update-the-negotiation-needed-flag">update the negotiation-needed flag</dfn> for
           <var>connection</var>, run the following steps:</p>
         <ol>
-          <li>
+          <li todo>
             <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
               <code>true</code>, abort these steps.</p>
           </li>
-          <li>
+          <li tested>
             <p>If <var>connection</var>'s <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> is not "stable", abort these steps.</p>
             <p>
 
@@ -4552,29 +4553,29 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
               </p>
             </div>
           </li>
-          <li>
+          <li todo>
             <p>If the result of <a data-lt="check if negotiation is needed" href="#dfn-check-if-negotiation-is-needed" class="internalDFN" data-link-type="dfn">
             checking if negotiation is needed</a> is "false", <dfn data-dfn-type="dfn" id="dfn-clear-the-negotiation-needed-flag">clear the
             negotiation-needed flag</dfn> by setting <var>connection</var>'s [[
               <a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot to <code>false</code>, and abort these steps.</p>
           </li>
-          <li>
+          <li tested>
             <p>If <var>connection</var>'s [[<a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot is already <code>true</code>, abort these steps.</p>
           </li>
-          <li>
+          <li tested>
             <p>Set <var>connection</var>'s [[<a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot to
               <code>true</code>.</p>
           </li>
-          <li>
+          <li incomplete>
             <p>Queue a task that runs the following steps:</p>
             <ol>
-              <li>
+              <li tested>
                 <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
               </li>
-              <li>
+              <li todo>
                 <p>If <var>connection</var>'s [[<a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot is <code>false</code>, abort these steps.</p>
               </li>
-              <li>
+              <li tested>
                 <p>Fire a simple event named <a href="#event-negotiation" class="internalDFN" data-link-type="dfn"><code>negotiationneeded</code></a> at <var>connection</var>.</p>
               </li>
             </ol>
@@ -4584,26 +4585,28 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
             </div>
           </li>
         </ol>
+        </section>
+
         <p>To <dfn data-dfn-type="dfn" id="dfn-check-if-negotiation-is-needed">check if negotiation is needed</dfn> for
           <var>connection</var>, perform the following checks:</p>
         <ul>
-          <li>
+          <li tested>
             <p>If any implementation-specific negotiation is required, as described at the start of this section, return "true".</p>
           </li>
-          <li>
+          <li tested>
             <p>If <var>connection</var> has created any
               <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
               </code>s, and no m= section has been negotiated yet for data, return "true".</p>
           </li>
-          <li>
+          <li incomplete>
             <p>For each transceiver <var>t</var> in <var>connection</var>'s
               <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of transceivers</a>, perform the following checks:</p>
             <ul>
-              <li>
+              <li tested>
                 <p>If <var>t</var> isn't <a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-stopped" class="internalDFN" data-link-type="dfn"><code>
                 stopped</code></a> and isn't yet associated with an m= section according to <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.4.1">section 3.4.1.</a>)</span>, return "true".</p>
               </li>
-              <li>
+              <li todo>
                 <p>If <var>t</var> isn't <a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-stopped" class="internalDFN" data-link-type="dfn"><code>
                 stopped</code></a> and is associated with an m= section according to <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.4.1">section 3.4.1.</a>)</span>, then perform the following checks:</p>
                 <ul>
@@ -4626,7 +4629,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
                   </li>
                 </ul>
               </li>
-              <li>
+              <li todo>
                 <p>If <var>t</var> is <a data-for="RTCRtpTransceiver" href="#dom-rtcrtptransceiver-stopped" class="internalDFN" data-link-type="dfn"><code>
                 stopped</code></a> and is associated with an m= section according to
                   <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.4.1">section 3.4.1.</a>)</span>, but the associated m= section is not yet rejected in
@@ -4637,7 +4640,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
               </li>
             </ul>
           </li>
-          <li>
+          <li todo>
             <p>If all the preceding checks were performed and "true" was not returned, nothing remains to be negotiated; return "false".</p>
           </li>
         </ul>
