@@ -1,4 +1,5 @@
 
+*[deleted-from-spec],
 *[non-normative],
 *[out-of-scope],
 *[untestable] {
@@ -7,6 +8,9 @@
   content: "...";
 }
 
+*[deleted-from-spec] p,
+*[deleted-from-spec] ul,
+*[deleted-from-spec] h2,
 *[non-normative] p,
 *[non-normative] ul,
 *[non-normative] h2,
@@ -19,6 +23,7 @@
   opacity: 0.25
 }
 
+*[deleted-from-spec]:before,
 *[untestable]:before,
 *[out-of-scope]:before {
   content: "Out Of Scope";
@@ -31,6 +36,9 @@
   padding: 3px 6px 3px 3px;
 }
 
+*[deleted-from-spec]:before {
+  content: "Deleted From Spec";
+}
 *[untestable]:before {
   content: "Untestable";
 }
@@ -154,6 +162,7 @@ pre [incomplete] {
 }
 
 
+*[deleted-from-spec]
 *[out-of-scope]
 *[non-normative]
 *[incomplete]

@@ -7493,7 +7493,7 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#methods-7" property="bibo:hasPart">
           <h4 id="methods-7" resource="#methods-7"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCRtpTransceiver" data-dfn-for="RTCRtpTransceiver" class="methods">
-            <section incomplete>
+            <section tested>
             <dt><code>setDirection</code></dt>
             <dd>
               <p>The <dfn id="dom-rtcrtptransceiver-setdirection" data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" data-idl="" data-title="setDirection" data-lt="setdirection()|setDirection"><code>setDirection</code></dfn> method sets the direction of the <code>RTCRtpTransceiver</code>.
@@ -7523,7 +7523,7 @@ sender.setParameters(params)</pre>
                   <p>If <var>newDirection</var> is equal to
                     <code><var>transceiver</var>.direction</code>, abort these steps.</p>
                 </li>
-                <li untested>
+                <li deleted-from-spec>
                   <p>If <var>newDirection</var> has a value other than <code>sendrecv</code>, <code>sendonly</code>,
                     <code>recvonly</code> or <code>inactive</code>,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</p>
