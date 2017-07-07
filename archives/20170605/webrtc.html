@@ -1354,7 +1354,9 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcconfiguration" data-idl="" data-title="RTCConfiguration">dictionary <span class="idlDictionaryID"><a data-lt="RTCConfiguration" href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCConfiguration</code></a></span> {
 <span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
+<section tested>
 <span class="idlMember" id="idl-def-rtcconfiguration-bundlepolicy" data-idl="" data-title="bundlePolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcbundlepolicy" class="internalDFN" data-link-type="dfn"><code>RTCBundlePolicy</code></a></span>          <span class="idlMemberName"><a data-lt="bundlePolicy" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>bundlePolicy</code></a></span> = <span class="idlMemberValue">"balanced"</span>;</span>
+</section>
 <span class="idlMember" id="idl-def-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>         <span class="idlMemberName"><a data-lt="rtcpMuxPolicy" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>rtcpMuxPolicy</code></a></span> = <span class="idlMemberValue">"require"</span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-peeridentity" data-idl="" data-title="peerIdentity" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>                <span class="idlMemberName"><a data-lt="peerIdentity" href="#dom-rtcconfiguration-peeridentity" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>peerIdentity</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-certificates" data-idl="" data-title="certificates" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn"><code>RTCCertificate</code></a>&gt;</span> <span class="idlMemberName"><a data-lt="certificates" href="#dom-rtcconfiguration-certificates" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>certificates</code></a></span>;</span>
@@ -1378,11 +1380,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
               <dd>
                 <p>Indicates which candidates the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> is allowed to use.</p>
               </dd>
+              <section tested>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-bundlepolicy" data-idl="" data-title="bundlePolicy"><code>bundlePolicy</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcbundlepolicy" class="internalDFN" data-link-type="dfn"><code>RTCBundlePolicy</code></a></span>, defaulting to
               <code>"balanced"</code></dt>
               <dd>
                 <p>Indicates which media-bundling policy to use when gathering ICE candidates.</p>
               </dd>
+              </section>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy"><code>rtcpMuxPolicy</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>, defaulting to
               <code>"require"</code></dt>
               <dd>
@@ -3334,7 +3338,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   </li>
                   <li tested>If <code><var>configuration</var>.certificates</code> is set and the set of certificates differs from the ones used when <var>connection</var> was constructed, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
-                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
+                  <li tested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s bundle policy,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
                   <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
