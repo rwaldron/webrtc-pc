@@ -1356,8 +1356,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
 <span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-bundlepolicy" data-idl="" data-title="bundlePolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcbundlepolicy" class="internalDFN" data-link-type="dfn"><code>RTCBundlePolicy</code></a></span>          <span class="idlMemberName"><a data-lt="bundlePolicy" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>bundlePolicy</code></a></span> = <span class="idlMemberValue">"balanced"</span>;</span>
-</section>
 <span class="idlMember" id="idl-def-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>         <span class="idlMemberName"><a data-lt="rtcpMuxPolicy" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>rtcpMuxPolicy</code></a></span> = <span class="idlMemberValue">"require"</span>;</span>
+</section>
 <span class="idlMember" id="idl-def-rtcconfiguration-peeridentity" data-idl="" data-title="peerIdentity" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>                <span class="idlMemberName"><a data-lt="peerIdentity" href="#dom-rtcconfiguration-peeridentity" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>peerIdentity</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-certificates" data-idl="" data-title="certificates" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtccertificate" class="internalDFN" data-link-type="dfn"><code>RTCCertificate</code></a>&gt;</span> <span class="idlMemberName"><a data-lt="certificates" href="#dom-rtcconfiguration-certificates" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>certificates</code></a></span>;</span>
 
@@ -1391,11 +1391,13 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <p>Indicates which media-bundling policy to use when gathering ICE candidates.</p>
               </dd>
               </section>
+              <section tested>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-rtcpmuxpolicy" data-idl="" data-title="rtcpMuxPolicy"><code>rtcpMuxPolicy</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcrtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>RTCRtcpMuxPolicy</code></a></span>, defaulting to
               <code>"require"</code></dt>
               <dd>
                 <p>Indicates which rtcp-mux policy to use when gathering ICE candidates.</p>
               </dd>
+              </section>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-peeridentity" data-idl="" data-title="peerIdentity"><code>peerIdentity</code></dfn> of type <span class="idlMemberType">DOMString</span></dt>
               <dd>
                 <p>Sets the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer identity</a> for the
@@ -1727,7 +1729,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section untested id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
+      <section tested id="rtcrtcpmuxpolicy-enum" typeof="bibo:Chapter" resource="#rtcrtcpmuxpolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcrtcpmuxpolicy-enum" resource="#h-rtcrtcpmuxpolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.7 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtcpmuxpolicy" data-idl="" data-title="RTCRtcpMuxPolicy"><code>RTCRtcpMuxPolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, the RtcpMuxPolicy affects what ICE candidates are gathered to support non-multiplexed RTCP.</p>
@@ -1884,7 +1886,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <var>configuration</var> is non-empty, check that the <code>expires</code> on each value is in the future. If a certificate has expired, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                 <code>InvalidAccessError</code>; otherwise, store the certificates. If no <code>certificates</code> value was specified, one or more new <code>RTCCertificate</code> instances are generated for use with this <code>RTCPeerConnection</code> instance. This <em class="rfc2119" title="MAY">MAY</em> happen asynchronously and the value of <code>certificates</code> remains undefined for the subsequent steps.</p>
             </li>
-            <li untested>
+            <li tested>
               <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
                 </code> is
                 <code>negotiate</code>, and the user agent does not implement non-muxed RTCP, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>NotSupportedError</code>.</p>
