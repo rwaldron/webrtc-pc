@@ -2211,7 +2211,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- B) transition rollback to haveLocalOffer to stable -->
-                        <li todo>
+                        <li tested>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
@@ -2219,7 +2219,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- G) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li todo>
+                        <li tested>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendinglocaldescription" class="internalDFN" data-link-type="dfn"><code>pendingLocalDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -2255,7 +2255,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to <code>stable</code></p>
                         </li>
                         <!-- E) transition rollback to haveRemoteOffer to stable -->
-                        <li todo>
+                        <li tested>
                           <p>If <var>description</var> is of type "rollback", then this is a rollback. Set
                             <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
@@ -2263,7 +2263,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                             <code>stable</code>.</p>
                         </li>
                         <!-- H) transition haveRemoteOffer to haveLocalProvAnswer -->
-                        <li todo>
+                        <li tested>
                           <p>If <var>description</var> is of type "pranswer", then set <code><var>connection</var>.<a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-pendingremotedescription" class="internalDFN" data-link-type="dfn"><code>pendingRemoteDescription</code></a>
                             </code>
                             to <var>description</var> and <a href="#dfn-signaling-state" class="internalDFN" data-link-type="dfn">signaling state</a> to
@@ -4399,7 +4399,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
         </div>
       </section>
 
-      <section id="rtcsessiondescription-class" typeof="bibo:Chapter" resource="#rtcsessiondescription-class" property="bibo:hasPart">
+      <section tested id="rtcsessiondescription-class" typeof="bibo:Chapter" resource="#rtcsessiondescription-class" property="bibo:hasPart">
         <h4 id="h-rtcsessiondescription-class" resource="#h-rtcsessiondescription-class"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.6.2 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcsessiondescription" data-idl="" data-title="RTCSessionDescription"><code>RTCSessionDescription</code></dfn> Class</span>
         </h4>
         <p>The <code>RTCSessionDescription</code> class is used by
@@ -4415,7 +4415,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
 };</span></pre>
           </div>
 
-          <section incomplete typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#constructors-1" property="bibo:hasPart">
             <h5 id="constructors-1" resource="#constructors-1"><span property="xhv:role" resource="xhv:heading">Constructors</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="constructors">
               <dt><code>RTCSessionDescription</code></dt>
@@ -4451,7 +4451,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
             </dl>
           </section>
 
-          <section incomplete typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
+          <section tested typeof="bibo:Chapter" resource="#attributes-2" property="bibo:hasPart">
             <h5 id="attributes-2" resource="#attributes-2"><span property="xhv:role" resource="xhv:heading">Attributes</span></h5>
             <dl data-link-for="RTCSessionDescription" data-dfn-for="RTCSessionDescription" class="attributes">
               <dt><dfn data-dfn-for="rtcsessiondescription" data-dfn-type="dfn" id="dom-rtcsessiondescription-type" data-idl="" data-title="type"><code>type</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span>, readonly</dt>
@@ -4461,7 +4461,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
             </dl>
           </section>
 
-          <section typeof="bibo:Chapter" resource="#serializer" property="bibo:hasPart">
+          <section untested typeof="bibo:Chapter" resource="#serializer" property="bibo:hasPart">
             <h5 id="serializer" resource="#serializer"><span property="xhv:role" resource="xhv:heading"><dfn data-dfn-for="rtcsessiondescription" data-dfn-type="dfn" id="dom-rtcsessiondescription-serializer" data-idl="" data-title="Serializer"><code>Serializer</code></dfn></span></h5>
             <div>
               <p>Instances of this interface are serialized as a map with entries for each of the serializable attributes.</p>
@@ -4469,7 +4469,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
           </section>
         </div>
         <div>
-          <div>
+          <div untested>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcsessiondescriptioninit" data-idl="" data-title="RTCSessionDescriptionInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCSessionDescriptionInit" href="#dom-rtcsessiondescriptioninit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSessionDescriptionInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcsessiondescriptioninit-type" data-idl="" data-title="type" data-dfn-for="rtcsessiondescriptioninit">    required <span class="idlMemberType"><a href="#dom-rtcsdptype" class="internalDFN" data-link-type="dfn"><code>RTCSdpType</code></a></span> <span class="idlMemberName"><a data-lt="type" href="#dom-rtcsessiondescriptioninit-type" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescriptionInit"><code>type</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcsessiondescriptioninit-sdp" data-idl="" data-title="sdp" data-dfn-for="rtcsessiondescriptioninit">             <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>  <span class="idlMemberName"><a data-lt="sdp" href="#dom-rtcsessiondescriptioninit-sdp" class="internalDFN" data-link-type="dfn" data-for="RTCSessionDescriptionInit"><code>sdp</code></a></span> = <span class="idlMemberValue">""</span>;</span>
