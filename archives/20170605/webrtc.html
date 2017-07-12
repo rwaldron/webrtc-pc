@@ -1352,8 +1352,8 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         <div>
           <div incomplete>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcconfiguration" data-idl="" data-title="RTCConfiguration">dictionary <span class="idlDictionaryID"><a data-lt="RTCConfiguration" href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCConfiguration</code></a></span> {
-<span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <section tested>
+<span class="idlMember" id="idl-def-rtcconfiguration-iceservers" data-idl="" data-title="iceServers" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span>   <span class="idlMemberName"><a data-lt="iceServers" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceServers</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>    <span class="idlMemberName"><a data-lt="iceTransportPolicy" href="#dom-rtcconfiguration-icetransportpolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>iceTransportPolicy</code></a></span> = <span class="idlMemberValue">"all"</span>;</span>
 <span class="idlMember" id="idl-def-rtcconfiguration-bundlepolicy" data-idl="" data-title="bundlePolicy" data-dfn-for="rtcconfiguration">    <span class="idlMemberType"><a href="#dom-rtcbundlepolicy" class="internalDFN" data-link-type="dfn"><code>RTCBundlePolicy</code></a></span>          <span class="idlMemberName"><a data-lt="bundlePolicy" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn" data-for="RTCConfiguration"><code>bundlePolicy</code></a></span> = <span class="idlMemberValue">"balanced"</span>;</span>
 </section>
@@ -1367,13 +1367,15 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   </section>
 };</span></pre>
           </div>
-          <section tested typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
+          <section typeof="bibo:Chapter" resource="#dictionary-rtcconfiguration-members" property="bibo:hasPart">
             <h5 id="dictionary-rtcconfiguration-members" resource="#dictionary-rtcconfiguration-members"><span property="xhv:role" resource="xhv:heading">Dictionary <a class="idlType internalDFN" href="#dom-rtcconfiguration" data-link-type="dfn"><code>RTCConfiguration</code></a> Members</span></h5>
             <dl data-link-for="RTCConfiguration" data-dfn-for="RTCConfiguration" class="dictionary-members">
+              <section tested>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-iceservers" data-idl="" data-title="iceServers"><code>iceServers</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtciceserver" class="internalDFN" data-link-type="dfn"><code>RTCIceServer</code></a>&gt;</span></dt>
               <dd>
                 <p>An array of objects describing servers available to be used by ICE, such as STUN and TURN servers.</p>
               </dd>
+              </section>
               <section tested>
               <dt><dfn data-dfn-for="rtcconfiguration" data-dfn-type="dfn" id="dom-rtcconfiguration-icetransportpolicy" data-idl="" data-title="iceTransportPolicy"><code>iceTransportPolicy</code></dfn> of type
               <span class="idlMemberType"><a href="#dom-rtcicetransportpolicy" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportPolicy</code></a></span>,
@@ -1518,7 +1520,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section untested id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
+      <section tested id="rtcoauthcredential-dictionary" typeof="bibo:Chapter" resource="#rtcoauthcredential-dictionary" property="bibo:hasPart">
         <h4 id="h-rtcoauthcredential-dictionary" resource="#h-rtcoauthcredential-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcoauthcredential" data-idl="" data-title="RTCOAuthCredential"><code>RTCOAuthCredential</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCOAuthCredential</code> dictionary is used to describe the OAuth auth credential information which is used by the STUN/TURN client (inside the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>) to authenticate against a STUN/TURN server, as described in [<cite><a class="bibref" href="#bib-RFC7635">RFC7635</a></cite>]. Note that the <code>kid</code> parameter is not located in this dictionary, but in
@@ -1558,7 +1560,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section untested id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
+      <section tested id="rtciceserver-dictionary" typeof="bibo:Chapter" resource="#rtciceserver-dictionary" property="bibo:hasPart">
         <h4 id="h-rtciceserver-dictionary" resource="#h-rtciceserver-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtciceserver" data-idl="" data-title="RTCIceServer"><code>RTCIceServer</code></dfn> Dictionary</span>
         </h4>
         <p>The <code>RTCIceServer</code> dictionary is used to describe the STUN and TURN servers that can be used by the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> to establish a connection with a peer.</p>
@@ -3361,31 +3363,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li>
                     <p>Let <var>validatedServers</var> be an empty list.</p>
                   </li>
-                  <li untested>
+                  <li tested>
                     <p>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-iceservers" class="internalDFN" data-link-type="dfn"><code>iceServers</code></a>
                       </code> is defined, then run the following steps for each element:</p>
                     <ol>
-                      <li>
+                      <li tested>
                         <p>Let <var>server</var> be the current list element.
                         </p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <code><var>server</var>.urls</code> is a string, let <code><var>server</var>.urls</code> be a list consisting of just that string.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>For each <var>url</var> in
                           <code><var>server</var>.urls</code> parse
                           <var>url</var> and obtain <var>scheme name</var>. If the <var>scheme name</var> is not implemented by the browser, or if parsing based on the syntax defined in [
                           <cite><a class="bibref" href="#bib-RFC7064">RFC7064</a></cite>] and [<cite><a class="bibref" href="#bib-RFC7065">RFC7065</a></cite>] fails, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                           <code>SyntaxError</code>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <var>scheme name</var> is <code>turn</code> or
                           <code>turns</code>, and either of
                           <code><var>server</var>.username</code> or
                           <code><var>server</var>.credential</code> are omitted, then <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidAccessError</code>.</p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <var>scheme name</var> is <code>turn</code> or
                           <code>turns</code>, and
                           <code><var>server</var>.credentialType</code> is
@@ -3394,7 +3396,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           <code>InvalidAccessError</code> and abort these steps.
                         </p>
                       </li>
-                      <li>
+                      <li tested>
                         <p>If <var>scheme name</var> is <code>turn</code> or
                           <code>turns</code>, and
                           <code><var>server</var>.credentialType</code> is
