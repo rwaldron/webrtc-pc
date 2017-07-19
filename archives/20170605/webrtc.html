@@ -7745,7 +7745,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       </section>
     </section>
 
-    <section id="rtcdtlstransport-interface" typeof="bibo:Chapter" resource="#rtcdtlstransport-interface" property="bibo:hasPart">
+    <section incomplete id="rtcdtlstransport-interface" typeof="bibo:Chapter" resource="#rtcdtlstransport-interface" property="bibo:hasPart">
       <h3 id="h-rtcdtlstransport-interface" resource="#h-rtcdtlstransport-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.5 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcdtlstransport" data-idl="" data-title="RTCDtlsTransport"><code>RTCDtlsTransport</code></dfn> Interface</span>
       </h3>
       <p>The <code><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a>
@@ -7758,7 +7758,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         </code> objects are constructed as a result of calls to <code>setLocalDescription()</code> and
         <code>setRemoteDescription()</code>.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcdtlstransport" data-idl="" data-title="RTCDtlsTransport">interface <span class="idlInterfaceID"><a data-lt="RTCDtlsTransport" href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCDtlsTransport</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcdtlstransport-transport" data-idl="" data-title="transport" data-dfn-for="rtcdtlstransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a></span>       <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcdtlstransport-transport" class="internalDFN" data-link-type="dfn" data-for="RTCDtlsTransport"><code>transport</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcdtlstransport-state" data-idl="" data-title="state" data-dfn-for="rtcdtlstransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransportstate" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransportState</code></a></span> <span class="idlAttrName"><a data-lt="state" href="#dom-rtcdtlstransport-state" class="internalDFN" data-link-type="dfn" data-for="RTCDtlsTransport"><code>state</code></a></span>;</span>
@@ -7770,17 +7770,22 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <section typeof="bibo:Chapter" resource="#attributes-13" property="bibo:hasPart">
           <h4 id="attributes-13" resource="#attributes-13"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCDtlsTransport" data-dfn-for="RTCDtlsTransport" class="attributes">
+            <section untested>
             <dt><dfn data-dfn-for="rtcdtlstransport" data-dfn-type="dfn" id="dom-rtcdtlstransport-transport" data-idl="" data-title="transport"><code>transport</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a></span>, readonly</dt>
             <dd>
               <p>The <code>transport</code> attribute is the underlying transport that is used to send and receive packets. The underlying transport may not be shared between multiple active
                 <code><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a>
                 </code> objects.</p>
             </dd>
+            </section>
+            <section untested>
             <dt><dfn data-dfn-for="rtcdtlstransport" data-dfn-type="dfn" id="dom-rtcdtlstransport-state" data-idl="" data-title="state"><code>state</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcdtlstransportstate" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransportState</code></a></span>, readonly</dt>
             <dd>
               <p>The <code>state</code> attribute <em class="rfc2119" title="MUST">MUST</em> return the state of the transport.
               </p>
             </dd>
+            </section>
+            <section untested>
             <dt><dfn data-dfn-for="rtcdtlstransport" data-dfn-type="dfn" id="dom-rtcdtlstransport-onstatechange" data-idl="" data-title="onstatechange"><code>onstatechange</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
             <dd>
               This event handler, of event handler event type
@@ -7788,12 +7793,14 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
               </code>, <em class="rfc2119" title="MUST">MUST</em> be fired any time the
               <code>RTCDtlsTransport</code> state changes.
             </dd>
+            </section>
           </dl>
         </section>
 
         <section typeof="bibo:Chapter" resource="#methods-8" property="bibo:hasPart">
           <h4 id="methods-8" resource="#methods-8"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCDtlsTransport" data-dfn-for="RTCDtlsTransport" class="methods">
+            <section tested>
             <dt><dfn data-dfn-for="rtcdtlstransport" data-dfn-type="dfn" id="dom-rtcdtlstransport-getremotecertificates" data-idl="" data-title="getRemoteCertificates" data-lt="getremotecertificates()|getRemoteCertificates"><code>getRemoteCertificates</code></dfn></dt>
             <dd>
               <p>Returns the certificate chain in use by the remote side, with each certificate encoded in binary Distinguished Encoding Rules (DER) [<cite><a class="bibref" href="#bib-X690">X690</a></cite>]. <code>getRemoteCertificates()</code> will return an empty list prior to selection of the remote certificate, which will be completed by the time
@@ -7807,6 +7814,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
                 <em>Return type:</em> <code>sequence&lt;ArrayBuffer&gt;</code>
               </div>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
