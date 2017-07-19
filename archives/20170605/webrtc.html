@@ -5690,14 +5690,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <li tested>
                   <p>If <var>sender</var> is not <code>null</code>, run the following steps to use that sender:</p>
                   <ol>
-                    <li>
+                    <li tested>
                       <p>Set <var>sender.track</var> to <var>track</var>.</p>
                     </li>
-                    <li>
+                    <li untestable>
                       <p>Set <var>sender</var>'s [[<a href="#dfn-associated-mediastreams" class="internalDFN" data-link-type="dfn">associated
                       MediaStreams</a>]] to <var>streams</var>.</p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>Enable sending direction on the
                         <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                         </code> associated with
@@ -5705,23 +5705,23 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     </li>
                   </ol>
                 </li>
-                <li incomplete>
+                <li tested>
                   <p>If <var>sender</var> is <code>null</code>, run the following steps:</p>
                   <ol>
                     <li tested>
                       <p><a href="#dfn-create-an-rtcrtpsender" class="internalDFN" data-link-type="dfn">Create an RTCRtpSender</a> with <var>track</var> and <var>streams</var> and let <var>sender</var> be the result.
                       </p>
                     </li>
-                    <li untested>
+                    <li tested>
                       <p><a href="#dfn-create-an-rtcrtpreceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpReceiver</a> with
                         <var>track.kind</var> as kind and let <var>receiver</var> be the result.</p>
                     </li>
-                    <li untested>
+                    <li tested>
                       <p><a href="#dfn-create-an-rtcrtptransceiver" class="internalDFN" data-link-type="dfn">Create an RTCRtpTransceiver</a> with
                         <var>sender</var> and <var>receiver</var> and let
                         <var>transceiver</var> be the result.</p>
                     </li>
-                    <li>
+                    <li tested>
                       <p>Add <var>transceiver</var> to <var>connection</var>'s
                         <a href="#transceivers-set">set of transceivers</a></p>
                     </li>
@@ -5738,7 +5738,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <p>All other tracks that are not accessible to the application <em class="rfc2119" title="MUST NOT">MUST NOT</em> be sent to the peer, with silence (audio), black frames (video) or equivalently absent content being sent in place of track content.</p>
                   <p>Note that this property can change over time.</p>
                 </li>
-                <li todo>
+                <li tested>
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
