@@ -5508,12 +5508,14 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         <section typeof="bibo:Chapter" resource="#attributes-7" property="bibo:hasPart">
           <h4 id="attributes-7" resource="#attributes-7"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="attributes">
+            <section tested>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-ontrack" data-idl="" data-title="ontrack"><code>ontrack</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
             <dd>
               <p>The event type of this event handler is
                 <code><a href="#event-track" class="internalDFN" data-link-type="dfn"><code>track</code></a>
                 </code>.</p>
             </dd>
+            </section>
           </dl>
         </section>
 
@@ -5551,7 +5553,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <div>
                 <em>No parameters.</em>
               </div>
-              <div>
+              <div tested>
                 <em>Return type:</em> <code>sequence&lt;RTCRtpSender&gt;</code>
               </div>
             </dd>
@@ -5588,7 +5590,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <div>
                 <em>No parameters.</em>
               </div>
-              <div>
+              <div tested>
                 <em>Return type:</em>
                 <code>sequence&lt;RTCRtpReceiver&gt;</code>
               </div>
@@ -5620,7 +5622,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               <div>
                 <em>No parameters.</em>
               </div>
-              <div>
+              <div tested>
                 <em>Return type:</em>
                 <code>sequence&lt;RTCRtpTransceiver&gt;</code>
               </div>
@@ -5867,7 +5869,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             </section>
-            <section incomplete>
+            <section tested>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-addtransceiver" data-idl="" data-title="addTransceiver" data-lt="addtransceiver()|addTransceiver"><code>addTransceiver</code></dfn></dt>
             <dd>
               <p>Create a new <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
@@ -5885,11 +5887,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 </code>, must be left unset, or an error will be thrown.</p>
               <p>When this method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li todo>
+                <li tested>
                   <p>If the dictionary argument is present, and it has a
                     <code>streams</code> member, let <var>streams</var> be that list of <code><a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a></code> objects, or an empty list otherwise.</p>
                 </li>
-                <li todo>
+                <li tested>
                   <p>If the dictionary argument is present, and it has a
                     <code>sendEncodings</code> member, let
                     <var>sendEncodings</var> be that list of
@@ -5918,12 +5920,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <var>track</var> and let <var>kind</var> be
                     <var>track.kind</var>.</p>
                 </li>
-                <li todo>
+                <li tested>
                   <p>Verify that each <code><a data-link-for="RTCRtpEncodingParameters" href="#dom-rtcrtpencodingparameters-rid" class="internalDFN" data-link-type="dfn"><code>rid</code></a>
                     </code>
                     value in <var>sendEncodings</var> is composed only of case-sensitive alphanumeric characters (a-z, A-Z, 0-9) up to a maximum of 16 characters. If one of the RIDs does not meet these requirements, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>TypeError</code>.</p>
                 </li>
-                <li todo>
+                <li tested>
                   <p>If any <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
                     </code>
                     dictionary in <var>sendEncodings</var> contains a
@@ -6161,12 +6163,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
           <p>Set <var>sender</var>'s [[<a href="#dfn-associated-mediastreams" class="internalDFN" data-link-type="dfn">associated MediaStreams</a>]] slot to
             <var>streams</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Let <var>sender</var> have a [[<dfn data-dfn-type="dfn" id="dfn-send-encodings">send encodings</dfn>]] internal slot, representing a list of
             <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
             </code> dictionaries.</p>
         </li>
-        <li>
+        <li tested>
           <p>If <var>sendEncodings</var> is given as input to this algorithm, and is non-empty, set the [[<a href="#dfn-send-encodings" class="internalDFN" data-link-type="dfn">send encodings</a>]] slot to
             <var>sendEncodings</var>. Otherwise, set it to a list containing a single <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
             </code> with
@@ -6188,7 +6190,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </li>
       </ol>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtpsender" data-idl="" data-title="RTCRtpSender">interface <span class="idlInterfaceID"><a data-lt="RTCRtpSender" href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpSender</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtpsender-track" data-idl="" data-title="track" data-dfn-for="rtcrtpsender">    readonly attribute <span class="idlAttrType"><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>?</span> <span class="idlAttrName"><a data-lt="track" href="#dom-rtcrtpsender-track" class="internalDFN" data-link-type="dfn" data-for="RTCRtpSender"><code>track</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcrtpsender-transport" data-idl="" data-title="transport" data-dfn-for="rtcrtpsender">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a>?</span> <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcrtpsender-transport" class="internalDFN" data-link-type="dfn" data-for="RTCRtpSender"><code>transport</code></a></span>;</span>
@@ -6264,6 +6266,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>RTCRtpCapabilities</code>
               </div>
             </dd>
+            <section incomplete>
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-setparameters" data-idl="" data-title="setParameters" data-lt="setparameters()|setParameters"><code>setParameters</code></dfn></dt>
             <dd>
               <p>The <code>setParameters</code> method updates how
@@ -6271,34 +6274,34 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </p>
               <p>When the <code>setParameters</code> method is called, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>Let <var>sender</var> be the
+                <li tested>Let <var>sender</var> be the
                   <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                   </code> object on which
                   <code>setParameters</code> is invoked.</li>
-                <li>Let <var>transceiver</var> be the
+                <li tested>Let <var>transceiver</var> be the
                   <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                   </code> object associated with <var>sender</var>.</li>
-                <li>Let <var>N</var> be the number of
+                <li tested>Let <var>N</var> be the number of
                   <code><a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>
                   </code> stored in
                   <var>sender</var>'s internal [[<a href="#dfn-send-encodings" class="internalDFN" data-link-type="dfn">send encodings</a>]] slot.
                 </li>
-                <li>Let <var>p</var> be a new promise.</li>
-                <li>Return <var>p</var>, performing the next steps in parallel.
+                <li tested>Let <var>p</var> be a new promise.</li>
+                <li tested>Return <var>p</var>, performing the next steps in parallel.
                 </li>
-                <li untested>If <code><var>transceiver</var>.stopped</code> is
+                <li tested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidStateError</code>.</li>
-                <li untested>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
+                <li tested>If <code><var>parameters</var>.encodings.length</code> is different from <var>N</var>, or if any parameter in the <var>parameters</var> argument, marked as a <dfn data-dfn-type="dfn" id="dfn-read-only-parameter">Read-only parameter</dfn>, has a value that is different from the corresponding parameter value returned from
                   <code><var>sender</var>.getParameters()</code>, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>InvalidModificationError</code>. Note that this also applies to <var>transactionId</var>.</li>
-                <li>If the <code>scaleResolutionDownBy</code> parameter in the
+                <li tested>If the <code>scaleResolutionDownBy</code> parameter in the
                   <var>parameters</var> argument has a value less than 1.0, abort these steps and return a promise rejected with a newly
                   <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                   <code>RangeError</code>.</li>
-                <li>Set <var>sender</var>'s internal [[<a href="#dfn-send-encodings" class="internalDFN" data-link-type="dfn">send encodings</a>]] slot to <code><var>parameters</var>.encodings</code>.</li>
+                <li >Set <var>sender</var>'s internal [[<a href="#dfn-send-encodings" class="internalDFN" data-link-type="dfn">send encodings</a>]] slot to <code><var>parameters</var>.encodings</code>.</li>
                 <li>Set <var>sender</var>'s internal
                   <var>transactionId</var> slot to a previously unused value.
                 </li>
@@ -6333,6 +6336,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>Promise&lt;void&gt;</code>
               </div>
             </dd>
+            </section>
             <dt><code>getParameters</code></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-getparameters()" data-idl="" data-title="getParameters()" data-lt="getparameters()|getParameters"><code>getParameters()</code></dfn> method returns the <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
@@ -6350,7 +6354,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   <code>getParameters</code> call to a
                   <code>setParameters</code> call that may occur later.
                 </li>
-                <li>
+                <li tested>
                   <code><a data-link-for="RTCRtpParameters" href="#dom-rtcrtpparameters-encodings" class="internalDFN" data-link-type="dfn"><code>encodings</code></a>
                   </code>
                   is set to the value of the [[<a href="#dfn-send-encodings" class="internalDFN" data-link-type="dfn">send encodings</a>]] internal slot.
