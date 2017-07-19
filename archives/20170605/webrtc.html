@@ -6240,6 +6240,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         <section typeof="bibo:Chapter" resource="#methods-5" property="bibo:hasPart">
           <h4 id="methods-5" resource="#methods-5"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCRtpSender" data-dfn-for="RTCRtpSender" class="methods">
+            <section tested>
             <dt><code>getCapabilities</code>, static</dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-getcapabilities()" data-idl="" data-title="getCapabilities()" data-lt="getcapabilities()|getCapabilities"><code>getCapabilities()</code></dfn> method returns the most optimist view on the capabilities of the system for sending media of the given kind. It does not reserve any resources, ports, or other state but is meant to provide a way to discover the types of capabilities of the browser including which codecs may be supported.</p>
@@ -6266,6 +6267,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <em>Return type:</em> <code>RTCRtpCapabilities</code>
               </div>
             </dd>
+            </section>
             <section incomplete>
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-setparameters" data-idl="" data-title="setParameters" data-lt="setparameters()|setParameters"><code>setParameters</code></dfn></dt>
             <dd>
@@ -7167,6 +7169,7 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#methods-6" property="bibo:hasPart">
           <h4 id="methods-6" resource="#methods-6"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCRtpReceiver" data-dfn-for="RTCRtpReceiver" class="methods">
+            <section tested>
             <dt><code>getCapabilities</code>, static</dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpreceiver" data-dfn-type="dfn" id="dom-rtcrtpreceiver-getcapabilities()" data-idl="" data-title="getCapabilities()" data-lt="getcapabilities()|getCapabilities"><code>getCapabilities()</code></dfn> method returns the most optimistic view of the capabilities of the system for receiving media of the given kind. It does not reserve any resources, ports, or other state but is meant to provide a way to discover the types of capabilities of the browser including which codecs may be supported.</p>
@@ -7193,6 +7196,7 @@ sender.setParameters(params)</pre>
                 <em>Return type:</em> <code>RTCRtpCapabilities</code>
               </div>
             </dd>
+            </section>
             <dt><code>getParameters</code></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpreceiver" data-dfn-type="dfn" id="dom-rtcrtpreceiver-getparameters()" data-idl="" data-title="getParameters()" data-lt="getparameters()|getParameters"><code>getParameters()</code></dfn> method returns the
@@ -7668,8 +7672,9 @@ sender.setParameters(params)</pre>
               <p>This method allows applications to disable the negotiation of specific codecs. It also allows an application to cause a remote peer to prefer the codec that appears first in the list for sending.
               </p>
               <p>Codec preferences remain in effect for all calls to
-                <code>createOffer</code> and <code>createAnswer</code> that include this <code>RTCRtpTransceiver</code> until this method is called again. Setting <var>codecs</var> to an empty sequence resets codec preferences to any default value.</p>
-              <p>The <code>codecs</code> sequence passed into
+                <code>createOffer</code> and <code>createAnswer</code> that include this <code>RTCRtpTransceiver</code> until this method is called again.
+                <section tested>Setting <var>codecs</var> to an empty sequence resets codec preferences to any default value.</section></p>
+              <p tested>The <code>codecs</code> sequence passed into
                 <code>setCodecPreferences</code> can only contain codecs that are returned by <code>RTCRtpSender.getCapabilities(kind)</code> or
                 <code>RTCRtpReceiver.getCapabilities(kind)</code>, where
                 <code>kind</code> is the kind of the
