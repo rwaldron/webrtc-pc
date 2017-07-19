@@ -9985,7 +9985,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         </code>
         interface as described below.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection-partial-5" data-idl="" data-title="RTCPeerConnection">partial interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> {
 <span class="idlMethod" id="idl-def-rtcpeerconnection-getstats(selector)" data-idl="" data-title="getStats" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-promise">Promise</a>&lt;<a href="#dom-rtcstatsreport" class="internalDFN" data-link-type="dfn"><code>RTCStatsReport</code></a>&gt;</span> <span class="idlMethName"><a data-lt="getStats()|getstats()|getStats" data-lt-nodefault="" href="#dom-rtcpeerconnection-getstats()" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection">getStats</a></span>(<span class="idlParam">optional <span class="idlParamType"><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>?</span> <span class="idlParamName">selector</span> = <span class="idlDefaultValue">null</span></span>);</span>
 };</span></pre>
@@ -9994,6 +9994,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         <section typeof="bibo:Chapter" resource="#methods-13" property="bibo:hasPart">
           <h4 id="methods-13" resource="#methods-13"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
+            <section incomplete>
             <dt><code>getStats</code></dt>
             <dd>
               <p>Gathers stats for the given <a href="#stats-selector" class="internalDFN" data-link-type="dfn">selector</a> and reports the result asynchronously.</p>
@@ -10002,31 +10003,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
               <code>getStats()</code></dfn> method is invoked, the user agent
                 <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li tested>
                   <p>Let <var>selectorArg</var> be the method's first argument.
                   </p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method was invoked.</p>
                 </li>
-                <li>
+                <li untested>
                   <p>If <var>selectorArg</var> is neither <code>null</code> nor a valid <a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a>, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>TypeError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>selector</var> be a <a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a> or
                     <a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a> on <var>connection</var> which
                     <code>track</code> member matches <var>selectorArg</var>. If no such sender or receiver exists, or if more than one sender or receiver fit this criteria, return a promise rejected with a newly
                     <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                     <code>InvalidAccessError</code>.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Let <var>p</var> be a new promise.</p>
                 </li>
-                <li>
+                <li tested>
                   <p>Run the following steps in parallel:</p>
                   <ol>
                     <li>
@@ -10039,10 +10040,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
                     </li>
                   </ol>
                 </li>
-                <li>
+                <li tested>
                   <p>Return <var>p</var>.</p>
                 </li>
               </ol>
+              <section tested>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -10062,11 +10064,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
                   </tr>
                 </tbody>
               </table>
-              <div>
+              </section>
+              <div tested>
                 <em>Return type:</em>
                 <code>Promise&lt;RTCStatsReport&gt;</code>
               </div>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
