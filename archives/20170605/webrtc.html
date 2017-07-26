@@ -7675,6 +7675,7 @@ sender.setParameters(params)</pre>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-setcodecpreferences" data-idl="" data-title="setCodecPreferences" data-lt="setcodecpreferences()|setCodecPreferences"><code>setCodecPreferences</code></dfn></dt>
             <dd>
               <p>The <code>setCodecPreferences</code> method overrides the default codec preferences used by the <a href="#dfn-user-agent" class="internalDFN" data-link-type="dfn">user agent</a>. When generating a session description using either
@@ -7716,6 +7717,7 @@ sender.setParameters(params)</pre>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -8208,6 +8210,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <section typeof="bibo:Chapter" resource="#methods-9" property="bibo:hasPart">
           <h4 id="methods-9" resource="#methods-9"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCIceTransport" data-dfn-for="RTCIceTransport" class="methods">
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-getlocalcandidates" data-idl="" data-title="getLocalCandidates" data-lt="getlocalcandidates()|getLocalCandidates"><code>getLocalCandidates</code></dfn></dt>
             <dd>
               <p>Returns a sequence describing the local ICE candidates gathered for this <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
@@ -8223,6 +8226,8 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
                 <code>sequence&lt;RTCIceCandidate&gt;</code>
               </div>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-getremotecandidates" data-idl="" data-title="getRemoteCandidates" data-lt="getremotecandidates()|getRemoteCandidates"><code>getRemoteCandidates</code></dfn></dt>
             <dd>
               <p>Returns a sequence describing the remote ICE candidates received by this <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
@@ -8236,6 +8241,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
                 <code>sequence&lt;RTCIceCandidate&gt;</code>
               </div>
             </dd>
+            </section>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-getselectedcandidatepair" data-idl="" data-title="getSelectedCandidatePair" data-lt="getselectedcandidatepair()|getSelectedCandidatePair"><code>getSelectedCandidatePair</code></dfn></dt>
             <dd>
               <p>Returns the selected candidate pair on which packets are sent, or <code>null</code> if there is no such pair.</p>
