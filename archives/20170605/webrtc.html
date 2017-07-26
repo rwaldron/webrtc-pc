@@ -2143,7 +2143,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                   <p>If the process to apply <var>description</var> fails for any reason, then user agent <em class="rfc2119" title="MUST">MUST</em> queue a task runs the following steps:
                   </p>
                   <ol>
-                    <li tested>
+                    <li untestable>
                       <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                         <code>true</code>, then abort these steps.</p>
                     </li>
@@ -2179,7 +2179,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                 <li>
                   <p>If <var>description</var> is applied successfully, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                   <ol>
-                    <li tested>
+                    <li untestable>
                       <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                         <code>true</code>, then abort these steps.</p>
                     </li>
@@ -3180,7 +3180,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                             <p>If <var>candidate.sdpMLineIndex</var> is equal to or larger than the number of media descriptions in <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-remotedescription" class="internalDFN" data-link-type="dfn"><code>remoteDescription</code></a>
                               </code>, reject <var>p</var> with a newly
                               <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">
-                            created</a> <code>OperationError</code> and abort these steps.</p>
+                            created</a> <code>OperationError</code> <section untestable>and abort these steps.</section></p>
                           </li>
                         </ol>
                       </li>
@@ -3208,7 +3208,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                           <li tested>
                             <p>If <var>candidate</var> could not be successfully added the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
                             <ol>
-                              <li>
+                              <li untestable>
                                 <p>If <var>connection</var>'s [[
                                   <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, then abort these steps.</p>
                               </li>
@@ -3226,7 +3226,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                             <ol>
                               <li>
                                 <p>If <var>connection</var>'s [[
-                                  <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, then abort these steps.</p>
+                                  <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, <section untestable>then abort these steps.</section></p>
                               </li>
                               <li untestable>
                                 <p>Let <var>remoteDescription</var> be
@@ -4542,7 +4542,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
         <p>To <dfn data-dfn-type="dfn" id="dfn-update-the-negotiation-needed-flag">update the negotiation-needed flag</dfn> for
           <var>connection</var>, run the following steps:</p>
         <ol>
-          <li todo>
+          <li untestable>
             <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
               <code>true</code>, abort these steps.</p>
           </li>
@@ -4573,7 +4573,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
           <li incomplete>
             <p>Queue a task that runs the following steps:</p>
             <ol>
-              <li tested>
+              <li untestable>
                 <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
               </li>
               <li todo>
@@ -6476,7 +6476,7 @@ sender.setParameters(params)</pre>
                     <li>
                       <p>Queue a task that runs the following steps:</p>
                       <ol>
-                        <li tested>
+                        <li untestable>
                           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
                         </li>
                         <li tested>
