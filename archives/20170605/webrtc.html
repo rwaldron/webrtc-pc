@@ -1693,7 +1693,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
         </div>
       </section>
 
-      <section untested id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
+      <section tested id="rtcbundlepolicy-enum" typeof="bibo:Chapter" resource="#rtcbundlepolicy-enum" property="bibo:hasPart">
         <h4 id="h-rtcbundlepolicy-enum" resource="#h-rtcbundlepolicy-enum"><span property="xhv:role" resource="xhv:heading"><span class="secno">4.2.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcbundlepolicy" data-idl="" data-title="RTCBundlePolicy"><code>RTCBundlePolicy</code></dfn> Enum</span>
         </h4>
         <p>As described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-4.1.1">section 4.1.1.</a>)</span>, bundle policy affects which media tracks are negotiated if the remote endpoint is not bundle-aware, and what ICE candidates are gathered. If the remote endpoint is bundle-aware, all media tracks and data channels are bundled onto the same transport.</p>
@@ -2341,7 +2341,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li todo>
+                    <li tested>
                       <p>If <var>description</var> is set as a remote description, then run the following steps for each media description in
                         <var>description</var>:</p>
                       <ol>
@@ -2389,7 +2389,7 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
                         </li>
                       </ol>
                     </li>
-                    <li todo>
+                    <li tested>
                       <p>If <var>description</var> is of type "rollback", then run the following steps:</p>
                       <ol>
                         <li>
@@ -2886,7 +2886,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     assertion request process</a> if it has not already begun.
                     </p>
                   </li>
-                  <li incomplete>
+                  <li>
                     <p>Return the result of <a href="#enqueue-an-operation">enqueuing</a> the following steps:
                     </p>
                     <ol>
@@ -2900,7 +2900,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <li tested>
                         <p>Let <var>p</var> be a new promise.</p>
                       </li>
-                      <li incomplete>
+                      <li implicit>
                         <p>In parallel, begin the <a href="#dfn-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">steps to create an
                         answer</a>, given <var>p</var>.</p>
                       </li>
@@ -2913,12 +2913,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 <p>The <dfn data-dfn-type="dfn" id="dfn-steps-to-create-an-answer">steps to create an answer</dfn> given a promise
                   <var>p</var> are as follows:</p>
                 <ol>
-                  <li incomplete>
+                  <li todo>
                     <p>If the need for an identity assertion was identified when <code>createAnswer</code> was invoked, wait for
                       <a href="#sec.identity-proxy-assertion-request">the
                     identity assertion request process</a> to complete.</p>
                   </li>
-                  <li needs-verification>
+                  <li todo>
                     <p>If the identity provider was unable to produce an identity assertion, reject <var>p</var> with a newly
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>NotReadableError</code> and abort these steps.</p>
@@ -2935,7 +2935,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                       <a data-link-for="exception" data-lt="create" href="#dfn-create" class="internalDFN" data-link-type="dfn">created</a>
                       <code>OperationError</code> and abort these steps.</p>
                   </li>
-                  <li incomplete>
+                  <li implicit>
                     <p>Queue a task that runs the <a href="#dfn-final-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">final steps to create an
                     answer</a>, given <var>p</var>.</p>
                   </li>
@@ -2946,7 +2946,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                     <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                       <code>true</code>, then abort these steps.</p>
                   </li>
-                  <li incomplete>
+                  <li todo>
                     <p>If <var>connection</var> was modified in such a way that additional inspection of the system state is necessary, then in parallel begin the <a href="#dfn-steps-to-create-an-answer" class="internalDFN" data-link-type="dfn">steps to create an answer</a> again, given <var>p</var>, and abort these steps.</p>
                     <div class="note">
                       <div class="note-title marker" aria-level="6" role="heading" id="h-note6"><span>Note</span></div>
@@ -3319,7 +3319,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 Agent</a>. As noted in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-3.5.1">section 3.5.1.</a>)</span>, when the ICE configuration changes in a way that requires a new gathering phase, an ICE restart is required.</p>
                 <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-setconfiguration" data-idl="" data-title="setConfiguration" data-lt="setconfiguration()|setConfiguration"><code>setConfiguration</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
                 <ol>
-                  <li>
+                  <li implicit>
                     <p>Let <var>connection</var> be the
                       <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                       </code> on which the method was invoked.</p>
@@ -3332,11 +3332,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </ol>
                 <p>To <dfn id="set-pc-configuration" data-dfn-type="dfn">set a configuration</dfn>, run the following steps:</p>
                 <ol>
-                  <li>Let <var>configuration</var> be the
+                  <li implicit>Let <var>configuration</var> be the
                     <code><a href="#dom-rtcconfiguration" class="internalDFN" data-link-type="dfn"><code>RTCConfiguration</code></a>
                     </code> dictionary to be processed.
                   </li>
-                  <li>Let <var>connection</var> be the target
+                  <li implicit>Let <var>connection</var> be the target
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object.</li>
                   <li untested>If <code><var>configuration</var>.peerIdentity</code> is set and its value differs from the <a href="#target-peer-identity" class="internalDFN" data-link-type="dfn">target peer
@@ -3347,9 +3347,9 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                   <li tested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-bundlepolicy" class="internalDFN" data-link-type="dfn"><code>bundlePolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s bundle policy,
                     <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
+                  <li tested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-rtcpmuxpolicy" class="internalDFN" data-link-type="dfn"><code>rtcpMuxPolicy</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s rtcpMux policy, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidModificationError</code>.</li>
-                  <li untested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
+                  <li tested>If <code><var>configuration</var>.<a data-for="RTCConfiguration" href="#dom-rtcconfiguration-icecandidatepoolsize" class="internalDFN" data-link-type="dfn"><code>iceCandidatePoolSize</code></a>
                     </code> is set and its value differs from the <var>connection</var>'s previously set <code>iceCandidatePoolSize</code>, and <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-setlocaldescription" class="internalDFN" data-link-type="dfn"><code>setLocalDescription</code></a>
                     </code> has already been called, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidModificationError</code>.</li>
@@ -4570,13 +4570,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
             <p>Set <var>connection</var>'s [[<a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot to
               <code>true</code>.</p>
           </li>
-          <li incomplete>
+          <li>
             <p>Queue a task that runs the following steps:</p>
             <ol>
               <li untestable>
                 <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
               </li>
-              <li todo>
+              <li untestable>
                 <p>If <var>connection</var>'s [[<a href="#dfn-neednegotiation" class="internalDFN" data-link-type="dfn">needNegotiation</a>]] slot is <code>false</code>, abort these steps.</p>
               </li>
               <li tested>
@@ -4602,7 +4602,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCSessionDescription" href="
               <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
               </code>s, and no m= section has been negotiated yet for data, return "true".</p>
           </li>
-          <li incomplete>
+          <li>
             <p>For each transceiver <var>t</var> in <var>connection</var>'s
               <a href="#transceivers-set" class="internalDFN" data-link-type="dfn">set of transceivers</a>, perform the following checks:</p>
             <ul>
@@ -5066,7 +5066,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceEvent" hr
           </code>
           interface.</p>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnectioniceerrorevent" data-idl="" data-title="RTCPeerConnectionIceErrorEvent">[<span class="idlCtor"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#Constructor">Constructor</a></span>(<span class="idlParam"><span class="idlParamType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlParamName">type</span></span>, <span class="idlParam"><span class="idlParamType"><a href="#dom-rtcpeerconnectioniceerroreventinit" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnectionIceErrorEventInit</code></a></span> <span class="idlParamName">eventInitDict</span></span>)</span>]
 interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEvent" href="#dom-rtcpeerconnectioniceerrorevent" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnectionIceErrorEvent</code></a></span> : <span class="idlSuperclass"><a href="#dfn-event" class="internalDFN" data-link-type="dfn">Event</a></span> {
 <span class="idlAttribute" id="idl-def-rtcpeerconnectioniceerrorevent-hostcandidate" data-idl="" data-title="hostCandidate" data-dfn-for="rtcpeerconnectioniceerrorevent">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>      <span class="idlAttrName"><a data-lt="hostCandidate" href="#dom-rtcpeerconnectioniceerrorevent-hostcandidate" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceErrorEvent"><code>hostCandidate</code></a></span>;</span>
@@ -5144,7 +5144,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
           </section>
         </div>
         <div>
-          <div>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcpeerconnectioniceerroreventinit" data-idl="" data-title="RTCPeerConnectionIceErrorEventInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCPeerConnectionIceErrorEventInit" href="#dom-rtcpeerconnectioniceerroreventinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnectionIceErrorEventInit</code></a></span> : <span class="idlSuperclass">EventInit</span> {
 <span class="idlMember" id="idl-def-rtcpeerconnectioniceerroreventinit-hostcandidate" data-idl="" data-title="hostCandidate" data-dfn-for="rtcpeerconnectioniceerroreventinit">             <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>      <span class="idlMemberName"><a data-lt="hostCandidate" href="#dom-rtcpeerconnectioniceerroreventinit-hostcandidate" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceErrorEventInit"><code>hostCandidate</code></a></span>;</span>
 <span class="idlMember" id="idl-def-rtcpeerconnectioniceerroreventinit-url" data-idl="" data-title="url" data-dfn-for="rtcpeerconnectioniceerroreventinit">             <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span>      <span class="idlMemberName"><a data-lt="url" href="#dom-rtcpeerconnectioniceerroreventinit-url" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnectionIceErrorEventInit"><code>url</code></a></span>;</span>
@@ -5491,7 +5491,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </code>
         interface as described below.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcpeerconnection-partial-3" data-idl="" data-title="RTCPeerConnection">partial interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCPeerConnection</code></a></span> {
 <span class="idlMethod" id="idl-def-rtcpeerconnection-getsenders()" data-idl="" data-title="getSenders" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>&gt;</span>      <span class="idlMethName"><a data-lt="getSenders" href="#dom-rtcpeerconnection-getsenders" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>getSenders</code></a></span>();</span>
 <span class="idlMethod" id="idl-def-rtcpeerconnection-getreceivers()" data-idl="" data-title="getReceivers" data-dfn-for="rtcpeerconnection">    <span class="idlMethType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>&gt;</span>    <span class="idlMethName"><a data-lt="getReceivers" href="#dom-rtcpeerconnection-getreceivers" class="internalDFN" data-link-type="dfn" data-for="RTCPeerConnection"><code>getReceivers</code></a></span>();</span>
@@ -5793,11 +5793,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 </code> object.</p>
               <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-removetrack" data-idl="" data-title="removeTrack" data-lt="removetrack()|removeTrack"><code>removeTrack</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>
+                <li implicit>
                   <p>Let <var>sender</var> be the argument to
                     <code>removeTrack</code>.</p>
                 </li>
-                <li>
+                <li implicit>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method was invoked.</p>
@@ -5812,11 +5812,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <var>connection</var>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidAccessError</code>.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>Let <var>senders</var> be the result of executing the
                     <code><a href="#dfn-collectsenders" class="internalDFN" data-link-type="dfn">CollectSenders</a></code> algorithm.</p>
                 </li>
-                <li untested>
+                <li todo>
                   <p>If <var>sender</var> is not in <var>senders</var> (which indicates that it was removed due to <a href="#set-description">setting an RTCSessionDescription</a> of type "rollback"), then abort these steps.</p>
                 </li>
                 <li tested>
@@ -5841,7 +5841,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                     <code><var>transceiver</var>.direction</code> to
                     <code>inactive</code>.</p>
                 </li>
-                <li untested>
+                <li tested alt="RTCPeerConnection-onnegotiationneeded.html">
                   <p><a data-lt="update the negotiation-needed flag" href="#dfn-update-the-negotiation-needed-flag" class="internalDFN" data-link-type="dfn">Update the
                   negotiation-needed flag</a> for <var>connection</var>.</p>
                 </li>
@@ -5864,7 +5864,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                   </tr>
                 </tbody>
               </table>
-              <div untested>
+              <div tested>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
@@ -6001,7 +6001,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         </section>
       </div>
       <div>
-        <div untested>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCRtpTransceiverInit" href="#dom-rtcrtptransceiverinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiverInit</code></a></span> {
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-direction" data-idl="" data-title="direction" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiverDirection</code></a></span>         <span class="idlMemberName"><a data-lt="direction" href="#dom-rtcrtptransceiverinit-direction" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>direction</code></a></span> = <span class="idlMemberValue">"sendrecv"</span>;</span>
 <span class="idlMember" id="idl-def-rtcrtptransceiverinit-streams" data-idl="" data-title="streams" data-dfn-for="rtcrtptransceiverinit">    <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-sequence">sequence</a>&lt;<a href="#dfn-mediastream" class="internalDFN" data-link-type="dfn">MediaStream</a>&gt;</span>              <span class="idlMemberName"><a data-lt="streams" href="#dom-rtcrtptransceiverinit-streams" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiverInit"><code>streams</code></a></span>;</span>
@@ -6009,7 +6009,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
 };</span></pre>
         </div>
 
-        <section untested typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
+        <section tested typeof="bibo:Chapter" resource="#dictionary-rtcrtptransceiverinit-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcrtptransceiverinit-members" resource="#dictionary-rtcrtptransceiverinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtptransceiverinit" data-idl="" data-title="RTCRtpTransceiverInit"><code>RTCRtpTransceiverInit</code></dfn>
           Members</span></h4>
           <dl data-link-for="RTCRtpTransceiverInit" data-dfn-for="RTCRtpTransceiverInit" class="dictionary-members">
@@ -6207,6 +6207,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
         <section typeof="bibo:Chapter" resource="#attributes-8" property="bibo:hasPart">
           <h4 id="attributes-8" resource="#attributes-8"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpSender" data-dfn-for="RTCRtpSender" class="attributes">
+            <section tested>
+
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-track" data-idl="" data-title="track"><code>track</code></dfn> of type <span class="idlAttrType"><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a></span>, readonly,
             nullable</dt>
             <dd>
@@ -6215,6 +6217,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <code>track</code> is ended, or if
                 <code>track</code>.<var>muted</var> is set to <code>true</code>, the <code>RTCRtpSender</code> sends silence (audio) or a black frame (video). If <code>track</code> is set to null then the <code>RTCRtpSender</code> does not send.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-transport" data-idl="" data-title="transport"><code>transport</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span>, readonly,
             nullable</dt>
             <dd>
@@ -6224,6 +6228,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <code>transport</code> attribute will be null. When bundling is used, multiple <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                 </code> objects will share one <code>transport</code> and will all send RTP and RTCP over the same transport.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-rtcptransport" data-idl="" data-title="rtcpTransport"><code>rtcpTransport</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span>, readonly,
             nullable</dt>
             <dd>
@@ -6234,6 +6240,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
                 <code>rtcpTransport</code> will be null, and both RTP and RTCP traffic will flow over the transport described by
                 <code>transport</code>.</p>
             </dd>
+            </section>
           </dl>
         </section>
 
@@ -6268,7 +6275,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnectionIceErrorEven
               </div>
             </dd>
             </section>
-            <section incomplete>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-setparameters" data-idl="" data-title="setParameters" data-lt="setparameters()|setParameters"><code>setParameters</code></dfn></dt>
             <dd>
               <p>The <code>setParameters</code> method updates how
@@ -6405,7 +6412,7 @@ sender.setParameters(params)</pre>
               </div>
             </dd>
             </section>
-            <section incomplete>
+            <section tested>
             <dt><code>replaceTrack</code></dt>
             <dd>
               <p>Attempts to replace the track being sent with another track provided (or with a null track), without renegotiation.</p>
@@ -6593,24 +6600,34 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#dictionary-rtcrtpparameters-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcrtpparameters-members" resource="#dictionary-rtcrtpparameters-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtpparameters" data-idl="" data-title="RTCRtpParameters"><code>RTCRtpParameters</code></dfn> Members</span></h4>
           <dl data-link-for="RTCRtpParameters" data-dfn-for="RTCRtpParameters" class="dictionary-members">
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-transactionid" data-idl="" data-title="transactionId"><code>transactionId</code></dfn> of type <span class="idlMemberType">DOMString</span></dt>
             <dd>
               <p>An unique identifier for the last set of parameters applied. Ensures that setParameters can only be called based on a previous getParameters, and that there are no intervening changes.</p>
             </dd>
+            </section>
+            <section tested>
+
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-encodings" data-idl="" data-title="encodings"><code>encodings</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtcrtpencodingparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpEncodingParameters</code></a>&gt;</span></dt>
             <dd>
               <p>A sequence containing parameters for RTP encodings of media.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-headerextensions" data-idl="" data-title="headerExtensions"><code>headerExtensions</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtcrtpheaderextensionparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpHeaderExtensionParameters</code></a>&gt;</span></dt>
             <dd>
               <p>A sequence containing parameters for RTP header extensions.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-rtcp" data-idl="" data-title="rtcp"><code>rtcp</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcrtcpparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtcpParameters</code></a></span></dt>
             <dd>
               <p>Parameters used for RTCP.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-codecs" data-idl="" data-title="codecs"><code>codecs</code></dfn> of type <span class="idlMemberType">sequence&lt;<a href="#dom-rtcrtpcodecparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpCodecParameters</code></a>&gt;</span></dt>
             <dd>
               <p>A sequence containing the media codecs that an
@@ -6621,6 +6638,7 @@ sender.setParameters(params)</pre>
                 <code>RTCRtpCodecParameters</code> dictionary members cannot be modified.
               </p>
             </dd>
+            </section>
             <section tested>
             <dt><dfn data-dfn-for="rtcrtpparameters" data-dfn-type="dfn" id="dom-rtcrtpparameters-degradationpreference" data-idl="" data-title="degradationPreference"><code>degradationPreference</code></dfn> of type
             <span class="idlMemberType"><a href="#dom-rtcdegradationpreference" class="internalDFN" data-link-type="dfn"><code>RTCDegradationPreference</code></a></span></dt>
@@ -6656,26 +6674,35 @@ sender.setParameters(params)</pre>
           <h4 id="dictionary-rtcrtpencodingparameters-members" resource="#dictionary-rtcrtpencodingparameters-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters" data-idl="" data-title="RTCRtpEncodingParameters"><code>RTCRtpEncodingParameters</code></dfn>
           Members</span></h4>
           <dl data-link-for="RTCRtpEncodingParameters" data-dfn-for="RTCRtpEncodingParameters" class="dictionary-members">
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-ssrc" data-idl="" data-title="ssrc"><code>ssrc</code></dfn> of type <span class="idlMemberType">unsigned long</span></dt>
             <dd>
               <p>The SSRC of the RTP source stream of this encoding (non-RTX, non-FEC RTP stream). <a href="#dfn-read-only-parameter" class="internalDFN" data-link-type="dfn">Read-only parameter</a>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-rtx" data-idl="" data-title="rtx"><code>rtx</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcrtprtxparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpRtxParameters</code></a></span></dt>
             <dd>
               <p>The parameters used for RTX, or unset if RTX is not being used.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-fec" data-idl="" data-title="fec"><code>fec</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcrtpfecparameters" class="internalDFN" data-link-type="dfn"><code>RTCRtpFecParameters</code></a></span></dt>
             <dd>
               <p>The parameters used for FEC, or unset if FEC is not being used.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-dtx" data-idl="" data-title="dtx"><code>dtx</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcdtxstatus" class="internalDFN" data-link-type="dfn"><code>RTCDtxStatus</code></a></span></dt>
             <dd>
               <p>For an <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                 </code>, indicates whether discontinuous transmission will be used. Setting it to
                 <code>disabled</code> causes discontinuous transmission to be turned off. Setting it to <code>enabled</code> causes discontinuous transmission to be turned on if it was negotiated (either via a codec-specific parameter or via negotiation of the CN codec). This attribute is ignored by a video sender.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-active" data-idl="" data-title="active"><code>active</code></dfn> of type <span class="idlMemberType">boolean</span></dt>
             <dd>
               <p>For an <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
@@ -6683,35 +6710,48 @@ sender.setParameters(params)</pre>
                 </code>, a value of <code>true</code> indicates that this encoding is being decoded. A value of <code>false</code> indicates this encoding is no longer being decoded.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-priority" data-idl="" data-title="priority"><code>priority</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcprioritytype" class="internalDFN" data-link-type="dfn"><code>RTCPriorityType</code></a></span></dt>
             <dd>
               <p>Indicates the priority of this encoding. It is specified in [
                 <cite><a class="bibref" href="#bib-RTCWEB-TRANSPORT">RTCWEB-TRANSPORT</a></cite>], Section 4.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-ptime" data-idl="" data-title="ptime"><code>ptime</code></dfn> of type <span class="idlMemberType">unsigned long</span></dt>
             <dd>
               <p>For an <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                 </code>, indicates the preferred duration of media represented by a packet in milliseconds for this encoding. Typically, this is only relevant for audio encoding. The user agent <em class="rfc2119" title="MUST">MUST</em> use this duration if possible, and otherwise use the closest available duration. This value <em class="rfc2119" title="MUST">MUST</em> take precedence over any "ptime" attribute in the remote description, whose processing is described in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.9">section 5.9.</a>)</span>. Note that the user agent <em class="rfc2119" title="MUST">MUST</em> still respect the limit imposed by any "maxptime" attribute, as defined in [<cite><a class="bibref" href="#bib-RFC4566">RFC4566</a></cite>], Section 6.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-maxbitrate" data-idl="" data-title="maxBitrate"><code>maxBitrate</code></dfn> of type <span class="idlMemberType">unsigned long</span></dt>
             <dd>
               <p>Indicates the maximum bitrate that can be used to send this encoding. The encoding may also be further constrained by other limits (such as maxFramerate or per-transport or per-session bandwidth limits) below the maximum specified here. maxBitrate is the Transport Independent Application Specific Maximum (TIAS) bandwidth defined in [<cite><a class="bibref" href="#bib-RFC3890">RFC3890</a></cite>] Section 6.2.2, which is the maximum bandwidth needed without counting IP or other transport layers like TCP or UDP.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-maxframerate" data-idl="" data-title="maxFramerate"><code>maxFramerate</code></dfn> of type <span class="idlMemberType">double</span></dt>
             <dd>
               <p>Indicates the maximum framerate that can be used to send this encoding, in frames per second.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-rid" data-idl="" data-title="rid"><code>rid</code></dfn> of type <span class="idlMemberType">DOMString</span></dt>
             <dd>
               <p>If set, this RTP encoding will be sent with the RID header extension as defined by <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.1">section 5.2.1.</a>)</span>. The RID is not modifiable via
                 <code>setParameters</code>. It can only be set or modified in
                 <code>addTransceiver</code>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpencodingparameters" data-dfn-type="dfn" id="dom-rtcrtpencodingparameters-scaleresolutiondownby" data-idl="" data-title="scaleResolutionDownBy"><code>scaleResolutionDownBy</code></dfn> of type
             <span class="idlMemberType">double</span></dt>
             <dd>
               <p>If the sender's <code>kind</code> is "video", the video's resolution will be scaled down in each dimension by the given value before sending. For example, if the value is 2.0, the video will be scaled down by a factor of 2 in each dimension, resulting in sending a video of one quarter the size. If the value is 1.0, the video will not be affected. The value must be greater than or equal to 1.0. By default, the sender will not apply any scaling, (i.e., <code>scaleResolutionDownBy</code> will be 1.0).</p>
             </dd>
+            </section>
           </dl>
           <p>Usage of the attributes is defined in the table below:</p>
           <table class="simple">
@@ -7136,7 +7176,7 @@ sender.setParameters(params)</pre>
         </li>
       </ol>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtpreceiver" data-idl="" data-title="RTCRtpReceiver">interface <span class="idlInterfaceID"><a data-lt="RTCRtpReceiver" href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpReceiver</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtpreceiver-track" data-idl="" data-title="track" data-dfn-for="rtcrtpreceiver">    readonly attribute <span class="idlAttrType"><a href="#dom-mediastreamtrack" class="internalDFN" data-link-type="dfn"><code>MediaStreamTrack</code></a></span>  <span class="idlAttrName"><a data-lt="track" href="#dom-rtcrtpreceiver-track" class="internalDFN" data-link-type="dfn" data-for="RTCRtpReceiver"><code>track</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcrtpreceiver-transport" data-idl="" data-title="transport" data-dfn-for="rtcrtpreceiver">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a>?</span> <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcrtpreceiver-transport" class="internalDFN" data-link-type="dfn" data-for="RTCRtpReceiver"><code>transport</code></a></span>;</span>
@@ -7211,6 +7251,7 @@ sender.setParameters(params)</pre>
               </div>
             </dd>
             </section>
+            <section tested alt="RTCRtpReceiver-getParameters.html, RTCRtpParameters-helper.js">
             <dt><code>getParameters</code></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpreceiver" data-dfn-type="dfn" id="dom-rtcrtpreceiver-getparameters()" data-idl="" data-title="getParameters()" data-lt="getparameters()|getParameters"><code>getParameters()</code></dfn> method returns the
@@ -7270,6 +7311,7 @@ sender.setParameters(params)</pre>
                 </code>
               </div>
             </dd>
+            </section>
             <section tested>
             <dt><dfn data-dfn-for="rtcrtpreceiver" data-dfn-type="dfn" id="dom-rtcrtpreceiver-getcontributingsources" data-idl="" data-title="getContributingSources" data-lt="getcontributingsources()|getContributingSources"><code>getContributingSources</code></dfn></dt>
             <dd>
@@ -7298,6 +7340,7 @@ sender.setParameters(params)</pre>
               </div>
             </dd>
             </section>
+            <section tested>
             <dt><code>getStats</code></dt>
             <dd>
               <p>Gathers stats for this receiver only and reports the result asynchronously.
@@ -7336,6 +7379,7 @@ sender.setParameters(params)</pre>
                 <code>Promise&lt;RTCStatsReport&gt;</code>
               </div>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -7375,20 +7419,26 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#attributes-10" property="bibo:hasPart">
           <h4 id="attributes-10" resource="#attributes-10"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpContributingSource" data-dfn-for="RTCRtpContributingSource" class="attributes">
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpcontributingsource" data-dfn-type="dfn" id="dom-rtcrtpcontributingsource-timestamp" data-idl="" data-title="timestamp"><code>timestamp</code></dfn> of type <span class="idlAttrType">DOMHighResTimeStamp</span>, readonly</dt>
             <dd>
               <p>The timestamp of type DOMHighResTimeStamp [<cite><a class="bibref" href="#bib-HIGHRES-TIME">HIGHRES-TIME</a></cite>], indicating the most recent time of playout of an RTP packet containing the source. The timestamp is defined in [
                 <cite><a class="bibref" href="#bib-HIGHRES-TIME">HIGHRES-TIME</a></cite>] and corresponds to a local clock.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpcontributingsource" data-dfn-type="dfn" id="dom-rtcrtpcontributingsource-source" data-idl="" data-title="source"><code>source</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly</dt>
             <dd>
               <p>The CSRC identifier of the contributing source.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpcontributingsource" data-dfn-type="dfn" id="dom-rtcrtpcontributingsource-audiolevel" data-idl="" data-title="audioLevel"><code>audioLevel</code></dfn> of type <span class="idlAttrType">byte</span>, readonly , nullable</dt>
             <dd>
               <p>The audio level contained in the last RTP packet played from this source. <code>audioLevel</code> will be the level value defined in [<cite><a class="bibref" href="#bib-RFC6465">RFC6465</a></cite>] if the RFC 6465 header extension is present, and otherwise <code>null</code>. RFC 6465 defines the level as a integral value from 0 to 127 representing the audio level in negative decibels relative to the loudest signal that the system could possibly encode. Thus, 0 represents the loudest signal the system could possibly encode, and 127 represents silence.
               </p>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -7405,31 +7455,39 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#attributes-11" property="bibo:hasPart">
           <h4 id="attributes-11" resource="#attributes-11"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpSynchronizationSource" data-dfn-for="RTCRtpSynchronizationSource" class="attributes">
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsynchronizationsource" data-dfn-type="dfn" id="dom-rtcrtpsynchronizationsource-timestamp" data-idl="" data-title="timestamp"><code>timestamp</code></dfn> of type <span class="idlAttrType">DOMHighResTimeStamp</span>, readonly</dt>
             <dd>
               <p>The timestamp of type DOMHighResTimeStamp [<cite><a class="bibref" href="#bib-HIGHRES-TIME">HIGHRES-TIME</a></cite>], indicating the most recent time of playout of an RTP packet from the source. The timestamp is defined in [
                 <cite><a class="bibref" href="#bib-HIGHRES-TIME">HIGHRES-TIME</a></cite>] and corresponds to a local clock.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsynchronizationsource" data-dfn-type="dfn" id="dom-rtcrtpsynchronizationsource-source" data-idl="" data-title="source"><code>source</code></dfn> of type <span class="idlAttrType">unsigned long</span>, readonly</dt>
             <dd>
               <p>The SSRC identifier of the synchronization source.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsynchronizationsource" data-dfn-type="dfn" id="dom-rtcrtpsynchronizationsource-audiolevel" data-idl="" data-title="audioLevel"><code>audioLevel</code></dfn> of type <span class="idlAttrType">byte</span>, readonly, nullable</dt>
             <dd>
               <p>The audio level contained in the last RTP packet played from this source. <code>audioLevel</code> will be the level value defined in [<cite><a class="bibref" href="#bib-RFC6464">RFC6464</a></cite>], if the RFC 6464 header extension is present. If the RFC 6464 extension header is not present, the browser will compute a value for <code>audioLevel</code> as if it had come from RFC 6464.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtpsynchronizationsource" data-dfn-type="dfn" id="dom-rtcrtpsynchronizationsource-voiceactivityflag" data-idl="" data-title="voiceActivityFlag"><code>voiceActivityFlag</code></dfn> of type <span class="idlAttrType">boolean</span>, readonly, nullable</dt>
             <dd>
               <p>Whether the last RTP packet played from this source contains voice activity (true) or not (false). If the RFC 6464 extension header was not present, or if the peer has signaled that it is not using the V bit by setting the "vad" extension attribute to "off", as described in [<cite><a class="bibref" href="#bib-RFC6464">RFC6464</a></cite>], Section 4,
                 <code>voiceActivityFlag</code> will be <code>null</code>.</p>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
     </section>
 
-    <section id="rtcrtptransceiver-interface" typeof="bibo:Chapter" resource="#rtcrtptransceiver-interface" property="bibo:hasPart">
+    <section incomplete id="rtcrtptransceiver-interface" typeof="bibo:Chapter" resource="#rtcrtptransceiver-interface" property="bibo:hasPart">
       <h3 id="h-rtcrtptransceiver-interface" resource="#h-rtcrtptransceiver-interface"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.4 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcrtptransceiver" data-idl="" data-title="RTCRtpTransceiver"><code>RTCRtpTransceiver</code></dfn> Interface</span>
       </h3>
       <p>The <a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpTransceiver</code></code></a> interface represents a combination of an <a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpSender</code></code></a> and an
@@ -7466,7 +7524,7 @@ sender.setParameters(params)</pre>
         </li>
       </ol>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtptransceiver" data-idl="" data-title="RTCRtpTransceiver">interface <span class="idlInterfaceID"><a data-lt="RTCRtpTransceiver" href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpTransceiver</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtptransceiver-mid" data-idl="" data-title="mid" data-dfn-for="rtcrtptransceiver">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a>?</span>                  <span class="idlAttrName"><a data-lt="mid" href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn" data-for="RTCRtpTransceiver"><code>mid</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcrtptransceiver-sender" data-idl="" data-title="sender" data-dfn-for="rtcrtptransceiver">    [<span class="extAttr"><span class="extAttrName"><a href="https://heycam.github.io/webidl/#SameObject">SameObject</a></span></span>]
@@ -7485,24 +7543,33 @@ sender.setParameters(params)</pre>
         <section typeof="bibo:Chapter" resource="#attributes-12" property="bibo:hasPart">
           <h4 id="attributes-12" resource="#attributes-12"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpTransceiver" data-dfn-for="RTCRtpTransceiver" class="attributes">
+            <section tested>
             <dt><code>mid</code> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
             <dd>
               <p>The <dfn id="dom-rtcrtptransceiver-mid" data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" data-idl="" data-title="mid"><code>mid</code></dfn> attribute is the <code>mid</code> negotatiated and present in the local and remote descriptions as defined in <span>[<cite><a class="bibref" href="#bib-JSEP">JSEP</a></cite>] (<a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.2.1">section 5.2.1.</a> and <a href="https://tools.ietf.org/html/draft-ietf-rtcweb-jsep-20#section-5.3.1">section 5.3.1.</a>)</span>. Before negotiation is complete, the <code>mid</code> value may be null. After rollbacks, the value may change from a non-null value to null.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-sender" data-idl="" data-title="sender"><code>sender</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a></span>, readonly</dt>
             <dd>
               <p>The <code>sender</code> attribute is the
                 <a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpSender</code></code></a> corresponding to the RTP media that may be sent with mid = <a href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code><code>mid</code></code></a>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-receiver" data-idl="" data-title="receiver"><code>receiver</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a></span>, readonly</dt>
             <dd>
               <p>The <code>receiver</code> attribute is the
                 <a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpReceiver</code></code></a> corresponding to the RTP media that may be received with mid = <a href="#dom-rtcrtptransceiver-mid" class="internalDFN" data-link-type="dfn"><code><code>mid</code></code></a>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-stopped" data-idl="" data-title="stopped"><code>stopped</code></dfn> of type <span class="idlAttrType">boolean</span>, readonly</dt>
             <dd>
               <p>The <code>stopped</code> attribute indicates that the sender of this transceiver will no longer send, and that the receiver will no longer receive. It is true if either <code>stop</code> has been called or if setting the local or remote description has caused the <code>RTCTransceiver</code> to be stopped.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-direction" data-idl="" data-title="direction"><code>direction</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiverDirection</code></a></span>,
             readonly</dt>
             <dd>
@@ -7514,6 +7581,8 @@ sender.setParameters(params)</pre>
                 <code><a href="#dom-rtcrtptransceiver-setdirection" class="internalDFN" data-link-type="dfn"><code>setDirection</code></a>
                 </code>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-currentdirection" data-idl="" data-title="currentDirection"><code>currentDirection</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcrtptransceiverdirection" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiverDirection</code></a></span>,
             readonly, nullable</dt>
             <dd>
@@ -7526,6 +7595,7 @@ sender.setParameters(params)</pre>
                 </code>, <var>currentDirection</var> is null.
               </p>
             </dd>
+            </section>
           </dl>
         </section>
 
@@ -7604,6 +7674,7 @@ sender.setParameters(params)</pre>
               </div>
             </dd>
             </section>
+            <section incomplete>
             <dt><code>stop</code></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-stop" data-idl="" data-title="stop" data-lt="stop()|stop"><code>stop</code></dfn> method irreversibly stops the <a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code><code>RTCRtpTransceiver</code></code></a>. The sender of this transceiver will no longer send, the receiver will no longer receive. Calling
@@ -7627,7 +7698,7 @@ sender.setParameters(params)</pre>
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the <var>transceiver</var> is to be stopped.</p>
                 </li>
-                <li untested>
+                <li>
                   <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
                     <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                     <code>InvalidStateError</code>.</p>
@@ -7677,6 +7748,7 @@ sender.setParameters(params)</pre>
                 <em>Return type:</em> <code>void</code>
               </div>
             </dd>
+            </section>
             <section tested>
             <dt><dfn data-dfn-for="rtcrtptransceiver" data-dfn-type="dfn" id="dom-rtcrtptransceiver-setcodecpreferences" data-idl="" data-title="setCodecPreferences" data-lt="setcodecpreferences()|setCodecPreferences"><code>setCodecPreferences</code></dfn></dt>
             <dd>
@@ -7921,7 +7993,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       </section>
     </section>
 
-    <section id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
+    <section tested id="rtcicetransport" typeof="bibo:Chapter" resource="#rtcicetransport" property="bibo:hasPart">
       <h3 id="h-rtcicetransport" resource="#h-rtcicetransport"><span property="xhv:role" resource="xhv:heading"><span class="secno">5.6 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcicetransport" data-idl="" data-title="RTCIceTransport"><code>RTCIceTransport</code></dfn> Interface</span>
       </h3>
       <p>The <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
@@ -7936,17 +8008,17 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a> of candidates for an <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
         </code>, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
       <ol>
-        <li>
+        <li implicit>
           <p>Let <var>connection</var> be the
             <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object associated with this
             <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
             <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li implicit>
           <p>Let <var>transport</var> be the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
             </code>
             for which candidate gathering began.</p>
@@ -7970,22 +8042,22 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a> of candidates for an <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
         </code>, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
       <ol>
-        <li>
+        <li implicit>
           <p>Let <var>connection</var> be the
             <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object associated with this
             <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
             <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li implicit>
           <p>Let <var>transport</var> be the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
             </code>
             for which candidate gathering finished.</p>
         </li>
-        <li>
+        <li tested>
           <p>Create an <code><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a>
             </code> instance
             <var>newCandidate</var>, with <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-sdpmid" class="internalDFN" data-link-type="dfn"><code>sdpMid</code></a>
@@ -8000,12 +8072,12 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
             <code><a data-for="RTCIceCandidate" href="#dom-rtcicecandidate-candidate" class="internalDFN" data-link-type="dfn"><code>candidate</code></a>
             </code> set to an empty string, and with all other nullable members set to null.</p>
         </li>
-        <li>
+        <li tested>
           <p>Fire an event named <code><a href="#event-icecandidate" class="internalDFN" data-link-type="dfn"><code>icecandidate</code></a>
             </code> with
             <var>newCandidate</var> at <var>connection</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p>If another <a href="#dfn-generation" class="internalDFN" data-link-type="dfn">generation</a> of candidates is still being gathered, abort these steps.</p>
           <div class="note">
             <div class="note-title marker" aria-level="4" role="heading" id="h-note21"><span>Note</span></div>
@@ -8032,30 +8104,30 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
       <p>When the <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a> indicates that a new ICE candidate is available for an <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
         </code>, either by taking one from the <a data-lt="ICE candidate pool size" href="#dfn-ice-candidate-pool-size" class="internalDFN" data-link-type="dfn">ICE candidate pool</a> or gathering it from scratch, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
       <ol>
-        <li>
+        <li implicit>
           <p>Let <var>connection</var> be the
             <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object associated with this
             <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
             <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li implicit>
           <p>Let <var>transport</var> be the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
             </code>
             for which this candidate is being made available.</p>
         </li>
-        <li>
+        <li tested>
           <p>Add the candidate to <var>connection</var>'s <code><a data-link-for="RTCPeerConnection" href="#dom-rtcpeerconnection-localdescription" class="internalDFN" data-link-type="dfn"><code>localDescription</code></a>
             </code>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Create an <code><a href="#dom-rtcicecandidate" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidate</code></a>
             </code> instance to represent the candidate. Let <var>newCandidate</var> be that object.</p>
         </li>
-        <li>
+        <li tested>
           <p>Add <var>newCandidate</var> to <var>transport</var>'s set of local candidates.
           </p>
         </li>
@@ -8072,32 +8144,32 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
         </code> has changed, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
       <ol>
-        <li>
+        <li implicit>
           <p>Let <var>connection</var> be the
             <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object associated with this
             <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
             <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li implicit>
           <p>Let <var>transport</var> be the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
             </code>
             whose state is changing.</p>
         </li>
-        <li>
+        <li tested>
           <p>Let <var>newState</var> be the new indicated
             <code><a href="#dom-rtcicetransportstate" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportState</code></a>
             </code>.
           </p>
         </li>
-        <li>
+        <li tested>
           <p>Set <var>transport</var>'s <code><a data-link-for="RTCIceTransport" href="#dom-rtcicetransport-state" class="internalDFN" data-link-type="dfn"><code>state</code></a>
             </code> to <var>newState</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Fire a simple event named <code><a href="#event-icetransport-statechange" class="internalDFN" data-link-type="dfn"><code>statechange</code></a>
             </code> at
             <var>transport</var>.</p>
@@ -8115,31 +8187,31 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         </code> has changed, the user agent
         <em class="rfc2119" title="MUST">MUST</em> queue a task that runs the following steps:</p>
       <ol>
-        <li>
+        <li implicit>
           <p>Let <var>connection</var> be the
             <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object associated with this
             <a href="#dfn-ice-agent" class="internalDFN" data-link-type="dfn">ICE Agent</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>If <var>connection</var>'s [[<a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is
             <code>true</code>, abort these steps.</p>
         </li>
-        <li>
+        <li implicit>
           <p>Let <var>transport</var> be the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
             </code>
             whose selected candidate pair is changing.</p>
         </li>
-        <li>
+        <li tested>
           <p>Let <var>newCandidatePair</var> be a newly created
             <code><a href="#dom-rtcicecandidatepair" class="internalDFN" data-link-type="dfn"><code>RTCIceCandidatePair</code></a>
             </code> representing the indicated pair if one is selected, and <code>null</code> otherwise.</p>
         </li>
-        <li>
+        <li tested>
           <p>Set <var>transport</var>'s selected candidate pair to
             <var>newCandidatePair</var>.</p>
         </li>
-        <li>
+        <li tested>
           <p>Fire a simple event named
             <code><a href="#event-icetransport-selectedcandidatepairchange" class="internalDFN" data-link-type="dfn"><code>selectedcandidatepairchange</code></a>
             </code> at
@@ -8147,7 +8219,7 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         </li>
       </ol>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcicetransport" data-idl="" data-title="RTCIceTransport">interface <span class="idlInterfaceID"><a data-lt="RTCIceTransport" href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCIceTransport</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcicetransport-role" data-idl="" data-title="role" data-dfn-for="rtcicetransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcicerole" class="internalDFN" data-link-type="dfn"><code>RTCIceRole</code></a></span>           <span class="idlAttrName"><a data-lt="role" href="#dom-rtcicetransport-role" class="internalDFN" data-link-type="dfn" data-for="RTCIceTransport"><code>role</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcicetransport-component" data-idl="" data-title="component" data-dfn-for="rtcicetransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcicecomponent" class="internalDFN" data-link-type="dfn"><code>RTCIceComponent</code></a></span>      <span class="idlAttrName"><a data-lt="component" href="#dom-rtcicetransport-component" class="internalDFN" data-link-type="dfn" data-for="RTCIceTransport"><code>component</code></a></span>;</span>
@@ -8167,25 +8239,34 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
         <section typeof="bibo:Chapter" resource="#attributes-14" property="bibo:hasPart">
           <h4 id="attributes-14" resource="#attributes-14"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCIceTransport" data-dfn-for="RTCIceTransport" class="attributes">
+            <section tested>
             <dt><code>role</code> of type <span class="idlAttrType"><a href="#dom-rtcicerole" class="internalDFN" data-link-type="dfn"><code>RTCIceRole</code></a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-rtcicetransport-role" data-dfn-for="rtcicetransport" data-dfn-type="dfn" data-idl="" data-title="role"><code>role</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the ICE role of the transport.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><code>component</code> of type <span class="idlAttrType"><a href="#dom-rtcicecomponent" class="internalDFN" data-link-type="dfn"><code>RTCIceComponent</code></a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-rtcicetransport-component" data-dfn-for="rtcicetransport" data-dfn-type="dfn" data-idl="" data-title="component"><code>component</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the ICE component of the transport. When RTCP mux is used, a single
                 <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
                 </code> transports both RTP and RTCP and <code>component</code> is set to "RTP".</p>
             </dd>
+            </section>
+            <section tested>
             <dt><code>state</code> of type <span class="idlAttrType"><a href="#dom-rtcicetransportstate" class="internalDFN" data-link-type="dfn"><code>RTCIceTransportState</code></a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-rtcicetransport-state" data-dfn-for="rtcicetransport" data-dfn-type="dfn" data-idl="" data-title="state"><code>state</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the state of the transport.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-gatheringstate" data-idl="" data-title="gatheringState"><code>gatheringState</code></dfn> of type <span class="idlAttrType"><a href="#dom-rtcicegatheringstate" class="internalDFN" data-link-type="dfn"><code>RTCIceGatheringState</code></a></span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-icetransport-gatheringstate" data-dfn-type="dfn"><code>gathering
               state</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return the gathering state of the transport.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-onstatechange" data-idl="" data-title="onstatechange"><code>onstatechange</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
             <dd>
               This event handler, of event handler event type
@@ -8193,6 +8274,8 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
               </code>, <em class="rfc2119" title="MUST">MUST</em> be fired any time the
               <code>RTCIceTransport</code> state changes.
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-ongatheringstatechange" data-idl="" data-title="ongatheringstatechange"><code>ongatheringstatechange</code></dfn> of type
             <span class="idlAttrType">EventHandler</span></dt>
             <dd>
@@ -8200,12 +8283,16 @@ pc.setRemoteDescription(sendrecvOffer).then(doAnswer).catch(onSignalingError);</
               <code><a href="#event-icetransport-gatheringstatechange" class="internalDFN" data-link-type="dfn"><code>gatheringstatechange</code></a>
               </code>, <em class="rfc2119" title="MUST">MUST</em> be fired any time the <code>RTCIceTransport</code>gathering state changes.
             </dd>
+            </section>
+            <section tested>
             <dt><dfn data-dfn-for="rtcicetransport" data-dfn-type="dfn" id="dom-rtcicetransport-onselectedcandidatepairchange" data-idl="" data-title="onselectedcandidatepairchange"><code>onselectedcandidatepairchange</code></dfn> of type
             <span class="idlAttrType">EventHandler</span></dt>
             <dd>This event handler, of event handler event type
               <code><a href="#event-icetransport-selectedcandidatepairchange" class="internalDFN" data-link-type="dfn"><code>selectedcandidatepairchange</code></a>
               </code>, <em class="rfc2119" title="MUST">MUST</em> be fired any time the <code><a href="#dom-rtcicetransport" class="internalDFN" data-link-type="dfn"><code>RTCIceTransport</code></a>
               </code>'s selected candidate pair changes.</dd>
+            </section>
+
           </dl>
         </section>
 
@@ -8682,7 +8769,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
     </h2>
     <p>The Peer-to-peer Data API lets a web application send and receive generic application data peer-to-peer. The API for sending and receiving data models the behavior of WebSockets [<cite><a class="bibref" href="#bib-WEBSOCKETS-API">WEBSOCKETS-API</a></cite>].</p>
 
-    <section incomplete id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
+    <section tested id="rtcpeerconnection-interface-extensions-1" typeof="bibo:Chapter" resource="#rtcpeerconnection-interface-extensions-1" property="bibo:hasPart">
       <h3 id="h-rtcpeerconnection-interface-extensions-1" resource="#h-rtcpeerconnection-interface-extensions-1"><span property="xhv:role" resource="xhv:heading"><span class="secno">6.1 </span>RTCPeerConnection Interface Extensions</span>
       </h3>
       <p>The Peer-to-peer data API extends the
@@ -8719,7 +8806,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
           </dl>
         </section>
 
-        <section typeof="bibo:Chapter" resource="#methods-10" property="bibo:hasPart">
+        <section tested typeof="bibo:Chapter" resource="#methods-10" property="bibo:hasPart">
           <h4 id="methods-10" resource="#methods-10"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
             <dt><code>createDataChannel</code></dt>
@@ -8732,7 +8819,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
               <p>When the <dfn id="dom-rtcpeerconnection-createdatachannel" data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" data-idl="" data-title="createDataChannel" data-lt="createdatachannel()|createDataChannel"><code>createDataChannel</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps.
               </p>
               <ol>
-                <li>
+                <li implicit>
                   <p>Let <var>connection</var> be the
                     <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
                     </code> object on which the method is invoked.</p>
@@ -8784,7 +8871,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                   <code>protocol</code> is longer than 65535 bytes long,
                   <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a <code>TypeError</code>.
                 </li>
-                <li needs-verification>
+                <li tested>
                   <p>If both the <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
                     </code> and
                     <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxretransmits" class="internalDFN" data-link-type="dfn"><code>maxRetransmits</code></a>
@@ -8792,7 +8879,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     attributes are set (not null), <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                     <code>SyntaxError</code>.</p>
                 </li>
-                <li untested>
+                <li tested>
                   <p>If an attribute, either <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxpacketlifetime" class="internalDFN" data-link-type="dfn"><code>maxPacketLifeTime</code></a>
                     </code> or
                     <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-maxretransmits" class="internalDFN" data-link-type="dfn"><code>maxRetransmits</code></a>
@@ -8803,7 +8890,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                     </code> is equal to 65535, which is greater than the maximum allowed ID of 65534 but still qualifies as an <span class="idlMemberType">unsigned short</span>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> a
                     <code>TypeError</code>.</p>
                 </li>
-                <li untested>
+                <li implicit>
                   <p>If the <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
                     </code>
                     attribute is <code>null</code> (due to no ID being passed into <code>createDataChannel</code>), and the DTLS role of the SCTP transport has already been negotiated, then initialize <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-id" class="internalDFN" data-link-type="dfn"><code>id</code></a>
@@ -8823,11 +8910,11 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                 <li tested>
                   <p>Return <var>channel</var> and continue the following steps in the background.</p>
                 </li>
-                <li needs-verification>
+                <li implicit>
                   <p>Create <var>channel</var>'s associated <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data
                   transport</a> and configure it according to the relevant properties of <var>channel</var>.</p>
                 </li>
-                <li needs-verification>
+                <li implicit>
                   <p>If <var>channel</var> was the first
                     <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
                     </code> created on
@@ -8877,7 +8964,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         <p>The <code><a href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn"><code>RTCSctpTransport</code></a>
           </code> interface allows an application access to information about the SCTP data channels tied to a particular SCTP association.</p>
         <div>
-          <div untested>
+          <div tested-idlharness>
             <pre class="def idl"><span class="idlInterface" id="idl-def-rtcsctptransport" data-idl="" data-title="RTCSctpTransport">interface <span class="idlInterfaceID"><a data-lt="RTCSctpTransport" href="#dom-rtcsctptransport" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCSctpTransport</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcsctptransport-transport" data-idl="" data-title="transport" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtlstransport" class="internalDFN" data-link-type="dfn"><code>RTCDtlsTransport</code></a></span> <span class="idlAttrName"><a data-lt="transport" href="#dom-rtcsctptransport-transport" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>transport</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcsctptransport-maxmessagesize" data-idl="" data-title="maxMessageSize" data-dfn-for="rtcsctptransport">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-unsigned-long">unsigned long</a></span>    <span class="idlAttrName"><a data-lt="maxMessageSize" href="#dom-rtcsctptransport-maxmessagesize" class="internalDFN" data-link-type="dfn" data-for="RTCSctpTransport"><code>maxMessageSize</code></a></span>;</span>
@@ -8969,7 +9056,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
       open</dfn>, the user agent <em class="rfc2119" title="MUST">MUST</em> queue a task to run the following steps:
       </p>
       <ol>
-        <li>
+        <li untestable>
           <p>If the associated <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object's [[
             <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
@@ -8992,8 +9079,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
       </ol>
       <p tested>When an <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> is to be announced (the other peer created a channel with <code><a data-for="RTCDataChannelInit" href="#dom-rtcdatachannelinit-negotiated" class="internalDFN" data-link-type="dfn"><code>negotiated</code></a>
         </code> unset or set to false), the user agent of the peer that did not initiate the creation process <em class="rfc2119" title="MUST">MUST</em> queue a task to run the following steps:</p>
-      <ol incomplete>
-        <li untested>
+      <ol>
+        <li untestable>
           <p>If the associated <code><a href="#dom-rtcpeerconnection" class="internalDFN" data-link-type="dfn"><code>RTCPeerConnection</code></a>
             </code> object's [[
             <a href="#dfn-isclosed" class="internalDFN" data-link-type="dfn">isClosed</a>]] slot is <code>true</code>, abort these steps.</p>
@@ -9003,7 +9090,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
             </code> object.</p>
         </li>
-        <li needs-verification>
+        <li untestable>
           <p>Let <var>configuration</var> be an information bundle received from the other peer as a part of the process to establish the
             <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> described by the WebRTC DataChannel Protocol specification [<cite><a class="bibref" href="#bib-RTCWEB-DATA-PROTOCOL">RTCWEB-DATA-PROTOCOL</a></cite>].</p>
         </li>
@@ -9046,7 +9133,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             object whose <a data-lt="data transport" href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">transport</a> was closed.
           </p>
         </li>
-        <li>
+        <li untestable>
           <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
             </code> attribute to
             <code>closed</code>.</p>
@@ -9076,7 +9163,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
             object for which the user agent could not create an <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying
           data transport</a>.</p>
         </li>
-        <li>
+        <li untestable>
           <p>Set <var>channel</var>'s <code><a data-for="RTCDataChannel" href="#dom-rtcdatachannel-readystate" class="internalDFN" data-link-type="dfn"><code>readyState</code></a>
             </code> attribute to
             <code>closed</code>.</p>
@@ -9092,7 +9179,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         </li>
       </ol>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcdatachannel" data-idl="" data-title="RTCDataChannel">interface <span class="idlInterfaceID"><a data-lt="RTCDataChannel" href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCDataChannel</code></a></span> : <span class="idlSuperclass">EventTarget</span> {
 <span class="idlAttribute" id="idl-def-rtcdatachannel-label" data-idl="" data-title="label" data-dfn-for="rtcdatachannel">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-USVString">USVString</a></span>           <span class="idlAttrName"><a data-lt="label" href="#dom-rtcdatachannel-label" class="internalDFN" data-link-type="dfn" data-for="RTCDataChannel"><code>label</code></a></span>;</span>
 <span class="idlAttribute" id="idl-def-rtcdatachannel-ordered" data-idl="" data-title="ordered" data-dfn-for="rtcdatachannel">    readonly attribute <span class="idlAttrType"><a href="https://heycam.github.io/webidl/#idl-boolean">boolean</a></span>             <span class="idlAttrName"><a data-lt="ordered" href="#dom-rtcdatachannel-ordered" class="internalDFN" data-link-type="dfn" data-for="RTCDataChannel"><code>ordered</code></a></span>;</span>
@@ -9283,7 +9370,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         <section typeof="bibo:Chapter" resource="#methods-11" property="bibo:hasPart">
           <h4 id="methods-11" resource="#methods-11"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCDataChannel" data-dfn-for="RTCDataChannel" class="methods">
-            <section incomplete>
+            <section tested alt="RTCDataChannel-send.html">
             <dt><code>close</code></dt>
             <dd>
               <p>Closes the <code><a href="#dom-rtcdatachannel" class="internalDFN" data-link-type="dfn"><code>RTCDataChannel</code></a>
@@ -9457,24 +9544,33 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         <section typeof="bibo:Chapter" resource="#dictionary-rtcdatachannelinit-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcdatachannelinit-members" resource="#dictionary-rtcdatachannelinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcdatachannelinit" data-idl="" data-title="RTCDataChannelInit"><code>RTCDataChannelInit</code></dfn> Members</span></h4>
           <dl data-link-for="RTCDataChannelInit" data-dfn-for="RTCDataChannelInit" class="dictionary-members">
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-ordered" data-idl="" data-title="ordered"><code>ordered</code></dfn> of type <span class="idlMemberType">boolean</span>, defaulting to
             <code>true</code></dt>
             <dd>
               <p>If set to false, data is allowed to be delivered out of order. The default value of true, guarantees that data will be delivered in order.</p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-maxpacketlifetime" data-idl="" data-title="maxPacketLifeTime"><code>maxPacketLifeTime</code></dfn> of type <span class="idlMemberType">unsigned short</span></dt>
             <dd>
               <p>Limits the time (in milliseconds) during which the channel will transmit or retransmit data if not acknowledged. This value may be clamped if it exceeds the maximum value supported by the user agent.</p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-maxretransmits" data-idl="" data-title="maxRetransmits"><code>maxRetransmits</code></dfn> of type <span class="idlMemberType">unsigned short</span></dt>
             <dd>
               <p>Limits the number of times a channel will retransmit data if not successfully delivered. This value may be clamped if it exceeds the maximum value supported by the user agent.</p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-protocol" data-idl="" data-title="protocol"><code>protocol</code></dfn> of type <span class="idlMemberType">USVString</span>, defaulting to
             <code>""</code></dt>
             <dd>
               <p>Subprotocol name used for this channel.</p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-negotiated" data-idl="" data-title="negotiated"><code>negotiated</code></dfn> of type <span class="idlMemberType">boolean</span>, defaulting to
             <code>false</code></dt>
             <dd>
@@ -9485,15 +9581,20 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
                 </code> at the other peer.
               </p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-id" data-idl="" data-title="id"><code>id</code></dfn> of type <span class="idlMemberType">unsigned short</span></dt>
             <dd>
               <p>Overrides the default selection of ID for this channel.</p>
             </dd>
+            </section>
+            <section tested alt="RTCPeerConnection-createDataChannel.html">
             <dt><dfn data-dfn-for="rtcdatachannelinit" data-dfn-type="dfn" id="dom-rtcdatachannelinit-priority" data-idl="" data-title="priority"><code>priority</code></dfn> of type <span class="idlMemberType"><a href="#dom-rtcprioritytype" class="internalDFN" data-link-type="dfn"><code>RTCPriorityType</code></a></span>, defaulting to
             <code>low</code></dt>
             <dd>
               <p>Priority of this channel.</p>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -9549,7 +9650,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
         <li tested>
           <p>If <var>channel</var>'s <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a> is not established yet, or if the <code><a href="#data-transport-closing-procedure" class="internalDFN" data-link-type="dfn">closing procedure</a></code> has started, then abort these steps.</p>
         </li>
-        <li untested>
+        <li todo>
           <p>Attempt to send <var>data</var> on <var>channel</var>'s
             <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying data transport</a>; if the data cannot be sent, e.g. because it would need to be buffered but the buffer is full, the user agent <em class="rfc2119" title="MUST">MUST</em> abruptly <a href="#event-datachannel-close" class="internalDFN" data-link-type="dfn"><code>close</code></a> <var>channel</var>'s <a href="#dfn-underlying-data-transport" class="internalDFN" data-link-type="dfn">underlying
           data transport</a> <a href="#data-transport-closed-error" class="internalDFN" data-link-type="dfn">with an error</a>.</p>
@@ -9564,7 +9665,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCTrackEvent" href="#dom-rtc
     <a href="#dom-rtcdatachannelstate-closed" class="idlEnumItem">"closed"</a>
 };</span></pre>
         </div>
-        <section incomplete>
+        <section tested alt="RTCStats-helper.js">
         <table data-link-for="RTCDataChannelState" data-dfn-for="RTCDataChannelState" class="simple">
           <tbody>
             <tr>
@@ -9752,13 +9853,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
         </code>
         interface as described below.</p>
       <div>
-        <div>
+        <div tested-idlharness>
           <pre class="def idl"><span class="idlInterface" id="idl-def-rtcrtpsender-partial-1" data-idl="" data-title="RTCRtpSender">partial interface <span class="idlInterfaceID"><a data-lt="RTCRtpSender" href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCRtpSender</code></a></span> {
 <span class="idlAttribute" id="idl-def-rtcrtpsender-dtmf" data-idl="" data-title="dtmf" data-dfn-for="rtcrtpsender">    readonly attribute <span class="idlAttrType"><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a>?</span> <span class="idlAttrName"><a data-lt="dtmf" href="#dom-rtcrtpsender-dtmf" class="internalDFN" data-link-type="dfn" data-for="RTCRtpSender"><code>dtmf</code></a></span>;</span>
 };</span></pre>
         </div>
 
-        <section typeof="bibo:Chapter" resource="#attributes-20" property="bibo:hasPart">
+        <section untested typeof="bibo:Chapter" resource="#attributes-20" property="bibo:hasPart">
           <h4 id="attributes-20" resource="#attributes-20"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpSender" data-dfn-for="RTCRtpSender" class="attributes">
             <dt><code>dtmf</code> of type <span class="idlAttrType"><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a></span>, readonly, nullable</dt>
@@ -9784,7 +9885,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
 };</span></pre>
         </div>
 
-        <section typeof="bibo:Chapter" resource="#attributes-21" property="bibo:hasPart">
+        <section untested typeof="bibo:Chapter" resource="#attributes-21" property="bibo:hasPart">
           <h4 id="attributes-21" resource="#attributes-21"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCDTMFSender" data-dfn-for="RTCDTMFSender" class="attributes">
             <dt><dfn data-dfn-for="rtcdtmfsender" data-dfn-type="dfn" id="dom-rtcdtmfsender-ontonechange" data-idl="" data-title="ontonechange"><code>ontonechange</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
@@ -9961,9 +10062,10 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
           </dl>
         </section>
 
-        <section typeof="bibo:Chapter" resource="#attributes-22" property="bibo:hasPart">
+        <section untested typeof="bibo:Chapter" resource="#attributes-22" property="bibo:hasPart">
           <h4 id="attributes-22" resource="#attributes-22"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCDTMFToneChangeEvent" data-dfn-for="RTCDTMFToneChangeEvent" class="attributes">
+
             <dt><code>tone</code> of type <span class="idlAttrType">DOMString</span>, readonly</dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcdtmftonechangeevent" data-dfn-type="dfn" id="dom-rtcdtmftonechangeevent-tone" data-idl="" data-title="tone"><code>tone</code></dfn> attribute contains the character for the tone that has just begun playout (see
@@ -10027,7 +10129,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         <section typeof="bibo:Chapter" resource="#methods-13" property="bibo:hasPart">
           <h4 id="methods-13" resource="#methods-13"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCPeerConnection" data-dfn-for="RTCPeerConnection" class="methods">
-            <section incomplete>
+            <section tested>
             <dt><code>getStats</code></dt>
             <dd>
               <p>Gathers stats for the given <a href="#stats-selector" class="internalDFN" data-link-type="dfn">selector</a> and reports the result asynchronously.</p>
@@ -10109,7 +10211,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
       </div>
     </section>
 
-    <section id="rtcstatsreport-object" typeof="bibo:Chapter" resource="#rtcstatsreport-object" property="bibo:hasPart">
+    <section tested id="rtcstatsreport-object" typeof="bibo:Chapter" resource="#rtcstatsreport-object" property="bibo:hasPart">
       <h3 id="h-rtcstatsreport-object" resource="#h-rtcstatsreport-object"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.3 </span><dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcstatsreport" data-idl="" data-title="RTCStatsReport"><code>RTCStatsReport</code></dfn> Object</span>
       </h3>
       <p>The <code><a data-for="RTCPeerConnection" href="#dom-rtcpeerconnection-getstats()" class="internalDFN" data-link-type="dfn">getStats()</a></code> method delivers a successful result in the form of an
@@ -10141,7 +10243,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
       </div>
     </section>
 
-    <section id="rtcstats-dictionary" typeof="bibo:Chapter" resource="#rtcstats-dictionary" property="bibo:hasPart">
+    <section tested id="rtcstats-dictionary" typeof="bibo:Chapter" resource="#rtcstats-dictionary" property="bibo:hasPart">
       <h3 id="h-rtcstats-dictionary" resource="#h-rtcstats-dictionary"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.4 </span>RTCStats Dictionary</span>
       </h3>
       <p>An <code><a href="#dom-rtcstats" class="internalDFN" data-link-type="dfn"><code>RTCStats</code></a>
@@ -10166,6 +10268,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         <section typeof="bibo:Chapter" resource="#dictionary-rtcstats-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcstats-members" resource="#dictionary-rtcstats-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcstats" data-idl="" data-title="RTCStats"><code>RTCStats</code></dfn> Members</span></h4>
           <dl data-link-for="RTCStats" data-dfn-for="RTCStats" class="dictionary-members">
+            <section tested>
             <dt><code>timestamp</code> of type <span class="idlMemberType">DOMHighResTimeStamp</span></dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcstats" data-dfn-type="dfn" id="dom-rtcstats-timestamp" data-idl="" data-title="timestamp"><code>timestamp</code></dfn>, of type
@@ -10174,6 +10277,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
                 </code>-derived dictionary, if applicable.
               </p>
             </dd>
+            </section>
+            <section tested>
             <dt><code>type</code> of type <span class="idlMemberType"><a data-link-type="dfn" href="https://www.w3.org/TR/webrtc-stats/#dom-rtcstatstype">RTCStatsType</a></span></dt>
             <dd>
               <p>The type of this object.</p>
@@ -10181,6 +10286,9 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
                 <code><a href="#dom-rtcstats" class="internalDFN" data-link-type="dfn"><code>RTCStats</code></a>
                 </code> dictionary represents.</p>
             </dd>
+            </section>
+            <section tested>
+
             <dt><code>id</code> of type <span class="idlMemberType">DOMString</span></dt>
             <dd>
               <p>A unique <dfn data-dfn-for="rtcstats" data-dfn-type="dfn" id="dom-rtcstats-id" data-idl="" data-title="id"><code>id</code></dfn> that is associated with the object that was inspected to produce this
@@ -10190,6 +10298,8 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
                 </code> objects, extracted from two different <code><a href="#dom-rtcstatsreport" class="internalDFN" data-link-type="dfn"><code>RTCStatsReport</code></a>
                 </code> objects, <em class="rfc2119" title="MUST">MUST</em> have the same id if they were produced by inspecting the same underlying object. User agents are free to pick any format for the id as long as it meets the requirements above.</p>
             </dd>
+            </section>
+
           </dl>
         </section>
       </div>
@@ -10197,18 +10307,18 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         <cite><a class="bibref" href="#bib-WEBRTC-STATS">WEBRTC-STATS</a></cite>].</p>
     </section>
 
-    <section id="the-stats-selection-algorithm" typeof="bibo:Chapter" resource="#the-stats-selection-algorithm" property="bibo:hasPart">
+    <section tested id="the-stats-selection-algorithm" typeof="bibo:Chapter" resource="#the-stats-selection-algorithm" property="bibo:hasPart">
       <h3 id="h-the-stats-selection-algorithm" resource="#h-the-stats-selection-algorithm"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.5 </span>The stats selection algorithm</span>
       </h3>
       <p>The <dfn data-dfn-type="dfn" id="dfn-stats-selection-algorithm">stats selection algorithm</dfn> is as follows:</p>
       <ol>
-        <li>
+        <li implicit>
           Let <var>result</var> be an empty RTCStatsReport.
         </li>
-        <li>If <var>selector</var> is <code>null</code>, gather stats for the whole <var>connection</var>, add them to <var>result</var>, return
+        <li implicit>If <var>selector</var> is <code>null</code>, gather stats for the whole <var>connection</var>, add them to <var>result</var>, return
           <var>result</var>, and abort these steps.
         </li>
-        <li>If <var>selector</var> is an <a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>, gather stats for and add the following objects to <var>result</var>:
+        <li tested>If <var>selector</var> is an <a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>, gather stats for and add the following objects to <var>result</var>:
           <ul>
             <li>
               All <code>RTCOutboundRTPStreamStats</code> objects corresponding to
@@ -10220,7 +10330,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
             </li>
           </ul>
         </li>
-        <li>If <var>selector</var> is an <a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>, gather stats for and add the following objects to <var>result</var>:
+        <li tested>If <var>selector</var> is an <a href="#dom-rtcrtpreceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpReceiver</code></a>, gather stats for and add the following objects to <var>result</var>:
           <ul>
             <li>
               All <code>RTCInboundRTPStreamStats</code> objects corresponding to <var>selector</var>.
@@ -10231,7 +10341,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
             </li>
           </ul>
         </li>
-        <li>
+        <li tested>
           Return <var>result</var>.
         </li>
       </ol>
@@ -10240,27 +10350,27 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
       </p>
     </section>
 
-    <section id="mandatory-to-implement-stats" typeof="bibo:Chapter" resource="#mandatory-to-implement-stats" property="bibo:hasPart">
+    <section tested id="mandatory-to-implement-stats" typeof="bibo:Chapter" resource="#mandatory-to-implement-stats" property="bibo:hasPart">
       <h3 id="h-mandatory-to-implement-stats" resource="#h-mandatory-to-implement-stats"><span property="xhv:role" resource="xhv:heading"><span class="secno">8.6 </span>Mandatory To Implement Stats</span>
       </h3>
       <p>The stats listed in [<cite><a class="bibref" href="#bib-WEBRTC-STATS">WEBRTC-STATS</a></cite>] are intended to cover a wide range of use cases. Not all of them have to be implemented by every WebRTC implementation.</p>
       <p>An implementation <em class="rfc2119" title="MUST">MUST</em> support generating statistics of the following types when the corresponding objects exist on a PeerConnection, with the attributes that are listed when they are valid for that object:</p>
       <ul>
-        <li>RTCRTPStreamStats, with attributes ssrc, associateStatsId, isRemote, mediaType, mediaTrackId, transportId, codecId, nackCount</li>
-        <li>RTCInboundRTPStreamStats, with all required attributes from RTCRTPStreamStats, and also attributes packetsReceived, bytesReceived, packetsLost, jitter, packetsDiscarded</li>
-        <li>RTCOutboundRTPStreamStats, with all required attributes from RTCRTPStreamStats, and also attributes packetsSent, bytesSent, roundTripTime
+        <li tested alt="RTCStats-helper.js">RTCRTPStreamStats, with attributes ssrc, associateStatsId, isRemote, mediaType, mediaTrackId, transportId, codecId, nackCount</li>
+        <li tested alt="RTCStats-helper.js">RTCInboundRTPStreamStats, with all required attributes from RTCRTPStreamStats, and also attributes packetsReceived, bytesReceived, packetsLost, jitter, packetsDiscarded</li>
+        <li tested alt="RTCStats-helper.js">RTCOutboundRTPStreamStats, with all required attributes from RTCRTPStreamStats, and also attributes packetsSent, bytesSent, roundTripTime
         </li>
-        <li>RTCPeerConnectionStats, with attributes dataChannelsOpened, dataChannelsClosed
+        <li tested alt="RTCStats-helper.js">RTCPeerConnectionStats, with attributes dataChannelsOpened, dataChannelsClosed
         </li>
-        <li>RTCDataChannelStats, with attributes label, protocol, datachannelId, state, messagesSent, bytesSent, messagesReceived, bytesReceived
+        <li tested alt="RTCStats-helper.js">RTCDataChannelStats, with attributes label, protocol, datachannelId, state, messagesSent, bytesSent, messagesReceived, bytesReceived
         </li>
-        <li>RTCMediaStreamStats, with attributes streamIdentifer, trackIds</li>
-        <li>RTCMediaStreamTrackStats, with attributes trackIdentifier, remoteSource, ended, detached, ssrcIds, frameWidth, frameHeight, framesPerSecond, framesSent, framesReceived, framesDecoded, framesDropped, framesCorrupted, audioLevel</li>
-        <li>RTCCodecStats, with attributes payloadType, codec, clockRate, channels, parameters</li>
-        <li>RTCTransportStats, with attributes bytesSent, bytesReceived, rtcpTransportStatsId, activeConnection, selectedCandidatePairId, localCertificateId, remoteCertificateId</li>
-        <li>RTCIceCandidatePairStats, with attributes transportId, localCandidateId, remoteCandidateId, state, priority, nominated, writable, readable, bytesSent, bytesReceived, totalRtt, currentRtt</li>
-        <li>RTCIceCandidateStats, with attributes ip, port, protocol, candidateType, priority, url</li>
-        <li>RTCCertificateStats, with attributes fingerprint, fingerprintAlgorithm, base64Certificate, issuerCertificateId</li>
+        <li tested alt="RTCStats-helper.js">RTCMediaStreamStats, with attributes streamIdentifer, trackIds</li>
+        <li tested alt="RTCStats-helper.js">RTCMediaStreamTrackStats, with attributes trackIdentifier, remoteSource, ended, detached, ssrcIds, frameWidth, frameHeight, framesPerSecond, framesSent, framesReceived, framesDecoded, framesDropped, framesCorrupted, audioLevel</li>
+        <li tested alt="RTCStats-helper.js">RTCCodecStats, with attributes payloadType, codec, clockRate, channels, parameters</li>
+        <li tested alt="RTCStats-helper.js">RTCTransportStats, with attributes bytesSent, bytesReceived, rtcpTransportStatsId, activeConnection, selectedCandidatePairId, localCertificateId, remoteCertificateId</li>
+        <li tested alt="RTCStats-helper.js">RTCIceCandidatePairStats, with attributes transportId, localCandidateId, remoteCandidateId, state, priority, nominated, writable, readable, bytesSent, bytesReceived, totalRtt, currentRtt</li>
+        <li tested alt="RTCStats-helper.js">RTCIceCandidateStats, with attributes ip, port, protocol, candidateType, priority, url</li>
+        <li tested alt="RTCStats-helper.js">RTCCertificateStats, with attributes fingerprint, fingerprintAlgorithm, base64Certificate, issuerCertificateId</li>
       </ul>
       <p>An implementation <em class="rfc2119" title="MAY">MAY</em> support generating any other statistic defined in [<cite><a class="bibref" href="#bib-WEBRTC-STATS">WEBRTC-STATS</a></cite>], and <em class="rfc2119" title="MAY">MAY</em> generate statistics that are not documented.
       </p>
