@@ -10762,7 +10762,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           <p>This step depends entirely on the IdP. The methods by which an IdP authenticates users or generates assertions is not specified, though they could involve interacting with the IdP server or other servers.
           </p>
         </li>
-        <li>
+        <li tested>
           <p>If the IdP proxy produces an error or returns a promise that does not resolve to a valid
             <code><a href="#dom-rtcidentityvalidationresult" class="internalDFN" data-link-type="dfn"><code>RTCIdentityValidationResult</code></a>
             </code> (see <a href="#sec.idp-error-handling" class="sec-ref"><span class="secno">9.5</span> <span class="sec-title">IdP Error Handling</span></a>), then identity validation fails.</p>
@@ -10899,7 +10899,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
           <p>If the IdP loads fails due to the TLS certificate used for the HTTPS connection not being trusted, it fails with an
             <code>RTCError</code> with <code>errorDetail</code> set to "idp-tls-failure". This typically happens when the IdP uses certificate pinning and an intermediary such as an enterprise firewall has intercepted the TLS connection.</p>
         </li>
-        <li>
+        <li tested >
           <p>If the script loaded from the identity provider is not valid JavaScript or does not implement the correct interfaces, it causes an IdP failure with an <code>RTCError</code> with
             <code>errorDetail</code> set to "idp-bad-script-failure".</p>
         </li>
@@ -10922,7 +10922,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
             <code>RTCError</code> with <code>errorDetail</code> set to "idp-timeout".
           </p>
         </li>
-        <li>
+        <li tested>
           <p>If the identity provider requires the user to login, the operation will fail <code>RTCError</code> with <code>errorDetail</code> set to "idp-need-login" and the <code>idpLoginUrl</code> attribute of the error set to the URL that can be used to login.</p>
         </li>
         <li>
@@ -10964,10 +10964,12 @@ interface <span class="idlInterfaceID"><a data-lt="RTCIdentityProviderRegistrar"
             <dd>
               <p>The URL that an application can navigate to so that the user can login to the IdP, as described in <a href="#sec.idp-loginneeded" class="sec-ref"><span class="secno">9.3.1</span> <span class="sec-title">User Login Procedure</span></a>.</p>
             </dd>
+            <section tested>
             <dt><dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-idperrorinfo" data-idl="" data-title="idpErrorInfo"><code>idpErrorInfo</code></dfn> of type <span class="idlAttrType">DOMString</span>, readonly, nullable</dt>
             <dd>
               <p>An attribute that the IdP can use to pass additional information back to the applications about the error. The format of this string is defined by the IdP and may be JSON.</p>
             </dd>
+            </section>
           </dl>
         </section>
 
