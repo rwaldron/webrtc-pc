@@ -3448,7 +3448,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCPeerConnection" href="#dom
                 </div>
               </dd>
               </section>
-              <section untested>
+              <section needs-verification>
               <dt><code>close</code></dt>
               <dd>
                 <p>When the <dfn data-dfn-for="rtcpeerconnection" data-dfn-type="dfn" id="dom-rtcpeerconnection-close" data-idl="" data-title="close" data-lt="close()|close"><code>close</code></dfn> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
@@ -9859,13 +9859,15 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
 };</span></pre>
         </div>
 
-        <section untested typeof="bibo:Chapter" resource="#attributes-20" property="bibo:hasPart">
+        <section typeof="bibo:Chapter" resource="#attributes-20" property="bibo:hasPart">
           <h4 id="attributes-20" resource="#attributes-20"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCRtpSender" data-dfn-for="RTCRtpSender" class="attributes">
+            <section tested>
             <dt><code>dtmf</code> of type <span class="idlAttrType"><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a></span>, readonly, nullable</dt>
             <dd>
               <p>The <dfn data-dfn-for="rtcrtpsender" data-dfn-type="dfn" id="dom-rtcrtpsender-dtmf" data-idl="" data-title="dtmf"><code>dtmf</code></dfn> attribute returns a RTCDTMFSender which can be used to send DTMF. A null value indicates that this RTCRtpSender cannot send DTMF.</p>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -9885,26 +9887,31 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
 };</span></pre>
         </div>
 
-        <section untested typeof="bibo:Chapter" resource="#attributes-21" property="bibo:hasPart">
+        <section typeof="bibo:Chapter" resource="#attributes-21" property="bibo:hasPart">
           <h4 id="attributes-21" resource="#attributes-21"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCDTMFSender" data-dfn-for="RTCDTMFSender" class="attributes">
+            <section tested>
             <dt><dfn data-dfn-for="rtcdtmfsender" data-dfn-type="dfn" id="dom-rtcdtmfsender-ontonechange" data-idl="" data-title="ontonechange"><code>ontonechange</code></dfn> of type <span class="idlAttrType">EventHandler</span></dt>
             <dd>
               <p>The event type of this event handler is
                 <code><a href="#event-RTCDTMFSender-tonechange" class="internalDFN" data-link-type="dfn"><code>tonechange</code></a>
                 </code>.</p>
             </dd>
+            </section>
+            <section tested>
             <dt><code>toneBuffer</code> of type <span class="idlAttrType">DOMString</span>, readonly</dt>
             <dd>
               <p>The <dfn id="dom-rtcdtmfsender-tonebuffer" data-dfn-for="rtcdtmfsender" data-dfn-type="dfn" data-idl="" data-title="toneBuffer"><code>toneBuffer</code></dfn> attribute <em class="rfc2119" title="MUST">MUST</em> return a list of the tones remaining to be played out. For the syntax, content, and interpretation of this list, see <code><a href="#dom-rtcdtmfsender-insertdtmf" class="internalDFN" data-link-type="dfn"><code>insertDTMF</code></a>
                 </code>.</p>
             </dd>
+            </section>
           </dl>
         </section>
 
         <section typeof="bibo:Chapter" resource="#methods-12" property="bibo:hasPart">
           <h4 id="methods-12" resource="#methods-12"><span property="xhv:role" resource="xhv:heading">Methods</span></h4>
           <dl data-link-for="RTCDTMFSender" data-dfn-for="RTCDTMFSender" class="methods">
+            <section tested>
             <dt><code>insertDTMF</code></dt>
             <dd>
               <p>An <code><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a>
@@ -9913,57 +9920,58 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
                 <cite><a class="bibref" href="#bib-RTCWEB-AUDIO">RTCWEB-AUDIO</a></cite>] Section 3, support for the characters 0 through 9, A through D, #, and * are required. The character ',' <em class="rfc2119" title="MUST">MUST</em> be supported, and indicates a delay of 2 seconds before processing the next character in the tones parameter. All other characters (and only those other characters) <em class="rfc2119" title="MUST">MUST</em> be considered <dfn id="dtmf-unrecognized" data-dfn-type="dfn">unrecognized</dfn>.</p>
               <p>The duration parameter indicates the duration in ms to use for each character passed in the tones parameters. The duration cannot be more than 6000 ms or less than 40 ms. The default duration is 100 ms for each tone.</p>
               <p>The interToneGap parameter indicates the gap between tones in ms. The user agent clamps it to at least 30 ms. The default value is 70 ms.</p>
-              <p>The browser <em class="rfc2119" title="MAY">MAY</em> increase the duration and interToneGap times to cause the times that DTMF start and stop to align with the boundaries of RTP packets but it <em class="rfc2119" title="MUST">MUST</em> not increase either of them by more than the duration of a single RTP audio packet.</p>
+              <p untestable>The browser <em class="rfc2119" title="MAY">MAY</em> increase the duration and interToneGap times to cause the times that DTMF start and stop to align with the boundaries of RTP packets but it <em class="rfc2119" title="MUST">MUST</em> not increase either of them by more than the duration of a single RTP audio packet.</p>
               <p>When the <code><a href="#dom-rtcdtmfsender-insertdtmf" class="internalDFN" data-link-type="dfn">insertDTMF()</a></code> method is invoked, the user agent <em class="rfc2119" title="MUST">MUST</em> run the following steps:</p>
               <ol>
-                <li>let <var>sender</var> be the
+                <li tested>let <var>sender</var> be the
                   <code><a href="#dom-rtcrtpsender" class="internalDFN" data-link-type="dfn"><code>RTCRtpSender</code></a>
                   </code> used to send DTMF.</li>
-                <li>
+                <li tested>
                   <p>Let <var>transceiver</var> be the
                     <code><a href="#dom-rtcrtptransceiver" class="internalDFN" data-link-type="dfn"><code>RTCRtpTransceiver</code></a>
                     </code> object associated with
                     <var>sender</var>.</p>
                 </li>
-                <li untested>If <code><var>transceiver</var>.stopped</code> is
+                <li tested>If <code><var>transceiver</var>.stopped</code> is
                   <code>true</code>, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an
                   <code>InvalidStateError</code>.</li>
-                <li untested>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
+                <li tested>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>,
                   <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidStateError</code>.</li>
-                <li>Let <var>tones</var> be the method's first argument.</li>
-                <li>If <var>tones</var> contains any <a href="#dtmf-unrecognized" class="internalDFN" data-link-type="dfn">unrecognized</a> characters, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidCharacterError</code>.
+                <li tested>Let <var>tones</var> be the method's first argument.</li>
+                <li tested>If <var>tones</var> contains any <a href="#dtmf-unrecognized" class="internalDFN" data-link-type="dfn">unrecognized</a> characters, <a href="#dfn-throw" class="internalDFN" data-link-type="dfn">throw</a> an <code>InvalidCharacterError</code>.
                 </li>
-                <li>Set the object's <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
+                <li tested>Set the object's <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
                   </code> attribute to
                   <var>tones</var>.</li>
-                <li>If the value of the <code>duration</code> parameter is less than 40, set it to 40. If, on the other hand, the value is greater than 6000, set it to 6000.</li>
-                <li>If the value of the <code>interToneGap</code> parameter is less than 30, set it to 30.</li>
-                <li>If <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
+                <li tested>If the value of the <code>duration</code> parameter is less than 40, set it to 40. If, on the other hand, the value is greater than 6000, set it to 6000.</li>
+                <li tested>If the value of the <code>interToneGap</code> parameter is less than 30, set it to 30.</li>
+                <li tested>If <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
                   </code>
                   is an empty string, abort these steps.</li>
                 <li>If a <em>Playout task</em> is scheduled to be run; abort these steps; otherwise queue a task that runs the following steps (<em>Playout task</em>):
                   <ol>
-                    <li>If <code><var>transceiver</var>.stopped</code> is
+                    <li tested>If <code><var>transceiver</var>.stopped</code> is
                       <code>true</code>, abort these steps.</li>
-                    <li>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>, abort these steps.</li>
-                    <li>If <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
+                    <li tested>If <code><var>transceiver</var>.currentDirection</code> is <code>recvonly</code> or <code>inactive</code>, abort these steps.</li>
+                    <li tested>If <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
                       </code> is an empty string, fire an event named <code><a href="#event-RTCDTMFSender-tonechange" class="internalDFN" data-link-type="dfn"><code>tonechange</code></a>
                       </code> with an empty string at the <code><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a>
                       </code>
                       object and abort these steps.</li>
-                    <li>Remove the first character from <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
+                    <li tested>Remove the first character from <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-tonebuffer" class="internalDFN" data-link-type="dfn"><code>toneBuffer</code></a>
                       </code> and let that character be <var>tone</var>.</li>
-                    <li>Start playout of <var>tone</var> for <code>duration</code> ms on the associated RTP media stream, using the appropriate codec.</li>
-                    <li>Queue a task to be executed in <code>duration</code> + <code>interToneGap</code> ms from now that runs the steps labelled <em>Playout task</em>.</li>
-                    <li>Fire an event named <code><a href="#event-RTCDTMFSender-tonechange" class="internalDFN" data-link-type="dfn"><code>tonechange</code></a>
+                    <li untestable>Start playout of <var>tone</var> for <code>duration</code> ms on the associated RTP media stream, using the appropriate codec.</li>
+                    <li tested>Queue a task to be executed in <code>duration</code> + <code>interToneGap</code> ms from now that runs the steps labelled <em>Playout task</em>.</li>
+                    <li tested>Fire an event named <code><a href="#event-RTCDTMFSender-tonechange" class="internalDFN" data-link-type="dfn"><code>tonechange</code></a>
                       </code> with a string consisting of <var>tone</var> at the
                       <code><a href="#dom-rtcdtmfsender" class="internalDFN" data-link-type="dfn"><code>RTCDTMFSender</code></a>
                       </code> object.</li>
                   </ol>
                 </li>
               </ol>
-              <p>Calling <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-insertdtmf" class="internalDFN" data-link-type="dfn"><code>insertDTMF</code></a>
+              <p untested>Calling <code><a data-for="RTCDTMFSender" href="#dom-rtcdtmfsender-insertdtmf" class="internalDFN" data-link-type="dfn"><code>insertDTMF</code></a>
                 </code> with an empty tones parameter can be used to cancel all tones queued to play after the currently playing tone.</p>
+              <section tested>
               <table class="parameters">
                 <tbody>
                   <tr>
@@ -9999,7 +10007,9 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDataChannelEvent" href="#d
               <div>
                 <em>Return type:</em> <code>void</code>
               </div>
+              </section>
             </dd>
+            </section>
           </dl>
         </section>
       </div>
@@ -10062,7 +10072,7 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
           </dl>
         </section>
 
-        <section untested typeof="bibo:Chapter" resource="#attributes-22" property="bibo:hasPart">
+        <section tested typeof="bibo:Chapter" resource="#attributes-22" property="bibo:hasPart">
           <h4 id="attributes-22" resource="#attributes-22"><span property="xhv:role" resource="xhv:heading">Attributes</span></h4>
           <dl data-link-for="RTCDTMFToneChangeEvent" data-dfn-for="RTCDTMFToneChangeEvent" class="attributes">
 
@@ -10076,13 +10086,13 @@ interface <span class="idlInterfaceID"><a data-lt="RTCDTMFToneChangeEvent" href=
         </section>
       </div>
       <div>
-        <div>
+        <div tested>
           <pre class="def idl"><span class="idlDictionary" id="idl-def-rtcdtmftonechangeeventinit" data-idl="" data-title="RTCDTMFToneChangeEventInit">dictionary <span class="idlDictionaryID"><a data-lt="RTCDTMFToneChangeEventInit" href="#dom-rtcdtmftonechangeeventinit" class="internalDFN" data-link-type="dfn" data-for=""><code>RTCDTMFToneChangeEventInit</code></a></span> : <span class="idlSuperclass">EventInit</span> {
 <span class="idlMember" id="idl-def-rtcdtmftonechangeeventinit-tone" data-idl="" data-title="tone" data-dfn-for="rtcdtmftonechangeeventinit">    required <span class="idlMemberType"><a href="https://heycam.github.io/webidl/#idl-DOMString">DOMString</a></span> <span class="idlMemberName"><a data-lt="tone" href="#dom-rtcdtmftonechangeeventinit-tone" class="internalDFN" data-link-type="dfn" data-for="RTCDTMFToneChangeEventInit"><code>tone</code></a></span>;</span>
 };</span></pre>
         </div>
 
-        <section typeof="bibo:Chapter" resource="#dictionary-rtcdtmftonechangeeventinit-members" property="bibo:hasPart">
+        <section tested typeof="bibo:Chapter" resource="#dictionary-rtcdtmftonechangeeventinit-members" property="bibo:hasPart">
           <h4 id="dictionary-rtcdtmftonechangeeventinit-members" resource="#dictionary-rtcdtmftonechangeeventinit-members"><span property="xhv:role" resource="xhv:heading">Dictionary <dfn data-dfn-for="" data-dfn-type="dfn" id="dom-rtcdtmftonechangeeventinit" data-idl="" data-title="RTCDTMFToneChangeEventInit"><code>RTCDTMFToneChangeEventInit</code></dfn>
           Members</span></h4>
           <dl data-link-for="RTCDTMFToneChangeEventInit" data-dfn-for="RTCDTMFToneChangeEventInit" class="dictionary-members">
